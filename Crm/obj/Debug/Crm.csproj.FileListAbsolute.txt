@@ -1,0 +1,530 @@
+D:\Crm\Crm\bin\Debug\Crm.exe.config
+D:\Crm\Crm\obj\Debug\Crm.exe
+D:\Crm\Crm\obj\Debug\Crm.pdb
+C:\Users\Michael\Documents\Visual Studio 2013\Projects\Crm\Crm\bin\Debug\Crm.exe.config
+C:\Users\Michael\Documents\Visual Studio 2013\Projects\Crm\Crm\bin\Debug\Crm.exe
+C:\Users\Michael\Documents\Visual Studio 2013\Projects\Crm\Crm\bin\Debug\Crm.pdb
+C:\Users\Michael\Documents\Visual Studio 2013\Projects\Crm\Crm\obj\Debug\Crm.ExtraccionAgave.FrmExtraccionAgave.resources
+C:\Users\Michael\Documents\Visual Studio 2013\Projects\Crm\Crm\obj\Debug\Crm.FrmInicio.resources
+C:\Users\Michael\Documents\Visual Studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Inicio.FrmPrincipal.resources
+C:\Users\Michael\Documents\Visual Studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Inventario.FrmAgaveSobrante.resources
+C:\Users\Michael\Documents\Visual Studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Inventario.FrmCompletarTapda.resources
+C:\Users\Michael\Documents\Visual Studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Inventario.FrmEnsamblePredio.resources
+C:\Users\Michael\Documents\Visual Studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Inventario.FrmExtraccionAgaveDos.resources
+C:\Users\Michael\Documents\Visual Studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimienEnvasado.resources
+C:\Users\Michael\Documents\Visual Studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientoEnvasadoSalio.resources
+C:\Users\Michael\Documents\Visual Studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosBarrica.resources
+C:\Users\Michael\Documents\Visual Studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosGranel.resources
+C:\Users\Michael\Documents\Visual Studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosVidrio.resources
+C:\Users\Michael\Documents\Visual Studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Inventario.FrmRendimientoTapada.resources
+C:\Users\Michael\Documents\Visual Studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarDestilacion.resources
+C:\Users\Michael\Documents\Visual Studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Inventario.FrmInventario.resources
+C:\Users\Michael\Documents\Visual Studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarCoccion.resources
+C:\Users\Michael\Documents\Visual Studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarFormulacion.resources
+C:\Users\Michael\Documents\Visual Studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarMolienda.resources
+C:\Users\Michael\Documents\Visual Studio 2013\Projects\Crm\Crm\obj\Debug\Crm.PlanDeTrabajo.FrmPlanDeTrabajo.resources
+C:\Users\Michael\Documents\Visual Studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Properties.Resources.resources
+C:\Users\Michael\Documents\Visual Studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Subida.FrmSubida.resources
+C:\Users\Michael\Documents\Visual Studio 2013\Projects\Crm\Crm\obj\Debug\Crm.csproj.GenerateResource.Cache
+C:\Users\Michael\Documents\Visual Studio 2013\Projects\Crm\Crm\obj\Debug\Crm.exe
+C:\Users\Michael\Documents\Visual Studio 2013\Projects\Crm\Crm\obj\Debug\Crm.pdb
+C:\Users\Michael\Documents\Visual Studio 2013\Projects\Crm\Crm\obj\Debug\Crm.csprojResolveAssemblyReference.cache
+D:\Crm\Crm\bin\Debug\Crm.exe
+D:\Crm\Crm\bin\Debug\Crm.pdb
+D:\Crm\Crm\obj\Debug\Crm.csprojResolveAssemblyReference.cache
+D:\Crm\Crm\obj\Debug\Crm.ExtraccionAgave.FrmExtraccionAgave.resources
+D:\Crm\Crm\obj\Debug\Crm.FrmInicio.resources
+D:\Crm\Crm\obj\Debug\Crm.Inicio.FrmPrincipal.resources
+D:\Crm\Crm\obj\Debug\Crm.Inventario.FrmAgaveSobrante.resources
+D:\Crm\Crm\obj\Debug\Crm.Inventario.FrmCompletarTapda.resources
+D:\Crm\Crm\obj\Debug\Crm.Inventario.FrmEnsamblePredio.resources
+D:\Crm\Crm\obj\Debug\Crm.Inventario.FrmExtraccionAgaveDos.resources
+D:\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimienEnvasado.resources
+D:\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientoEnvasadoSalio.resources
+D:\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosBarrica.resources
+D:\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosGranel.resources
+D:\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosVidrio.resources
+D:\Crm\Crm\obj\Debug\Crm.Inventario.FrmRendimientoTapada.resources
+D:\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarDestilacion.resources
+D:\Crm\Crm\obj\Debug\Crm.Inventario.FrmInventario.resources
+D:\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarCoccion.resources
+D:\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarFormulacion.resources
+D:\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarMolienda.resources
+D:\Crm\Crm\obj\Debug\Crm.PlanDeTrabajo.FrmPlanDeTrabajo.resources
+D:\Crm\Crm\obj\Debug\Crm.Properties.Resources.resources
+D:\Crm\Crm\obj\Debug\Crm.Subida.FrmSubida.resources
+D:\Crm\Crm\obj\Debug\Crm.csproj.GenerateResource.Cache
+C:\Users\CRMPC001\documents\visual studio 2013\Projects\Crm\Crm\bin\Debug\Crm.exe.config
+C:\Users\CRMPC001\documents\visual studio 2013\Projects\Crm\Crm\bin\Debug\Crm.exe
+C:\Users\CRMPC001\documents\visual studio 2013\Projects\Crm\Crm\bin\Debug\Crm.pdb
+C:\Users\CRMPC001\documents\visual studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Consultas.FrmConsultasNuevas.resources
+C:\Users\CRMPC001\documents\visual studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Consultas.FrmConsultas.resources
+C:\Users\CRMPC001\documents\visual studio 2013\Projects\Crm\Crm\obj\Debug\Crm.ExtraccionAgave.FrmExtraccionAgave.resources
+C:\Users\CRMPC001\documents\visual studio 2013\Projects\Crm\Crm\obj\Debug\Crm.FrmInicio.resources
+C:\Users\CRMPC001\documents\visual studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Inicio.FrmPrincipal.resources
+C:\Users\CRMPC001\documents\visual studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Inventario.FrmAgaveSobrante.resources
+C:\Users\CRMPC001\documents\visual studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Inventario.FrmClienteMaquila.resources
+C:\Users\CRMPC001\documents\visual studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Inventario.FrmCompletarTapda.resources
+C:\Users\CRMPC001\documents\visual studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Inventario.FrmEnsamblePredio.resources
+C:\Users\CRMPC001\documents\visual studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Inventario.FrmExtraccionAgaveDos.resources
+C:\Users\CRMPC001\documents\visual studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Inventario.FrmGranelNuevo.resources
+C:\Users\CRMPC001\documents\visual studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Inventario.FrmMensajes.resources
+C:\Users\CRMPC001\documents\visual studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimienEnvasado.resources
+C:\Users\CRMPC001\documents\visual studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimienEnvasadoNoTerminado.resources
+C:\Users\CRMPC001\documents\visual studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientoEnvasadoSalio.resources
+C:\Users\CRMPC001\documents\visual studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosBarrica.resources
+C:\Users\CRMPC001\documents\visual studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosGranel.resources
+C:\Users\CRMPC001\documents\visual studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosVidrio.resources
+C:\Users\CRMPC001\documents\visual studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevaEnvasadora.resources
+C:\Users\CRMPC001\documents\visual studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoArt.resources
+C:\Users\CRMPC001\documents\visual studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoEnvasado.resources
+C:\Users\CRMPC001\documents\visual studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoMaestroFabrica.resources
+C:\Users\CRMPC001\documents\visual studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Inventario.FrmRendimientoTapada.resources
+C:\Users\CRMPC001\documents\visual studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarDestilacion.resources
+C:\Users\CRMPC001\documents\visual studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Inventario.FrmInventario.resources
+C:\Users\CRMPC001\documents\visual studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarCoccion.resources
+C:\Users\CRMPC001\documents\visual studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarFormulacion.resources
+C:\Users\CRMPC001\documents\visual studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarMolienda.resources
+C:\Users\CRMPC001\documents\visual studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Inventario.FrmTransaccion.resources
+C:\Users\CRMPC001\documents\visual studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Mensajes.FrmNuevoMensaje.resources
+C:\Users\CRMPC001\documents\visual studio 2013\Projects\Crm\Crm\obj\Debug\Crm.PlanDeTrabajo.FrmPlanDeTrabajo.resources
+C:\Users\CRMPC001\documents\visual studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Properties.Resources.resources
+C:\Users\CRMPC001\documents\visual studio 2013\Projects\Crm\Crm\obj\Debug\Crm.Subida.FrmSubida.resources
+C:\Users\CRMPC001\documents\visual studio 2013\Projects\Crm\Crm\obj\Debug\Crm.csproj.GenerateResource.Cache
+C:\Users\CRMPC001\documents\visual studio 2013\Projects\Crm\Crm\obj\Debug\Crm.exe
+C:\Users\CRMPC001\documents\visual studio 2013\Projects\Crm\Crm\obj\Debug\Crm.pdb
+C:\Users\CRMPC001\documents\visual studio 2013\Projects\Crm\Crm\obj\Debug\Crm.csprojResolveAssemblyReference.cache
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\bin\Debug\Crm.exe.config
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\obj\Debug\Crm.exe
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\obj\Debug\Crm.pdb
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\bin\Debug\Crm.exe
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\bin\Debug\Crm.pdb
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\bin\Debug\clvdb.dll
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\bin\Debug\clvdb.pdb
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\obj\Debug\Crm.csprojResolveAssemblyReference.cache
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\obj\Debug\Crm.Consultas.FrmConsultasNuevas.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\obj\Debug\Crm.Consultas.FrmConsultas.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\obj\Debug\Crm.ExtraccionAgave.FrmExtraccionAgave.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\obj\Debug\Crm.FrmInicio.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\obj\Debug\Crm.Inicio.FrmPrincipal.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmAgaveSobrante.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmClienteMaquila.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmCompletarTapda.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmEnsamblePredio.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmExtraccionAgaveDos.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmGranelNuevo.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMensajes.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimienEnvasado.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimienEnvasadoNoTerminado.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientoEnvasadoSalio.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosBarrica.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosGranel.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosVidrio.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevaEnvasadora.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoArt.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoEnvasado.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoMaestroFabrica.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmRendimientoTapada.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarDestilacion.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmInventario.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarCoccion.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarFormulacion.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarMolienda.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTransaccion.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\obj\Debug\Crm.Mensajes.FrmNuevoMensaje.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\obj\Debug\Crm.PlanDeTrabajo.FrmPlanDeTrabajo.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\obj\Debug\Crm.Properties.Resources.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\obj\Debug\Crm.Subida.FrmSubida.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\obj\Debug\Crm.csproj.GenerateResource.Cache
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\obj\Debug\Crm.Bitacora.Bitacora.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\bin\Debug\MaterialSkin.dll
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\obj\Debug\Crm.Inventario.Dialogs.MsgBxGranelenvasado.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2Crm\Crm\Crm\obj\Debug\Crm.Inventario.Obsevaciones.Observaciones.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\bin\Debug\Crm.exe.config
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\obj\Debug\Crm.exe
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\obj\Debug\Crm.pdb
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\bin\Debug\Crm.exe
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\bin\Debug\Crm.pdb
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\bin\Debug\clvdb.dll
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\bin\Debug\MaterialSkin.dll
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\bin\Debug\clvdb.pdb
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\obj\Debug\Crm.csprojResolveAssemblyReference.cache
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\obj\Debug\Crm.Bitacora.Bitacora.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\obj\Debug\Crm.Consultas.FrmConsultasNuevas.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\obj\Debug\Crm.Consultas.FrmConsultas.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\obj\Debug\Crm.ExtraccionAgave.FrmExtraccionAgave.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\obj\Debug\Crm.FrmInicio.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\obj\Debug\Crm.Inicio.FrmPrincipal.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\obj\Debug\Crm.Inventario.Dialogs.MsgBxGranelenvasado.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmAgaveSobrante.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmClienteMaquila.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmCompletarTapda.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmEnsamblePredio.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmExtraccionAgaveDos.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmGranelNuevo.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMensajes.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimienEnvasado.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimienEnvasadoNoTerminado.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientoEnvasadoSalio.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosBarrica.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosGranel.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosVidrio.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevaEnvasadora.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoArt.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoEnvasado.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoMaestroFabrica.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmRendimientoTapada.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarDestilacion.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmInventario.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarCoccion.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarFormulacion.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarMolienda.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTransaccion.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\obj\Debug\Crm.Inventario.Obsevaciones.Observaciones.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\obj\Debug\Crm.Mensajes.FrmNuevoMensaje.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\obj\Debug\Crm.PlanDeTrabajo.FrmPlanDeTrabajo.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\obj\Debug\Crm.Properties.Resources.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\obj\Debug\Crm.Subida.FrmSubida.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\obj\Debug\Crm.csproj.GenerateResource.Cache
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\obj\Debug\Crm.Inventario.editar.FrmEditar_Produccion.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.3Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoAlmacen.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\bin\Debug\Crm.exe.config
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.exe
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.pdb
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.csprojResolveAssemblyReference.cache
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Administrador.FrmAdministrador.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Bitacora.Bitacora.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Consultas.FrmConsultasNuevas.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Consultas.FrmConsultas.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.ExtraccionAgave.FrmExtraccionAgave.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.FrmInicio.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inicio.FrmPrincipal.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.Dialogs.MsgBxGranelenvasado.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.editar.FrmEditar_Produccion.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmAgaveSobrante.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmClienteMaquila.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmCompletarTapda.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmEnsamblePredio.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmExtraccionAgaveDos.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmGranelNuevo.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMensajes.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimienEnvasado.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimienEnvasadoNoTerminado.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientoEnvasadoSalio.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosBarrica.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosGranel.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosVidrio.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoAlmacen.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevaEnvasadora.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoArt.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoEnvasado.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoMaestroFabrica.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmRendimientoTapada.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarDestilacion.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmInventario.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarCoccion.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarFormulacion.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarMolienda.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTransaccion.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.Obsevaciones.Observaciones.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Mensajes.FrmNuevoMensaje.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.PlanDeTrabajo.FrmPlanDeTrabajo.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Properties.Resources.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Subida.FrmSubida.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.csproj.GenerateResource.Cache
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\bin\Debug\Crm.exe
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\bin\Debug\Crm.pdb
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\bin\Debug\clvdb.dll
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\bin\Debug\MaterialSkin.dll
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\bin\Debug\clvdb.pdb
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNoFolioGranel.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNewMaestroMezcalero.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmEditarTanques.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.editar.FrmCambioNombre.resources
+C:\Users\CRMPC001\Documents\Visual Studio 2013\Projects\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.editar.FrmCambioTanques.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\bin\Debug\Crm.exe.config
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\bin\Debug\Crm.exe
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\bin\Debug\Crm.pdb
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\bin\Debug\MaterialSkin.dll
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\bin\Debug\clvdb.pdb
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.csprojAssemblyReference.cache
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Administrador.FrmAdministrador.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Bitacora.Bitacora.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Consultas.FrmConsultasNuevas.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Consultas.FrmConsultas.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.ExtraccionAgave.FrmExtraccionAgave.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.FrmInicio.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inicio.FrmPrincipal.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.Dialogs.MsgBxGranelenvasado.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.editar.FrmCambioNombre.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.editar.FrmCambioTanques.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.editar.FrmEditar_Produccion.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmAgaveSobrante.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmClienteMaquila.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmCompletarTapda.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmEditarTanques.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmEnsamblePredio.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmExtraccionAgaveDos.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmGranelNuevo.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMensajes.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimienEnvasado.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimienEnvasadoNoTerminado.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientoEnvasadoSalio.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosBarrica.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosGranel.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosVidrio.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNewMaestroMezcalero.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNoFolioGranel.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoAlmacen.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevaEnvasadora.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoArt.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoEnvasado.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoMaestroFabrica.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmRendimientoTapada.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarDestilacion.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmInventario.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarCoccion.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarFormulacion.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarMolienda.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTransaccion.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.Obsevaciones.Observaciones.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Mensajes.FrmNuevoMensaje.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.PlanDeTrabajo.FrmPlanDeTrabajo.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Properties.Resources.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Subida.FrmSubida.resources
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.csproj.GenerateResource.cache
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.csproj.CoreCompileInputs.cache
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.csproj.CopyComplete
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.exe
+C:\Users\Eitch\Documents\REVECA ULTIMA VERSION VERIS 07012021\2.4.2Crm\Crm\Crm\obj\Debug\Crm.pdb
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\bin\Debug\Crm.exe.config
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\bin\Debug\Crm.exe
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\bin\Debug\Crm.pdb
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\bin\Debug\MaterialSkin.dll
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.csprojAssemblyReference.cache
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Administrador.FrmAdministrador.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Bitacora.Bitacora.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Consultas.FrmConsultasNuevas.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Consultas.FrmConsultas.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.ExtraccionAgave.FrmExtraccionAgave.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.FrmInicio.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inicio.FrmPrincipal.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.Dialogs.MsgBxGranelenvasado.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.editar.FrmCambioNombre.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.editar.FrmCambioTanques.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.editar.FrmEditar_Produccion.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmAgaveSobrante.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmClienteMaquila.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmCompletarTapda.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmEditarTanques.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmEnsamblePredio.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmExtraccionAgaveDos.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmGranelNuevo.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMensajes.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimienEnvasado.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimienEnvasadoNoTerminado.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientoEnvasadoSalio.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosBarrica.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosGranel.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosVidrio.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNewMaestroMezcalero.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNoFolioGranel.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoAlmacen.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevaEnvasadora.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoArt.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoEnvasado.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoMaestroFabrica.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmRendimientoTapada.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarDestilacion.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmInventario.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarCoccion.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarFormulacion.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarMolienda.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTransaccion.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.Obsevaciones.Observaciones.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Mensajes.FrmNuevoMensaje.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.PlanDeTrabajo.FrmPlanDeTrabajo.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Properties.Resources.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Subida.FrmSubida.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.csproj.GenerateResource.cache
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.csproj.CoreCompileInputs.cache
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.csproj.CopyComplete
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.exe
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.pdb
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.DatoMagueyGuiaAntigua.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.DatosPredioAntiguo.resources
+C:\Users\Ing. Irvin\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.editaFechas.FrmEditaFechas.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\bin\Debug\Crm.exe.config
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\bin\Debug\Crm.exe
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\bin\Debug\Crm.pdb
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\bin\Debug\MaterialSkin.dll
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.csproj.AssemblyReference.cache
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Administrador.FrmAdministrador.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Bitacora.Bitacora.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Consultas.FrmConsultasNuevas.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Consultas.FrmConsultas.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.ExtraccionAgave.FrmExtraccionAgave.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.FrmInicio.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inicio.FrmPrincipal.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.DatoMagueyGuiaAntigua.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.DatosPredioAntiguo.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.Dialogs.MsgBxGranelenvasado.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.editaFechas.FrmEditaFechas.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.editar.FrmCambioNombre.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.editar.FrmCambioTanques.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.editar.FrmEditar_Produccion.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmAgaveSobrante.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmClienteMaquila.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmCompletarTapda.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmEditarTanques.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmEnsamblePredio.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmExtraccionAgaveDos.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmGranelNuevo.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMensajes.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimienEnvasado.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimienEnvasadoNoTerminado.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientoEnvasadoSalio.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosBarrica.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosGranel.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosVidrio.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNewMaestroMezcalero.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNoFolioGranel.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoAlmacen.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevaEnvasadora.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoArt.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoEnvasado.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoMaestroFabrica.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmRendimientoTapada.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarDestilacion.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmInventario.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarCoccion.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarFormulacion.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarMolienda.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTransaccion.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.mermasHologramas.frmMermasHologramas.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.Obsevaciones.Observaciones.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Mensajes.FrmNuevoMensaje.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.PlanDeTrabajo.FrmPlanDeTrabajo.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Properties.Resources.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Subida.FrmSubida.resources
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.csproj.GenerateResource.cache
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.csproj.CoreCompileInputs.cache
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.csproj.CopyComplete
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.exe
+C:\Users\EITCH\Documents\Reveca migracion SINCA\2.4.2Crm\Crm\Crm\obj\Debug\Crm.pdb
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.csproj.AssemblyReference.cache
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Administrador.FrmAdministrador.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Bitacora.Bitacora.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Consultas.FrmConsultasNuevas.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Consultas.FrmConsultas.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.ExtraccionAgave.FrmExtraccionAgave.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.FrmInicio.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inicio.FrmPrincipal.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.DatoMagueyGuiaAntigua.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.DatosPredioAntiguo.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.Dialogs.MsgBxGranelenvasado.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.editaFechas.FrmEditaFechas.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.editar.FrmCambioNombre.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.editar.FrmCambioTanques.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.editar.FrmEditar_Produccion.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmAgaveSobrante.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmClienteMaquila.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmCompletarTapda.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmEditarTanques.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmEnsamblePredio.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmExtraccionAgaveDos.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmGranelNuevo.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMensajes.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimienEnvasado.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimienEnvasadoNoTerminado.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientoEnvasadoSalio.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosBarrica.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosGranel.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosVidrio.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNewMaestroMezcalero.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNoFolioGranel.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoAlmacen.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevaEnvasadora.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoArt.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoEnvasado.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoMaestroFabrica.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmRendimientoTapada.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarDestilacion.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmInventario.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarCoccion.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarFormulacion.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarMolienda.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTransaccion.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.mermasHologramas.frmMermasHologramas.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.Obsevaciones.Observaciones.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Mensajes.FrmNuevoMensaje.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.PlanDeTrabajo.FrmPlanDeTrabajo.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Subida.FrmSubida.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.csproj.GenerateResource.cache
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.csproj.CoreCompileInputs.cache
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\bin\Debug\MaterialSkin.dll
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Properties.Resources.resources
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.csproj.CopyComplete
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\bin\Debug\SInCa.exe.config
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\bin\Debug\SInCa.exe
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\bin\Debug\SInCa.pdb
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\SInCa.exe
+C:\Users\EITCH\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\SInCa.pdb
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\bin\Debug\SInCa.exe.config
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\bin\Debug\SInCa.exe
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\bin\Debug\SInCa.pdb
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\bin\Debug\MaterialSkin.dll
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.csproj.AssemblyReference.cache
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Administrador.FrmAdministrador.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Bitacora.Bitacora.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Consultas.FrmConsultasNuevas.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Consultas.FrmConsultas.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.ExtraccionAgave.FrmExtraccionAgave.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.FrmInicio.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inicio.FrmPrincipal.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.DatoMagueyGuiaAntigua.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.DatosPredioAntiguo.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.Dialogs.MsgBxGranelenvasado.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.editaFechas.FrmEditaFechas.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.editar.FrmCambioNombre.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.editar.FrmCambioTanques.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.editar.FrmEditar_Produccion.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmAgaveSobrante.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmClienteMaquila.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmCompletarTapda.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmEditarTanques.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmEnsamblePredio.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmExtraccionAgaveDos.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmGranelNuevo.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMensajes.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimienEnvasado.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimienEnvasadoNoTerminado.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientoEnvasadoSalio.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosBarrica.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosGranel.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosVidrio.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNewMaestroMezcalero.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNoFolioGranel.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoAlmacen.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevaEnvasadora.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoArt.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoEnvasado.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoMaestroFabrica.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmRendimientoTapada.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarDestilacion.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmInventario.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarCoccion.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarFormulacion.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarMolienda.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTransaccion.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.mermasHologramas.frmMermasHologramas.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.Obsevaciones.Observaciones.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Mensajes.FrmNuevoMensaje.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.PlanDeTrabajo.FrmPlanDeTrabajo.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Properties.Resources.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Subida.FrmSubida.resources
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.csproj.GenerateResource.cache
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.csproj.CoreCompileInputs.cache
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.csproj.CopyComplete
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\SInCa.exe
+C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\SInCa.pdb

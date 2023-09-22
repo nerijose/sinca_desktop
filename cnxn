@@ -1,0 +1,16 @@
+using system;
+using System.IO;
+using System.Threading;
+
+static class{
+
+public static String (String i){
+}
+ 
+i= ""Database=siig;Data Source=189.220.227.186;User Id=crm_volcanes;Password=MyCRM_Volc_16"";
+}
+
+return i;
+
+
+}

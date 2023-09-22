@@ -1,0 +1,922 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0080E1EA-FD38-45F9-B25B-6F2A88D31EFB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Crm</RootNamespace>
+    <AssemblyName>SInCa</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>publicar\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icoSInCa.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="clvdb">
+      <HintPath>..\..\..\clvdb\clvdb\bin\Debug\clvdb.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Administrador\FrmAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Administrador\FrmAdministrador.Designer.cs">
+      <DependentUpon>FrmAdministrador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bitacora\Bitacora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bitacora\Bitacora.Designer.cs">
+      <DependentUpon>Bitacora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\FrmConsultasNuevas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\FrmConsultasNuevas.Designer.cs">
+      <DependentUpon>FrmConsultasNuevas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\FrmConsultas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\FrmConsultas.Designer.cs">
+      <DependentUpon>FrmConsultas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExtraccionAgave\FrmExtraccionAgave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExtraccionAgave\FrmExtraccionAgave.designer.cs">
+      <DependentUpon>FrmExtraccionAgave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInicio.Designer.cs">
+      <DependentUpon>FrmInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="functions\Funtions.cs" />
+    <Compile Include="functions\IdMaximo.cs" />
+    <Compile Include="Inicio\FrmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inicio\FrmPrincipal.Designer.cs">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\DatoMagueyGuiaAntigua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\DatoMagueyGuiaAntigua.Designer.cs">
+      <DependentUpon>DatoMagueyGuiaAntigua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\DatosPredioAntiguo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\DatosPredioAntiguo.Designer.cs">
+      <DependentUpon>DatosPredioAntiguo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\Dialogs\MsgBxGranelenvasado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\Dialogs\MsgBxGranelenvasado.Designer.cs">
+      <DependentUpon>MsgBxGranelenvasado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\editaFechas\FrmEditaFechas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\editaFechas\FrmEditaFechas.Designer.cs">
+      <DependentUpon>FrmEditaFechas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\editar\FrmCambioNombre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\editar\FrmCambioNombre.Designer.cs">
+      <DependentUpon>FrmCambioNombre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\editar\FrmCambioTanques.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\editar\FrmCambioTanques.Designer.cs">
+      <DependentUpon>FrmCambioTanques.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\editar\FrmEditar_Produccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\editar\FrmEditar_Produccion.Designer.cs">
+      <DependentUpon>FrmEditar_Produccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\FrmAgaveSobrante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\FrmAgaveSobrante.Designer.cs">
+      <DependentUpon>FrmAgaveSobrante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\FrmClienteMaquila.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\FrmClienteMaquila.Designer.cs">
+      <DependentUpon>FrmClienteMaquila.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\FrmCompletarTapda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\FrmCompletarTapda.Designer.cs">
+      <DependentUpon>FrmCompletarTapda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\FrmEditarTanques.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\FrmEditarTanques.Designer.cs">
+      <DependentUpon>FrmEditarTanques.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\FrmEnsamblePredio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\FrmEnsamblePredio.Designer.cs">
+      <DependentUpon>FrmEnsamblePredio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\FrmExtraccionAgaveDos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\FrmExtraccionAgaveDos.Designer.cs">
+      <DependentUpon>FrmExtraccionAgaveDos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\FrmGranelNuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\FrmGranelNuevo.Designer.cs">
+      <DependentUpon>FrmGranelNuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\FrmMensajes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\FrmMensajes.Designer.cs">
+      <DependentUpon>FrmMensajes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\FrmMovimienEnvasado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\FrmMovimienEnvasado.Designer.cs">
+      <DependentUpon>FrmMovimienEnvasado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\FrmMovimienEnvasadoNoTerminado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\FrmMovimienEnvasadoNoTerminado.Designer.cs">
+      <DependentUpon>FrmMovimienEnvasadoNoTerminado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\FrmMovimientoEnvasadoSalio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\FrmMovimientoEnvasadoSalio.Designer.cs">
+      <DependentUpon>FrmMovimientoEnvasadoSalio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\FrmMovimientosBarrica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\FrmMovimientosBarrica.Designer.cs">
+      <DependentUpon>FrmMovimientosBarrica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\FrmMovimientosGranel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\FrmMovimientosGranel.Designer.cs">
+      <DependentUpon>FrmMovimientosGranel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\FrmMovimientosVidrio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\FrmMovimientosVidrio.Designer.cs">
+      <DependentUpon>FrmMovimientosVidrio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\FrmNewMaestroMezcalero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\FrmNewMaestroMezcalero.Designer.cs">
+      <DependentUpon>FrmNewMaestroMezcalero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\FrmNoFolioGranel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\FrmNoFolioGranel.Designer.cs">
+      <DependentUpon>FrmNoFolioGranel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\FrmNuevoAlmacen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\FrmNuevoAlmacen.Designer.cs">
+      <DependentUpon>FrmNuevoAlmacen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\FrmNuevaEnvasadora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\FrmNuevaEnvasadora.Designer.cs">
+      <DependentUpon>FrmNuevaEnvasadora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\FrmNuevoArt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\FrmNuevoArt.Designer.cs">
+      <DependentUpon>FrmNuevoArt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\FrmNuevoEnvasado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\FrmNuevoEnvasado.Designer.cs">
+      <DependentUpon>FrmNuevoEnvasado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\FrmNuevoMaestroFabrica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\FrmNuevoMaestroFabrica.Designer.cs">
+      <DependentUpon>FrmNuevoMaestroFabrica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\FrmRendimientoTapada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\FrmRendimientoTapada.Designer.cs">
+      <DependentUpon>FrmRendimientoTapada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\FrmTerminarDestilacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\FrmTerminarDestilacion.Designer.cs">
+      <DependentUpon>FrmTerminarDestilacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\FrmInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\FrmInventario.Designer.cs">
+      <DependentUpon>FrmInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\FrmTerminarCoccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\FrmTerminarCoccion.Designer.cs">
+      <DependentUpon>FrmTerminarCoccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\FrmTerminarFormulacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\FrmTerminarFormulacion.Designer.cs">
+      <DependentUpon>FrmTerminarFormulacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\FrmTerminarMolienda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\FrmTerminarMolienda.Designer.cs">
+      <DependentUpon>FrmTerminarMolienda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\FrmTransaccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\FrmTransaccion.Designer.cs">
+      <DependentUpon>FrmTransaccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\mermasHologramas\frmMermasHologramas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\mermasHologramas\frmMermasHologramas.Designer.cs">
+      <DependentUpon>frmMermasHologramas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\Obsevaciones\Observaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\Obsevaciones\Observaciones.Designer.cs">
+      <DependentUpon>Observaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mensajes\FrmNuevoMensaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mensajes\FrmNuevoMensaje.Designer.cs">
+      <DependentUpon>FrmNuevoMensaje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlanDeTrabajo\FrmPlanDeTrabajo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlanDeTrabajo\FrmPlanDeTrabajo.Designer.cs">
+      <DependentUpon>FrmPlanDeTrabajo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Subida\FrmSubida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Subida\FrmSubida.Designer.cs">
+      <DependentUpon>FrmSubida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utilerias\ConexionMysqlRemota2.cs" />
+    <Compile Include="Utilerias\ConexionMysqlRemota.cs" />
+    <Compile Include="Utilerias\ConexionMysql.cs" />
+    <Compile Include="Utilerias\italk_theme_c#.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utilerias\Usuario.cs" />
+    <Compile Include="Utilerias\Validacion.cs" />
+    <Compile Include="Utilerias\Veri_movimientos.cs" />
+    <EmbeddedResource Include="Administrador\FrmAdministrador.resx">
+      <DependentUpon>FrmAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bitacora\Bitacora.resx">
+      <DependentUpon>Bitacora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\FrmConsultasNuevas.resx">
+      <DependentUpon>FrmConsultasNuevas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\FrmConsultas.resx">
+      <DependentUpon>FrmConsultas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExtraccionAgave\FrmExtraccionAgave.resx">
+      <DependentUpon>FrmExtraccionAgave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInicio.resx">
+      <DependentUpon>FrmInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inicio\FrmPrincipal.resx">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\DatoMagueyGuiaAntigua.resx">
+      <DependentUpon>DatoMagueyGuiaAntigua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\DatosPredioAntiguo.resx">
+      <DependentUpon>DatosPredioAntiguo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\Dialogs\MsgBxGranelenvasado.resx">
+      <DependentUpon>MsgBxGranelenvasado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\editaFechas\FrmEditaFechas.resx">
+      <DependentUpon>FrmEditaFechas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\editar\FrmCambioNombre.resx">
+      <DependentUpon>FrmCambioNombre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\editar\FrmCambioTanques.resx">
+      <DependentUpon>FrmCambioTanques.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\editar\FrmEditar_Produccion.resx">
+      <DependentUpon>FrmEditar_Produccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\FrmAgaveSobrante.resx">
+      <DependentUpon>FrmAgaveSobrante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\FrmClienteMaquila.resx">
+      <DependentUpon>FrmClienteMaquila.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\FrmCompletarTapda.resx">
+      <DependentUpon>FrmCompletarTapda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\FrmEditarTanques.resx">
+      <DependentUpon>FrmEditarTanques.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\FrmEnsamblePredio.resx">
+      <DependentUpon>FrmEnsamblePredio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\FrmExtraccionAgaveDos.resx">
+      <DependentUpon>FrmExtraccionAgaveDos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\FrmGranelNuevo.resx">
+      <DependentUpon>FrmGranelNuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\FrmMensajes.resx">
+      <DependentUpon>FrmMensajes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\FrmMovimienEnvasado.resx">
+      <DependentUpon>FrmMovimienEnvasado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\FrmMovimienEnvasadoNoTerminado.resx">
+      <DependentUpon>FrmMovimienEnvasadoNoTerminado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\FrmMovimientoEnvasadoSalio.resx">
+      <DependentUpon>FrmMovimientoEnvasadoSalio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\FrmMovimientosBarrica.resx">
+      <DependentUpon>FrmMovimientosBarrica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\FrmMovimientosGranel.resx">
+      <DependentUpon>FrmMovimientosGranel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\FrmMovimientosVidrio.resx">
+      <DependentUpon>FrmMovimientosVidrio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\FrmNewMaestroMezcalero.resx">
+      <DependentUpon>FrmNewMaestroMezcalero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\FrmNoFolioGranel.resx">
+      <DependentUpon>FrmNoFolioGranel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\FrmNuevoAlmacen.resx">
+      <DependentUpon>FrmNuevoAlmacen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\FrmNuevaEnvasadora.resx">
+      <DependentUpon>FrmNuevaEnvasadora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\FrmNuevoArt.resx">
+      <DependentUpon>FrmNuevoArt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\FrmNuevoEnvasado.resx">
+      <DependentUpon>FrmNuevoEnvasado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\FrmNuevoMaestroFabrica.resx">
+      <DependentUpon>FrmNuevoMaestroFabrica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\FrmRendimientoTapada.resx">
+      <DependentUpon>FrmRendimientoTapada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\FrmTerminarDestilacion.resx">
+      <DependentUpon>FrmTerminarDestilacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\FrmInventario.resx">
+      <DependentUpon>FrmInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\FrmTerminarCoccion.resx">
+      <DependentUpon>FrmTerminarCoccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\FrmTerminarFormulacion.resx">
+      <DependentUpon>FrmTerminarFormulacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\FrmTerminarMolienda.resx">
+      <DependentUpon>FrmTerminarMolienda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\FrmTransaccion.resx">
+      <DependentUpon>FrmTransaccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\mermasHologramas\frmMermasHologramas.resx">
+      <DependentUpon>frmMermasHologramas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\Obsevaciones\Observaciones.resx">
+      <DependentUpon>Observaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mensajes\FrmNuevoMensaje.resx">
+      <DependentUpon>FrmNuevoMensaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlanDeTrabajo\FrmPlanDeTrabajo.resx">
+      <DependentUpon>FrmPlanDeTrabajo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Subida\FrmSubida.resx">
+      <DependentUpon>FrmSubida.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\locked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\repeat %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\planning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove-circular-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove-circular-button %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agave %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agave %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\down-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disquette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cloud-computing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cloud-computing %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cloud-computing %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upload %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upload %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\replace-2r-400px.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\585d0331234507.564a1d239ac5e.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d613b519862589.562e1ef9c0b1d.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\colorwhistle_blog_preloader.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loader.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\04de2e31234507.564a1d23645bf.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dots_2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zadlwdwm4q6luluozrak.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\beepi_loader_blue.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\planning2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warehouse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warehouse %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tank-wagon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\import %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\import.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\send.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\import %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\meeting-point %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\meeting-point.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\directions.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\directions %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move-arrows.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\muestreo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dilucion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\promocion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barrel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barrel %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\big-bottle-of-water %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bottle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barrel %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barrel %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bottle %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\conveyor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\internet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mexico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mexico %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mexico %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\internet %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alcoholic-drinks.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\conveyor %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shuffle %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shuffle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\presentation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\three.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancelar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checked %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clipboard %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clipboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sprout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tank-wagon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stock %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-button-inside-black-circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\speech-bubble %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\speech-bubble.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\intersection %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\intersection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign-out-option.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exchange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\speech-bubble %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\truck %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\analytics %287%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\analytics %286%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\speech-bubble %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\speech-bubble %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="agave.ico" />
+    <Content Include="ammaico.ico" />
+    <Content Include="favicon.ico" />
+    <None Include="Resources\desti.png" />
+    <None Include="Resources\clean32.png" />
+    <None Include="Resources\bottle %28128%29.png" />
+    <None Include="Resources\bottle128.png" />
+    <None Include="Resources\logout.png" />
+    <None Include="Resources\logo2.png" />
+    <None Include="Resources\AlmacenEnvasado32_32.png" />
+    <None Include="Resources\Almacen-Granel32_32.png" />
+    <None Include="Resources\Granel-Envasado32_32.png" />
+    <None Include="Resources\GranelFabrica32_32.png" />
+    <None Include="Resources\AñadirenTabla24_24.png" />
+    <None Include="Resources\Capturar-Informacion24_24.png" />
+    <None Include="Resources\Cambio-Sesion32_32.png" />
+    <None Include="Resources\Cerrar32_32.png" />
+    <Content Include="icoSInCa.ico" />
+    <Content Include="Resources\Bitmap1.bmp" />
+    <Content Include="Resources\edita_guia.png" />
+    <Content Include="Resources\management.png" />
+    <None Include="Resources\management128.png" />
+    <None Include="Resources\Menu32_32.png" />
+    <Content Include="Resources\menu_rujo.png" />
+    <None Include="Resources\mermas.png" />
+    <Content Include="Resources\mezcalabocado1.png" />
+    <Content Include="Resources\mezcalabocado2.png" />
+    <None Include="Resources\Minimizar32_32.png" />
+    <None Include="Resources\Movimientos24_24.png" />
+    <None Include="Resources\NuevaFabrica24_24.png" />
+    <None Include="Resources\NuevoMaestro24_24.png" />
+    <None Include="Resources\Produccion32_32.png" />
+    <None Include="Resources\TrasladodeProducto24_24.png" />
+    <None Include="Resources\VerificarDatos24_24.png" />
+    <None Include="Resources\VoBo24_24.png" />
+    <Content Include="Resources\warehouse3.png" />
+    <None Include="Resources\eye %2812%29.png" />
+    <Content Include="Resources\agave.ico" />
+    <Content Include="Resources\icono-menu.png" />
+    <Content Include="Resources\Image1.bmp" />
+    <Content Include="Resources\Image1.png" />
+    <Content Include="Resources\Image2.png" />
+    <None Include="Resources\eye %2824%29.png" />
+    <Content Include="Resources\Image1.jpg" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
