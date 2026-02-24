@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DtaTabla = new System.Windows.Forms.DataGridView();
             this.fecha2 = new System.Windows.Forms.DateTimePicker();
             this.label13 = new System.Windows.Forms.Label();
@@ -58,27 +58,27 @@
             this.DtaTabla.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DtaTabla.BackgroundColor = System.Drawing.SystemColors.Control;
             this.DtaTabla.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkSeaGreen;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DtaTabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSeaGreen;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DtaTabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DtaTabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DtaTabla.EnableHeadersVisualStyles = false;
             this.DtaTabla.Location = new System.Drawing.Point(16, 237);
             this.DtaTabla.Name = "DtaTabla";
             this.DtaTabla.ReadOnly = true;
-            this.DtaTabla.Size = new System.Drawing.Size(990, 494);
+            this.DtaTabla.Size = new System.Drawing.Size(939, 494);
             this.DtaTabla.TabIndex = 0;
             this.DtaTabla.TabStop = false;
             // 
             // fecha2
             // 
             this.fecha2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.fecha2.Location = new System.Drawing.Point(668, 185);
+            this.fecha2.Location = new System.Drawing.Point(644, 185);
             this.fecha2.Name = "fecha2";
             this.fecha2.Size = new System.Drawing.Size(182, 20);
             this.fecha2.TabIndex = 290;
@@ -88,7 +88,7 @@
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(590, 186);
+            this.label13.Location = new System.Drawing.Point(566, 186);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(72, 18);
             this.label13.TabIndex = 291;
@@ -97,7 +97,7 @@
             // fecha1
             // 
             this.fecha1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.fecha1.Location = new System.Drawing.Point(366, 187);
+            this.fecha1.Location = new System.Drawing.Point(342, 187);
             this.fecha1.Name = "fecha1";
             this.fecha1.Size = new System.Drawing.Size(182, 20);
             this.fecha1.TabIndex = 292;
@@ -107,7 +107,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(270, 187);
+            this.label1.Location = new System.Drawing.Point(246, 187);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 18);
             this.label1.TabIndex = 293;
@@ -119,7 +119,7 @@
             this.CmbNoCliente.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.CmbNoCliente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.CmbNoCliente.FormattingEnabled = true;
-            this.CmbNoCliente.Location = new System.Drawing.Point(126, 186);
+            this.CmbNoCliente.Location = new System.Drawing.Point(102, 186);
             this.CmbNoCliente.Name = "CmbNoCliente";
             this.CmbNoCliente.Size = new System.Drawing.Size(127, 21);
             this.CmbNoCliente.TabIndex = 294;
@@ -130,7 +130,7 @@
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(42, 187);
+            this.label7.Location = new System.Drawing.Point(18, 187);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(81, 18);
             this.label7.TabIndex = 295;
@@ -149,7 +149,7 @@
             this.BtnExel.ForeColor = System.Drawing.Color.Black;
             this.BtnExel.Image = global::Crm.Properties.Resources.icon__2_;
             this.BtnExel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnExel.Location = new System.Drawing.Point(366, 789);
+            this.BtnExel.Location = new System.Drawing.Point(342, 789);
             this.BtnExel.Name = "BtnExel";
             this.BtnExel.Size = new System.Drawing.Size(131, 58);
             this.BtnExel.TabIndex = 297;
@@ -170,7 +170,7 @@
             this.BtnBuscar.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnBuscar.ForeColor = System.Drawing.Color.Black;
             this.BtnBuscar.Image = global::Crm.Properties.Resources.search__2_;
-            this.BtnBuscar.Location = new System.Drawing.Point(865, 173);
+            this.BtnBuscar.Location = new System.Drawing.Point(841, 173);
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(40, 38);
             this.BtnBuscar.TabIndex = 296;
@@ -191,7 +191,7 @@
             this.BtnEnvasadoGranel.ForeColor = System.Drawing.Color.Black;
             this.BtnEnvasadoGranel.Image = global::Crm.Properties.Resources.tank_wagon;
             this.BtnEnvasadoGranel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnEnvasadoGranel.Location = new System.Drawing.Point(537, 43);
+            this.BtnEnvasadoGranel.Location = new System.Drawing.Point(513, 43);
             this.BtnEnvasadoGranel.Name = "BtnEnvasadoGranel";
             this.BtnEnvasadoGranel.Size = new System.Drawing.Size(85, 100);
             this.BtnEnvasadoGranel.TabIndex = 288;
@@ -212,7 +212,7 @@
             this.BtnGranel.ForeColor = System.Drawing.Color.Black;
             this.BtnGranel.Image = global::Crm.Properties.Resources.tank_wagon;
             this.BtnGranel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnGranel.Location = new System.Drawing.Point(322, 43);
+            this.BtnGranel.Location = new System.Drawing.Point(298, 43);
             this.BtnGranel.Name = "BtnGranel";
             this.BtnGranel.Size = new System.Drawing.Size(65, 58);
             this.BtnGranel.TabIndex = 286;
@@ -234,7 +234,7 @@
             this.BtnEnvasado.ForeColor = System.Drawing.Color.Black;
             this.BtnEnvasado.Image = global::Crm.Properties.Resources.stock;
             this.BtnEnvasado.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnEnvasado.Location = new System.Drawing.Point(629, 43);
+            this.BtnEnvasado.Location = new System.Drawing.Point(605, 43);
             this.BtnEnvasado.Name = "BtnEnvasado";
             this.BtnEnvasado.Size = new System.Drawing.Size(83, 58);
             this.BtnEnvasado.TabIndex = 287;
@@ -256,7 +256,7 @@
             this.BtnProduccion.ForeColor = System.Drawing.Color.Black;
             this.BtnProduccion.Image = global::Crm.Properties.Resources.agave__1_;
             this.BtnProduccion.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnProduccion.Location = new System.Drawing.Point(200, 42);
+            this.BtnProduccion.Location = new System.Drawing.Point(176, 42);
             this.BtnProduccion.Name = "BtnProduccion";
             this.BtnProduccion.Size = new System.Drawing.Size(92, 58);
             this.BtnProduccion.TabIndex = 285;
@@ -270,7 +270,7 @@
             this.LblValor.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.LblValor.AutoSize = true;
             this.LblValor.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblValor.Location = new System.Drawing.Point(445, 125);
+            this.LblValor.Location = new System.Drawing.Point(421, 125);
             this.LblValor.Name = "LblValor";
             this.LblValor.Size = new System.Drawing.Size(32, 18);
             this.LblValor.TabIndex = 298;
@@ -289,7 +289,7 @@
             this.btnAlmacenGranel.ForeColor = System.Drawing.Color.Black;
             this.btnAlmacenGranel.Image = global::Crm.Properties.Resources.warehouse3;
             this.btnAlmacenGranel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAlmacenGranel.Location = new System.Drawing.Point(429, 43);
+            this.btnAlmacenGranel.Location = new System.Drawing.Point(405, 43);
             this.btnAlmacenGranel.Name = "btnAlmacenGranel";
             this.btnAlmacenGranel.Size = new System.Drawing.Size(83, 72);
             this.btnAlmacenGranel.TabIndex = 446;
@@ -311,7 +311,7 @@
             this.btnAlmacen.ForeColor = System.Drawing.Color.Black;
             this.btnAlmacen.Image = global::Crm.Properties.Resources.warehouse3;
             this.btnAlmacen.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAlmacen.Location = new System.Drawing.Point(745, 42);
+            this.btnAlmacen.Location = new System.Drawing.Point(721, 42);
             this.btnAlmacen.Name = "btnAlmacen";
             this.btnAlmacen.Size = new System.Drawing.Size(80, 73);
             this.btnAlmacen.TabIndex = 445;

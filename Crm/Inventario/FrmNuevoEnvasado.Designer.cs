@@ -850,7 +850,7 @@
             this.TxtMensajeBotellas.BubbleColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(206)))), ((int)(((byte)(215)))));
             this.TxtMensajeBotellas.DrawBubbleArrow = true;
             this.TxtMensajeBotellas.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtMensajeBotellas.Location = new System.Drawing.Point(727, 310);
+            this.TxtMensajeBotellas.Location = new System.Drawing.Point(727, 326);
             this.TxtMensajeBotellas.Name = "TxtMensajeBotellas";
             this.TxtMensajeBotellas.Size = new System.Drawing.Size(112, 57);
             this.TxtMensajeBotellas.TabIndex = 442;
@@ -927,7 +927,6 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.cmbEtiquetadocomo);
             this.Controls.Add(this.lblEtiquetadocomo);
-            this.Controls.Add(this.TxtMensajeBotellas);
             this.Controls.Add(this.TxtIngredienteEnvasado);
             this.Controls.Add(this.TxtGradoAlcoholicoEtiqueta);
             this.Controls.Add(this.label2);
@@ -979,6 +978,7 @@
             this.Controls.Add(this.DtaMagueyGuardar);
             this.Controls.Add(this.CmbMaguey);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.TxtMensajeBotellas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmNuevoEnvasado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

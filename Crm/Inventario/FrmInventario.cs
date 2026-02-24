@@ -22,6 +22,8 @@ namespace Crm.Inventario
         {
 
             InitializeComponent();
+            this.Size = new System.Drawing.Size(1080, 768); // tamaño inicial
+            this.StartPosition = FormStartPosition.CenterScreen;
             ConexionMysql.conecta();
             Usuario.No_Cliente = "0";
             Usuario.EnvasadoraSeleccionada = "0";
@@ -60,7 +62,6 @@ namespace Crm.Inventario
 
 
             Usuario.IdRuta = ConexionMysql.regresaCampoConsulta("SELECT id_ruta FROM rutas_verificadores");
-
 
 
 
@@ -4292,7 +4293,7 @@ namespace Crm.Inventario
                             fila["NO_TANQUE"] = Convert.ToString(row["tanque"]);
                             fila["NO_LOTE"] = Convert.ToString(row["no_lote"]);
 
-                            string especieMaguey = ConexionMysql.regresaCampoConsulta("call maguey_granel_entrada('" + Convert.ToString(row["id_granel_entrada"]) + "')");
+                            String especieMaguey = ConexionMysql.regresaCampoConsulta("call maguey_granel_entrada2('" + Convert.ToString(row["id_granel_entrada"]) + "')");
                             fila["ESPECIE"] = especieMaguey;
 
                             /*if (Convert.ToString(row["maguey"]) != "")
@@ -7589,6 +7590,7 @@ namespace Crm.Inventario
                         fila["NO_LOTE"] = Convert.ToString(row["no_lote"]);
 
                         string especieMaguey = ConexionMysql.regresaCampoConsulta("call maguey_envasado_entrada('" + Convert.ToString(row["id_envasado_entrada"]) + "')");
+                        //string especieMaguey = "";
                         fila["ESPECIE"] = especieMaguey;
 
                         /*
@@ -7632,7 +7634,7 @@ namespace Crm.Inventario
                 else if (BanderaEnvasado == true)
                 {
                     DataSet Datos = new DataSet();
-                    ConexionMysql.llenaDataset(ref Datos, "SELECT marcas.marca,envasado_entrada.id_envasado_entrada,envasado_entrada.no_cliente, DATE_FORMAT(envasado_entrada.fecha, '%d/%m/%Y') as fecha , envasado_entrada.no_lote, envasado_entrada.fq, envasado_entrada.clase, envasado_entrada.categoria, envasado_entrada.abocante, envasado_entrada.ingrediente, envasado_entrada.unidad_medida, envasado_entrada.contenido_por_botella, envasado_entrada.litros, envasado_entrada.grado_alcoholico,envasado_entrada.grado_alcoholico_etiqueta, envasado_entrada.botellas_existentes, comun.nombre as maguey, comun2.nombre as maguey_sin, GROUP_CONCAT(DISTINCT maguey.nombre) AS ensamble,  GROUP_CONCAT(DISTINCT TABLA.nombre order by TABLA.id_envasado_entrada ASC ) as ensamble_maguey   FROM envasado_entrada  LEFT JOIN existenciaplanta ON envasado_entrada.id_planta=existenciaplanta.id_plantas LEFT JOIN comun ON existenciaplanta.id_comun=comun.id_comun LEFT JOIN comun as comun2 ON envasado_entrada.id_comun=comun2.id_comun  LEFT JOIN  ( SELECT envasado_ensamble.id_envasado_entrada,envasado_ensamble.litros,envasado_ensamble.agave_coccion_kg,comun.nombre  FROM envasado_ensamble  INNER JOIN existenciaplanta ON envasado_ensamble.id_planta=existenciaplanta.id_plantas   INNER JOIN comun ON existenciaplanta.id_comun=comun.id_comun   order by envasado_ensamble.id_envasado_entrada asc, envasado_ensamble.litros desc, envasado_ensamble.agave_coccion_kg desc)  TABLA  ON envasado_entrada.id_envasado_entrada=TABLA.id_envasado_entrada   LEFT JOIN  ( SELECT envasado_ensamble.id_envasado_entrada, envasado_ensamble.id_planta,  envasado_ensamble.id_predio,envasado_ensamble.litros, envasado_ensamble.agave_coccion_kg, comun3.nombre  FROM envasado_ensamble  LEFT JOIN existenciaplanta ON envasado_ensamble.id_planta = existenciaplanta.id_plantas LEFT JOIN comun AS comun3 ON existenciaplanta.id_comun = comun3.id_comun  OR envasado_ensamble.id_comun = comun3.id_comun order by envasado_ensamble.litros desc, envasado_ensamble.agave_coccion_kg desc) AS maguey ON envasado_entrada.id_envasado_entrada = maguey.id_envasado_entrada  INNER JOIN marcas ON SUBSTRING(envasado_entrada.id_marca,1,5) =marcas.no_cliente and  SUBSTRING(envasado_entrada.id_marca,7,1)=marcas.cve_marca  WHERE envasado_entrada.id_envasadora='" + CmbEnvasadoraEnvasadora.SelectedValue + "' and envasado_entrada.botellas_existentes > 0 GROUP BY envasado_entrada.id_envasado_entrada ");
+                    ConexionMysql.llenaDataset(ref Datos, "SELECT marcas.marca,envasado_entrada.id_envasado_entrada,envasado_entrada.no_cliente, DATE_FORMAT(envasado_entrada.fecha, '%d/%m/%Y') as fecha , envasado_entrada.no_lote, envasado_entrada.fq, envasado_entrada.clase, envasado_entrada.categoria, envasado_entrada.abocante, envasado_entrada.ingrediente, envasado_entrada.unidad_medida, envasado_entrada.contenido_por_botella, envasado_entrada.litros, envasado_entrada.grado_alcoholico,envasado_entrada.grado_alcoholico_etiqueta, envasado_entrada.botellas_existentes, comun.nombre as maguey, comun2.nombre as maguey_sin, GROUP_CONCAT(DISTINCT maguey.nombre) AS ensamble,  GROUP_CONCAT(DISTINCT TABLA.nombre order by TABLA.id_envasado_entrada ASC ) as ensamble_maguey   FROM envasado_entrada  LEFT JOIN existenciaplanta ON envasado_entrada.id_planta=existenciaplanta.id_plantas LEFT JOIN comun ON existenciaplanta.id_comun=comun.id_comun LEFT JOIN comun as comun2 ON envasado_entrada.id_comun=comun2.id_comun  LEFT JOIN  ( SELECT envasado_ensamble.id_envasado_entrada,envasado_ensamble.litros,envasado_ensamble.agave_coccion_kg,comun.nombre  FROM envasado_ensamble  INNER JOIN existenciaplanta ON envasado_ensamble.id_planta=existenciaplanta.id_plantas   INNER JOIN comun ON existenciaplanta.id_comun=comun.id_comun   order by envasado_ensamble.id_envasado_entrada asc, envasado_ensamble.litros desc, envasado_ensamble.agave_coccion_kg desc)  TABLA  ON envasado_entrada.id_envasado_entrada=TABLA.id_envasado_entrada   LEFT JOIN  ( SELECT envasado_ensamble.id_envasado_entrada, envasado_ensamble.id_planta,  envasado_ensamble.id_predio,envasado_ensamble.litros, envasado_ensamble.agave_coccion_kg, comun3.nombre  FROM envasado_ensamble  LEFT JOIN existenciaplanta ON envasado_ensamble.id_planta = existenciaplanta.id_plantas LEFT JOIN comun AS comun3 ON existenciaplanta.id_comun = comun3.id_comun  OR envasado_ensamble.id_comun = comun3.id_comun order by envasado_ensamble.litros desc, envasado_ensamble.agave_coccion_kg desc) AS maguey ON envasado_entrada.id_envasado_entrada = maguey.id_envasado_entrada  INNER JOIN marcas ON SUBSTRING(envasado_entrada.id_marca,1,5) =marcas.no_cliente and  SUBSTRING(envasado_entrada.id_marca,7,2)=marcas.cve_marca  WHERE envasado_entrada.id_envasadora='" + CmbEnvasadoraEnvasadora.SelectedValue + "' and envasado_entrada.botellas_existentes > 0 GROUP BY envasado_entrada.id_envasado_entrada ");
                     DataRow fila;
                     dtsProductoEnvasado.Tables["PRODUCTOENVASADO"].Rows.Clear();
                     foreach (DataRow row in Datos.Tables[0].Rows)
@@ -7644,6 +7646,7 @@ namespace Crm.Inventario
                         fila["NO_LOTE"] = Convert.ToString(row["no_lote"]);
 
                         string especieMaguey = ConexionMysql.regresaCampoConsulta("call maguey_envasado_entrada('" + Convert.ToString(row["id_envasado_entrada"]) + "')");
+                        //string especieMaguey = "";
                         fila["ESPECIE"] = especieMaguey;
                         /*
                         if (Convert.ToString(row["maguey"]) != "")
@@ -7683,7 +7686,7 @@ namespace Crm.Inventario
                 else if (BanderaEnvasadoSalio == true)
                 {
                     DataSet Datos = new DataSet();
-                    ConexionMysql.llenaDataset(ref Datos, "SELECT envasado_entrada.id_planta,envasado_entrada.id_predio,envasado_entrada.id_marca,marcas.marca,envasado_entrada.id_envasadora,envasado_movimientos.id_envasado_movimientos,envasado_movimientos.no_cliente, DATE_FORMAT(envasado_movimientos.fecha, '%d/%m/%Y') as fecha ,envasado_movimientos.destino,envasado_entrada.no_lote,envasado_entrada.fq,envasado_entrada.clase,envasado_entrada.categoria,envasado_entrada.abocante,envasado_entrada.ingrediente,envasado_entrada.unidad_medida,envasado_entrada.contenido_por_botella,envasado_entrada.litros,envasado_entrada.grado_alcoholico,envasado_movimientos.botellas_existentes, comun.nombre as maguey, comun2.nombre as maguey_sin , GROUP_CONCAT(DISTINCT maguey.nombre) AS ensamble , GROUP_CONCAT(DISTINCT TABLA.nombre order by TABLA.id_envasado_entrada ASC ) as ensamble_maguey  FROM envasado_entrada  inner  JOIN envasado_movimientos ON envasado_entrada.id_envasado_entrada=envasado_movimientos.id_envasado_entrada LEFT JOIN existenciaplanta ON envasado_entrada.id_planta=existenciaplanta.id_plantas  LEFT JOIN comun ON existenciaplanta.id_comun=comun.id_comun  LEFT JOIN comun as comun2 ON envasado_entrada.id_comun=comun2.id_comun  LEFT JOIN ( SELECT envasado_ensamble.id_envasado_entrada,envasado_ensamble.litros,envasado_ensamble.agave_coccion_kg,comun.nombre  FROM envasado_ensamble  INNER JOIN existenciaplanta ON envasado_ensamble.id_planta=existenciaplanta.id_plantas   INNER JOIN comun ON existenciaplanta.id_comun=comun.id_comun  order by envasado_ensamble.id_envasado_entrada asc, envasado_ensamble.litros desc, envasado_ensamble.agave_coccion_kg desc) TABLA   ON envasado_entrada.id_envasado_entrada=TABLA.id_envasado_entrada  LEFT JOIN  ( SELECT envasado_ensamble.id_envasado_entrada, envasado_ensamble.id_planta,  envasado_ensamble.id_predio,envasado_ensamble.litros, envasado_ensamble.agave_coccion_kg, comun3.nombre  FROM envasado_ensamble  LEFT JOIN existenciaplanta ON envasado_ensamble.id_planta = existenciaplanta.id_plantas LEFT JOIN comun AS comun3 ON existenciaplanta.id_comun = comun3.id_comun  OR envasado_ensamble.id_comun = comun3.id_comun order by envasado_ensamble.litros desc, envasado_ensamble.agave_coccion_kg desc) AS maguey ON envasado_entrada.id_envasado_entrada = maguey.id_envasado_entrada   INNER JOIN marcas ON SUBSTRING(envasado_entrada.id_marca,1,5) =marcas.no_cliente and  SUBSTRING(envasado_entrada.id_marca,7,1)=marcas.cve_marca  WHERE envasado_entrada.id_envasadora='" + CmbEnvasadoraEnvasadora.SelectedValue + "' and envasado_movimientos.tipo in('salida','cambio')  and envasado_movimientos.destino in('Nacional','Exportacion','Promocion') and envasado_movimientos.botellas_existentes > 0 GROUP BY envasado_movimientos.id_envasado_movimientos");
+                    ConexionMysql.llenaDataset(ref Datos, "SELECT envasado_entrada.id_planta,envasado_entrada.id_predio,envasado_entrada.id_marca,marcas.marca,envasado_entrada.id_envasadora,envasado_movimientos.id_envasado_movimientos,envasado_movimientos.no_cliente, DATE_FORMAT(envasado_movimientos.fecha, '%d/%m/%Y') as fecha ,envasado_movimientos.destino,envasado_entrada.no_lote,envasado_entrada.fq,envasado_entrada.clase,envasado_entrada.categoria,envasado_entrada.abocante,envasado_entrada.ingrediente,envasado_entrada.unidad_medida,envasado_entrada.contenido_por_botella,envasado_entrada.litros,envasado_entrada.grado_alcoholico,envasado_movimientos.botellas_existentes, comun.nombre as maguey, comun2.nombre as maguey_sin , GROUP_CONCAT(DISTINCT maguey.nombre) AS ensamble , GROUP_CONCAT(DISTINCT TABLA.nombre order by TABLA.id_envasado_entrada ASC ) as ensamble_maguey  FROM envasado_entrada  inner  JOIN envasado_movimientos ON envasado_entrada.id_envasado_entrada=envasado_movimientos.id_envasado_entrada LEFT JOIN existenciaplanta ON envasado_entrada.id_planta=existenciaplanta.id_plantas  LEFT JOIN comun ON existenciaplanta.id_comun=comun.id_comun  LEFT JOIN comun as comun2 ON envasado_entrada.id_comun=comun2.id_comun  LEFT JOIN ( SELECT envasado_ensamble.id_envasado_entrada,envasado_ensamble.litros,envasado_ensamble.agave_coccion_kg,comun.nombre  FROM envasado_ensamble  INNER JOIN existenciaplanta ON envasado_ensamble.id_planta=existenciaplanta.id_plantas   INNER JOIN comun ON existenciaplanta.id_comun=comun.id_comun  order by envasado_ensamble.id_envasado_entrada asc, envasado_ensamble.litros desc, envasado_ensamble.agave_coccion_kg desc) TABLA   ON envasado_entrada.id_envasado_entrada=TABLA.id_envasado_entrada  LEFT JOIN  ( SELECT envasado_ensamble.id_envasado_entrada, envasado_ensamble.id_planta,  envasado_ensamble.id_predio,envasado_ensamble.litros, envasado_ensamble.agave_coccion_kg, comun3.nombre  FROM envasado_ensamble  LEFT JOIN existenciaplanta ON envasado_ensamble.id_planta = existenciaplanta.id_plantas LEFT JOIN comun AS comun3 ON existenciaplanta.id_comun = comun3.id_comun  OR envasado_ensamble.id_comun = comun3.id_comun order by envasado_ensamble.litros desc, envasado_ensamble.agave_coccion_kg desc) AS maguey ON envasado_entrada.id_envasado_entrada = maguey.id_envasado_entrada   INNER JOIN marcas ON SUBSTRING(envasado_entrada.id_marca,1,5) =marcas.no_cliente and  SUBSTRING(envasado_entrada.id_marca,7,2)=marcas.cve_marca  WHERE envasado_entrada.id_envasadora='" + CmbEnvasadoraEnvasadora.SelectedValue + "' and envasado_movimientos.tipo in('salida','cambio')  and envasado_movimientos.destino in('Nacional','Exportacion','Promocion') and envasado_movimientos.botellas_existentes > 0 GROUP BY envasado_movimientos.id_envasado_movimientos");
                     // ConexionMysql.llenaDataset(ref Datos, "SELECT * FROM view_envasado_salio WHERE id_envasadora='" + CmbEnvasadoraEnvasadora.SelectedValue + "'");
 
                     DataRow fila;
@@ -8729,8 +8732,11 @@ namespace Crm.Inventario
                             string clienteCrm2 = ConexionMysql.regresaCampoConsulta("SELECT cliente_antiguo FROM clientes where no_cliente = '" + no_cliente + "'");
                             //MessageBox.Show(no_cliente);
                             string cve_marca = CmbMarca.SelectedValue.ToString();
-                            cve_marca = cve_marca.Substring(6, 1);
-                            //MessageBox.Show(cve_marca);
+                            int lenght = cve_marca.Length;
+                            int mark = lenght == 7 ? 1 : 2;
+                            cve_marca = cve_marca.Substring(6, mark);
+                            MessageBox.Show(cve_marca);
+                            // 
 
                             if (ConexionMysql.insUpd_transaccion("INSERT INTO  envasado_holograma(id_envasado_holograma, id_envasado_entrada,no_cliente,cve_marca, holograma_inicio, holograma_fin,serie, id_verificador, actualizado, cliente_crm) VALUES( '" + id_max_hologramas + "','" + id_max_envasado_entrada + "','" + no_cliente + "','" + cve_marca + "','" + DtaHologramas.Rows[x].Cells["INICIO"].Value + "' , '" + DtaHologramas.Rows[x].Cells["FIN"].Value + "','" + DtaHologramas.Rows[x].Cells["SERIE"].Value + "'," + Usuario.IdUsuario + ",0,'" + clienteCrm2 + "')") == "Error")
                             {
@@ -9212,6 +9218,7 @@ namespace Crm.Inventario
                     TxtHologramaInicio.Focus();
                     return;
                 }*/
+
                 // fin
 
                 int holograma_inicio;
@@ -9278,7 +9285,7 @@ namespace Crm.Inventario
                 {
                 
                     //string clienteCrm = ConexionMysql.regresaCampoConsulta("SELECT cliente_antiguo FROM clientes where no_cliente = '" + no_cliente + "'");
-                    ConexionMysql.llenaDataset(ref Datos, "select eh.holograma_inicio,eh.holograma_fin, ee.no_lote, em.marca,ee.contenido_por_botella,ee.unidad_medida from reveca2.envasado_holograma eh inner join reveca2.envasado_entrada ee on eh.id_envasado_entrada = ee.id_envasado_entrada inner join reveca2.marcas em on  SUBSTRING(ee.id_marca,1,4) = em.no_cliente and  SUBSTRING(ee.id_marca,6,1)=em.cve_marca where eh.no_cliente='" + clienteCrm + "' and eh.cve_marca='" + cve_marca + "' and eh.serie='" + TxtSerie.Text.ToUpper() + "'");
+                    ConexionMysql.llenaDataset(ref Datos, "select eh.holograma_inicio,eh.holograma_fin, ee.no_lote, em.marca,ee.contenido_por_botella,ee.unidad_medida from reveca2.envasado_holograma eh inner join reveca2.envasado_entrada ee on eh.id_envasado_entrada = ee.id_envasado_entrada inner join reveca2.marcas em on  SUBSTRING(ee.id_marca,1,4) = em.no_cliente and  eh.cve_marca=em.cve_marca where eh.no_cliente='" + clienteCrm + "' and eh.cve_marca='" + cve_marca + "' and eh.serie='" + TxtSerie.Text.ToUpper() + "'");
                     foreach (DataRow row in Datos.Tables[0].Rows)
                     {
 
@@ -9309,7 +9316,7 @@ namespace Crm.Inventario
                     }
 
                     // POR SI NO ENCUENTRA DE PASO VA A BUSCAR A SINCA2 PERO JALANDO SOLO DONDE HAYA CLIENTE CRM
-                    ConexionMysql.llenaDataset(ref Datos1, "select eh.holograma_inicio,eh.holograma_fin, ee.no_lote, em.marca,ee.contenido_por_botella,ee.unidad_medida from envasado_holograma eh inner join envasado_entrada ee on eh.id_envasado_entrada = ee.id_envasado_entrada inner join marcas em on  SUBSTRING(ee.id_marca,1,5) = em.no_cliente and  SUBSTRING(ee.id_marca,7,1)=em.cve_marca where eh.no_cliente='" + no_cliente + "' AND eh.cliente_crm='" + clienteCrm + "'and eh.cve_marca='" + cve_marca + "' and eh.serie='" + TxtSerie.Text.ToUpper() + "'");
+                    ConexionMysql.llenaDataset(ref Datos1, "select eh.holograma_inicio,eh.holograma_fin, ee.no_lote, em.marca,ee.contenido_por_botella,ee.unidad_medida from envasado_holograma eh inner join envasado_entrada ee on eh.id_envasado_entrada = ee.id_envasado_entrada inner join marcas em on  SUBSTRING(ee.id_marca,1,5) = em.no_cliente and  eh.cve_marca=em.cve_marca where eh.no_cliente='" + no_cliente + "' AND eh.cliente_crm='" + clienteCrm + "'and eh.cve_marca='" + cve_marca + "' and eh.serie='" + TxtSerie.Text.ToUpper() + "'");
                     foreach (DataRow row in Datos1.Tables[0].Rows)
                     {
 
@@ -9417,12 +9424,12 @@ namespace Crm.Inventario
                                         
                                         if (DBNull.Value.Equals(row2["ff1a"]))
                                         {
-                                            MessageBox.Show("No se ah encontrado registro alguno de hologramas para la marca : " + Environment.NewLine + CmbMarca.Text, "¡¡AVISO!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                            MessageBox.Show("No se ha encontrado registro alguno de hologramas para la marca : " + Environment.NewLine + CmbMarca.Text, "¡¡AVISO!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                             return;
                                         }
                                         
                                         holograma_fin_amma = Convert.ToInt32(row2["ff1a"]);
-                                        MessageBox.Show(holograma_fin_amma.ToString());
+                                        //MessageBox.Show(holograma_fin_amma.ToString());
                                         if (int.Parse(TxtHologramaFin.Text) > holograma_fin_amma)
                                         {
                                             MessageBox.Show("No puedes introducir este rango ya que el rango final entregado al asociado es " + Environment.NewLine + "Entregado: " + holograma_fin_amma.ToString() + Environment.NewLine + "Introducido: " + TxtHologramaFin.Text);
@@ -9464,8 +9471,8 @@ namespace Crm.Inventario
                 // -------------------------------------------------------------------------HOLOGRAMAS NUEVOS AMMA -----------------------------------------
                 else
                 {
-                   // MessageBox.Show(Convert.ToString("select eh.holograma_inicio,eh.holograma_fin, ee.no_lote, em.marca,ee.contenido_por_botella,ee.unidad_medida from envasado_holograma eh inner join envasado_entrada ee on eh.id_envasado_entrada = ee.id_envasado_entrada inner join marcas em on  SUBSTRING(ee.id_marca,1,5) = em.no_cliente and  SUBSTRING(ee.id_marca,7,1)=em.cve_marca  where eh.no_cliente='" + no_cliente + "' AND eh.cliente_crm='' and eh.cve_marca='" + cve_marca + "' and eh.serie='" + TxtSerie.Text.ToUpper() + "'"));
-                ConexionMysql.llenaDataset(ref Datos, "select eh.holograma_inicio,eh.holograma_fin, ee.no_lote, em.marca,ee.contenido_por_botella,ee.unidad_medida from envasado_holograma eh inner join envasado_entrada ee on eh.id_envasado_entrada = ee.id_envasado_entrada inner join marcas em on  SUBSTRING(ee.id_marca,1,5) = em.no_cliente and  SUBSTRING(ee.id_marca,7,1)=em.cve_marca  where eh.no_cliente='" + no_cliente + "' AND eh.cliente_crm='' and eh.cve_marca='" + cve_marca + "' and eh.serie='" + TxtSerie.Text.ToUpper() + "' and eh.holograma_inicio not like 'Si ostenta' ");
+                     //MessageBox.Show(Convert.ToString("select eh.holograma_inicio,eh.holograma_fin, ee.no_lote, em.marca,ee.contenido_por_botella,ee.unidad_medida from envasado_holograma eh inner join envasado_entrada ee on eh.id_envasado_entrada = ee.id_envasado_entrada inner join marcas em on  SUBSTRING(ee.id_marca,1,5) = em.no_cliente and eh.cve_marca=em.cve_marca  where eh.no_cliente='" + no_cliente + "' AND eh.cliente_crm='' and eh.cve_marca='" + cve_marca + "' and eh.serie='" + TxtSerie.Text.ToUpper() + "' and eh.holograma_inicio not like 'Si ostenta' "));
+                    ConexionMysql.llenaDataset(ref Datos, "select eh.holograma_inicio,eh.holograma_fin, ee.no_lote, em.marca,ee.contenido_por_botella,ee.unidad_medida from envasado_holograma eh inner join envasado_entrada ee on eh.id_envasado_entrada = ee.id_envasado_entrada inner join marcas em on  SUBSTRING(ee.id_marca,1,5) = em.no_cliente and eh.cve_marca=em.cve_marca  where eh.no_cliente='" + no_cliente + "' AND eh.cliente_crm='' and eh.cve_marca='" + cve_marca + "' and eh.serie='" + TxtSerie.Text.ToUpper() + "' and eh.holograma_inicio not like 'Si ostenta' ");
                 foreach (DataRow row in Datos.Tables[0].Rows)
                 {
 
@@ -9546,7 +9553,7 @@ namespace Crm.Inventario
 
                         if (DBNull.Value.Equals(row["ff1"]))
                         {
-                            MessageBox.Show("No se ah encontrado registro alguno de hologramas para la marca : " + Environment.NewLine + CmbMarca.Text, "¡¡AVISO!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("No se ha encontrado registro alguno de hologramas para la marca : " + Environment.NewLine + CmbMarca.Text, "¡¡AVISO!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             return;
                         }
                         holograma_fin = Convert.ToInt32(row["ff1"]);
@@ -10711,7 +10718,7 @@ namespace Crm.Inventario
 
             CmbLotedeGranelesparaAlmacen.DataSource = null;
 
-            dtsProduccionParaGuardarAlmacenAgranel.Clear();
+            //dtsProduccionParaGuardarAlmacenAgranel.Clear();
 
             ///--- agregar la parte de  granel de envasado
             if (CmbGranelfabricaEnvasado.SelectedValue != null)
@@ -12167,13 +12174,13 @@ namespace Crm.Inventario
                 // limpia_envasado();
 
                 //cmbLoteparaAlmacen_Envasado.DataSource = null;
-
+                //MessageBox.Show("2-Escoge tipo almacen envasado: AE:" + BanderaAlmacenEnvasado + "|AES:" + BanderaAlmacenEnvasadoSalio + "|AENT:" + BanderaAlmacenEnvasadoNoTerminado);
 
 
                 if (BanderaAlmacenEnvasadoNoTerminado == true)
                 {
                     DataSet Datos = new DataSet();
-                    ConexionMysql.llenaDataset(ref Datos, "SELECT almacen_envasado_entrada.id_almacen_envasado_entrada,almacen_envasado_entrada.no_cliente, DATE_FORMAT(almacen_envasado_entrada.fecha, '%d/%m/%Y') as fecha , almacen_envasado_entrada.no_lote, almacen_envasado_entrada.fq, almacen_envasado_entrada.clase, almacen_envasado_entrada.categoria, almacen_envasado_entrada.abocante, almacen_envasado_entrada.ingrediente, almacen_envasado_entrada.unidad_medida, almacen_envasado_entrada.contenido_por_botella, almacen_envasado_entrada.litros, almacen_envasado_entrada.grado_alcoholico,almacen_envasado_entrada.botellas_existentes, comun.nombre as maguey, comun2.nombre as maguey_sin, GROUP_CONCAT(DISTINCT maguey.nombre) AS ensamble,   GROUP_CONCAT(DISTINCT TABLA.nombre order by TABLA.id_almacen_envasado_entrada ASC ) as ensamble_maguey FROM almacen_envasado_entrada  LEFT JOIN existenciaplanta ON almacen_envasado_entrada.id_planta=existenciaplanta.id_plantas LEFT JOIN comun ON existenciaplanta.id_comun=comun.id_comun LEFT JOIN comun as comun2 ON almacen_envasado_entrada.id_comun=comun2.id_comun  LEFT JOIN  ( SELECT almacen_envasado_ensamble.id_almacen_envasado_entrada,almacen_envasado_ensamble.litros,almacen_envasado_ensamble.agave_coccion_kg,comun.nombre  FROM almacen_envasado_ensamble  INNER JOIN existenciaplanta ON almacen_envasado_ensamble.id_planta=existenciaplanta.id_plantas   INNER JOIN comun ON existenciaplanta.id_comun=comun.id_comun   order by almacen_envasado_ensamble.id_almacen_envasado_entrada asc, almacen_envasado_ensamble.litros desc, almacen_envasado_ensamble.agave_coccion_kg desc)  TABLA  ON almacen_envasado_entrada.id_almacen_envasado_entrada=TABLA.id_almacen_envasado_entrada   LEFT JOIN  (SELECT almacen_envasado_ensamble.id_almacen_envasado_entrada,almacen_envasado_ensamble.id_planta,almacen_envasado_ensamble.id_predio,almacen_envasado_ensamble.litros,almacen_envasado_ensamble.agave_coccion_kg,comun3.nombre FROM almacen_envasado_ensamble LEFT JOIN existenciaplanta ON almacen_envasado_ensamble.id_planta = existenciaplanta.id_plantas LEFT JOIN comun AS comun3 ON existenciaplanta.id_comun = comun3.id_comun OR almacen_envasado_ensamble.id_comun = comun3.id_comun ORDER BY almacen_envasado_ensamble.litros DESC , almacen_envasado_ensamble.agave_coccion_kg DESC) AS maguey ON almacen_envasado_entrada.id_almacen_envasado_entrada = maguey.id_almacen_envasado_entrada   WHERE almacen_envasado_entrada.id_almacen='" + cmbBodegaEnvasado.SelectedValue + "' and almacen_envasado_entrada.botellas_existentes > 0  and almacen_envasado_entrada.id_marca=0 GROUP BY almacen_envasado_entrada.id_almacen_envasado_entrada ");
+                    ConexionMysql.llenaDataset(ref Datos, "SELECT almacen_envasado_entrada.id_almacen_envasado_entrada,almacen_envasado_entrada.no_cliente, DATE_FORMAT(almacen_envasado_entrada.fecha, '%d/%m/%Y') as fecha , almacen_envasado_entrada.no_lote, almacen_envasado_entrada.fq, almacen_envasado_entrada.clase, almacen_envasado_entrada.categoria, almacen_envasado_entrada.abocante, almacen_envasado_entrada.ingrediente, almacen_envasado_entrada.unidad_medida, almacen_envasado_entrada.contenido_por_botella, almacen_envasado_entrada.litros, almacen_envasado_entrada.grado_alcoholico,almacen_envasado_entrada.botellas_existentes, comun.nombre as maguey, comun2.nombre as maguey_sin, GROUP_CONCAT(DISTINCT maguey.nombre) AS ensamble,   GROUP_CONCAT(DISTINCT TABLA.nombre order by TABLA.id_almacen_envasado_entrada ASC ) as ensamble_maguey FROM almacen_envasado_entrada  LEFT JOIN existenciaplanta ON almacen_envasado_entrada.id_planta=existenciaplanta.id_plantas LEFT JOIN comun ON existenciaplanta.id_comun=comun.id_comun LEFT JOIN comun as comun2 ON almacen_envasado_entrada.id_comun=comun2.id_comun  LEFT JOIN  ( SELECT almacen_envasado_ensamble.id_almacen_envasado_entrada,almacen_envasado_ensamble.litros,almacen_envasado_ensamble.agave_coccion_kg,comun.nombre  FROM almacen_envasado_ensamble  INNER JOIN existenciaplanta ON almacen_envasado_ensamble.id_planta=existenciaplanta.id_plantas   INNER JOIN comun ON existenciaplanta.id_comun=comun.id_comun   order by almacen_envasado_ensamble.id_almacen_envasado_entrada asc, almacen_envasado_ensamble.litros desc, almacen_envasado_ensamble.agave_coccion_kg desc)  TABLA  ON almacen_envasado_entrada.id_almacen_envasado_entrada=TABLA.id_almacen_envasado_entrada   LEFT JOIN  (SELECT almacen_envasado_ensamble.id_almacen_envasado_entrada,almacen_envasado_ensamble.id_planta,almacen_envasado_ensamble.id_predio,almacen_envasado_ensamble.litros,almacen_envasado_ensamble.agave_coccion_kg,comun3.nombre FROM almacen_envasado_ensamble LEFT JOIN existenciaplanta ON almacen_envasado_ensamble.id_planta = existenciaplanta.id_plantas LEFT JOIN comun AS comun3 ON existenciaplanta.id_comun = comun3.id_comun OR almacen_envasado_ensamble.id_comun = comun3.id_comun ORDER BY almacen_envasado_ensamble.litros DESC , almacen_envasado_ensamble.agave_coccion_kg DESC) AS maguey ON almacen_envasado_entrada.id_almacen_envasado_entrada = maguey.id_almacen_envasado_entrada   WHERE almacen_envasado_entrada.id_almacen='" + cmbBodegaEnvasado.SelectedValue + "' and almacen_envasado_entrada.botellas_existentes > 0  and almacen_envasado_entrada.id_marca='0' GROUP BY almacen_envasado_entrada.id_almacen_envasado_entrada ");
                     DataRow fila;
                     dtsProductoAlmacenEnvasadoNoTerminado.Tables["PRODUCTOALMACENENVASADONOTERMINADO"].Rows.Clear();
                     foreach (DataRow row in Datos.Tables[0].Rows)
@@ -12218,7 +12225,8 @@ namespace Crm.Inventario
                 else if (BanderaAlmacenEnvasado == true)
                 {
                     DataSet Datos = new DataSet();
-                    ConexionMysql.llenaDataset(ref Datos, "SELECT marcas.marca,almacen_envasado_entrada.id_almacen_envasado_entrada,almacen_envasado_entrada.no_cliente, DATE_FORMAT(almacen_envasado_entrada.fecha, '%d/%m/%Y') as fecha , almacen_envasado_entrada.no_lote, almacen_envasado_entrada.fq, almacen_envasado_entrada.clase, almacen_envasado_entrada.categoria, almacen_envasado_entrada.abocante, almacen_envasado_entrada.ingrediente, almacen_envasado_entrada.unidad_medida, almacen_envasado_entrada.contenido_por_botella, almacen_envasado_entrada.litros, almacen_envasado_entrada.grado_alcoholico, almacen_envasado_entrada.grado_alcoholico_etiqueta, almacen_envasado_entrada.botellas_existentes, comun.nombre as maguey, comun2.nombre as maguey_sin,GROUP_CONCAT(DISTINCT maguey.nombre) AS ensamble, GROUP_CONCAT(DISTINCT TABLA.nombre order by TABLA.id_almacen_envasado_entrada ASC ) as ensamble_maguey FROM almacen_envasado_entrada  LEFT JOIN existenciaplanta ON almacen_envasado_entrada.id_planta=existenciaplanta.id_plantas LEFT JOIN comun ON existenciaplanta.id_comun=comun.id_comun LEFT JOIN comun as comun2 ON almacen_envasado_entrada.id_comun=comun2.id_comun  LEFT JOIN  ( SELECT almacen_envasado_ensamble.id_almacen_envasado_entrada,almacen_envasado_ensamble.litros,almacen_envasado_ensamble.agave_coccion_kg,comun.nombre  FROM almacen_envasado_ensamble  INNER JOIN existenciaplanta ON almacen_envasado_ensamble.id_planta=existenciaplanta.id_plantas   INNER JOIN comun ON existenciaplanta.id_comun=comun.id_comun   order by almacen_envasado_ensamble.id_almacen_envasado_entrada asc, almacen_envasado_ensamble.litros desc, almacen_envasado_ensamble.agave_coccion_kg desc)  TABLA  ON almacen_envasado_entrada.id_almacen_envasado_entrada=TABLA.id_almacen_envasado_entrada   LEFT JOIN  (SELECT almacen_envasado_ensamble.id_almacen_envasado_entrada,almacen_envasado_ensamble.id_planta,almacen_envasado_ensamble.id_predio,almacen_envasado_ensamble.litros,almacen_envasado_ensamble.agave_coccion_kg,comun3.nombre FROM almacen_envasado_ensamble LEFT JOIN existenciaplanta ON almacen_envasado_ensamble.id_planta = existenciaplanta.id_plantas LEFT JOIN comun AS comun3 ON existenciaplanta.id_comun = comun3.id_comun OR almacen_envasado_ensamble.id_comun = comun3.id_comun ORDER BY almacen_envasado_ensamble.litros DESC , almacen_envasado_ensamble.agave_coccion_kg DESC) AS maguey ON almacen_envasado_entrada.id_almacen_envasado_entrada = maguey.id_almacen_envasado_entrada  INNER JOIN marcas ON SUBSTRING(almacen_envasado_entrada.id_marca,1,4) =marcas.no_cliente and  SUBSTRING(almacen_envasado_entrada.id_marca,6,1)=marcas.cve_marca  WHERE almacen_envasado_entrada.id_almacen='" + cmbBodegaEnvasado.SelectedValue + "' and almacen_envasado_entrada.botellas_existentes > 0 GROUP BY almacen_envasado_entrada.id_almacen_envasado_entrada ");
+                    ConexionMysql.llenaDataset(ref Datos, "SELECT marcas.marca,almacen_envasado_entrada.id_almacen_envasado_entrada,almacen_envasado_entrada.no_cliente, DATE_FORMAT(almacen_envasado_entrada.fecha, '%d/%m/%Y') as fecha , almacen_envasado_entrada.no_lote, almacen_envasado_entrada.fq, almacen_envasado_entrada.clase, almacen_envasado_entrada.categoria, almacen_envasado_entrada.abocante, almacen_envasado_entrada.ingrediente, almacen_envasado_entrada.unidad_medida, almacen_envasado_entrada.contenido_por_botella, almacen_envasado_entrada.litros, almacen_envasado_entrada.grado_alcoholico, almacen_envasado_entrada.grado_alcoholico_etiqueta, almacen_envasado_entrada.botellas_existentes, comun.nombre as maguey, comun2.nombre as maguey_sin,GROUP_CONCAT(DISTINCT maguey.nombre) AS ensamble, GROUP_CONCAT(DISTINCT TABLA.nombre order by TABLA.id_almacen_envasado_entrada ASC ) as ensamble_maguey FROM almacen_envasado_entrada  LEFT JOIN existenciaplanta ON almacen_envasado_entrada.id_planta=existenciaplanta.id_plantas LEFT JOIN comun ON existenciaplanta.id_comun=comun.id_comun LEFT JOIN comun as comun2 ON almacen_envasado_entrada.id_comun=comun2.id_comun  LEFT JOIN  ( SELECT almacen_envasado_ensamble.id_almacen_envasado_entrada,almacen_envasado_ensamble.litros,almacen_envasado_ensamble.agave_coccion_kg,comun.nombre  FROM almacen_envasado_ensamble  INNER JOIN existenciaplanta ON almacen_envasado_ensamble.id_planta=existenciaplanta.id_plantas   INNER JOIN comun ON existenciaplanta.id_comun=comun.id_comun   order by almacen_envasado_ensamble.id_almacen_envasado_entrada asc, almacen_envasado_ensamble.litros desc, almacen_envasado_ensamble.agave_coccion_kg desc)  TABLA  ON almacen_envasado_entrada.id_almacen_envasado_entrada=TABLA.id_almacen_envasado_entrada   LEFT JOIN  (SELECT almacen_envasado_ensamble.id_almacen_envasado_entrada,almacen_envasado_ensamble.id_planta,almacen_envasado_ensamble.id_predio,almacen_envasado_ensamble.litros,almacen_envasado_ensamble.agave_coccion_kg,comun3.nombre FROM almacen_envasado_ensamble LEFT JOIN existenciaplanta ON almacen_envasado_ensamble.id_planta = existenciaplanta.id_plantas LEFT JOIN comun AS comun3 ON existenciaplanta.id_comun = comun3.id_comun OR almacen_envasado_ensamble.id_comun = comun3.id_comun ORDER BY almacen_envasado_ensamble.litros DESC , almacen_envasado_ensamble.agave_coccion_kg DESC) AS maguey ON almacen_envasado_entrada.id_almacen_envasado_entrada = maguey.id_almacen_envasado_entrada  INNER JOIN marcas ON SUBSTRING(almacen_envasado_entrada.id_marca,1,5) =marcas.no_cliente and  SUBSTRING(almacen_envasado_entrada.id_marca,7,2)=marcas.cve_marca  WHERE almacen_envasado_entrada.id_almacen='" + cmbBodegaEnvasado.SelectedValue + "' and almacen_envasado_entrada.botellas_existentes > 0 GROUP BY almacen_envasado_entrada.id_almacen_envasado_entrada ");
+                    
                     DataRow fila;
                     dtsProductoAlmacenEnvasado.Tables["PRODUCTOALMACENENVASADO"].Rows.Clear();
                     foreach (DataRow row in Datos.Tables[0].Rows)
@@ -12262,7 +12270,7 @@ namespace Crm.Inventario
                 else if (BanderaAlmacenEnvasadoSalio == true)
                 {
                     DataSet Datos = new DataSet();
-                    ConexionMysql.llenaDataset(ref Datos, "  SELECT almacen_envasado_entrada.id_planta,almacen_envasado_entrada.id_predio,almacen_envasado_entrada.id_marca,marcas.marca,almacen_envasado_entrada.id_almacen,almacen_envasado_movimientos.id_almacen_envasado_movimientos,almacen_envasado_movimientos.no_cliente, DATE_FORMAT(almacen_envasado_movimientos.fecha, '%d/%m/%Y') as fecha ,almacen_envasado_movimientos.destino,almacen_envasado_entrada.no_lote,almacen_envasado_entrada.fq,almacen_envasado_entrada.clase,almacen_envasado_entrada.categoria,almacen_envasado_entrada.abocante,almacen_envasado_entrada.ingrediente,almacen_envasado_entrada.unidad_medida,almacen_envasado_entrada.contenido_por_botella,almacen_envasado_entrada.litros,almacen_envasado_entrada.grado_alcoholico, almacen_envasado_entrada.grado_alcoholico_etiqueta,almacen_envasado_movimientos.botellas_existentes, comun.nombre as maguey, comun2.nombre as maguey_sin,GROUP_CONCAT(DISTINCT maguey.nombre) AS ensamble, GROUP_CONCAT(DISTINCT TABLA.nombre order by TABLA.id_almacen_envasado_entrada ASC ) as ensamble_maguey FROM almacen_envasado_entrada  inner  JOIN almacen_envasado_movimientos ON almacen_envasado_entrada.id_almacen_envasado_entrada=almacen_envasado_movimientos.id_almacen_envasado_entrada LEFT JOIN existenciaplanta ON almacen_envasado_entrada.id_planta=existenciaplanta.id_plantas  LEFT JOIN comun ON existenciaplanta.id_comun=comun.id_comun  LEFT JOIN comun as comun2 ON almacen_envasado_entrada.id_comun=comun2.id_comun  LEFT JOIN ( SELECT almacen_envasado_ensamble.id_almacen_envasado_entrada,almacen_envasado_ensamble.litros,almacen_envasado_ensamble.agave_coccion_kg,comun.nombre  FROM almacen_envasado_ensamble  INNER JOIN existenciaplanta ON almacen_envasado_ensamble.id_planta=existenciaplanta.id_plantas   INNER JOIN comun ON existenciaplanta.id_comun=comun.id_comun  order by almacen_envasado_ensamble.id_almacen_envasado_entrada asc, almacen_envasado_ensamble.litros desc, almacen_envasado_ensamble.agave_coccion_kg desc) TABLA   ON almacen_envasado_entrada.id_almacen_envasado_entrada=TABLA.id_almacen_envasado_entrada  LEFT JOIN  (SELECT almacen_envasado_ensamble.id_almacen_envasado_entrada,almacen_envasado_ensamble.id_planta,almacen_envasado_ensamble.id_predio,almacen_envasado_ensamble.litros,almacen_envasado_ensamble.agave_coccion_kg,comun3.nombre FROM almacen_envasado_ensamble LEFT JOIN existenciaplanta ON almacen_envasado_ensamble.id_planta = existenciaplanta.id_plantas LEFT JOIN comun AS comun3 ON existenciaplanta.id_comun = comun3.id_comun OR almacen_envasado_ensamble.id_comun = comun3.id_comun ORDER BY almacen_envasado_ensamble.litros DESC , almacen_envasado_ensamble.agave_coccion_kg DESC) AS maguey ON almacen_envasado_entrada.id_almacen_envasado_entrada = maguey.id_almacen_envasado_entrada   INNER JOIN marcas ON SUBSTRING(almacen_envasado_entrada.id_marca,1,4) =marcas.no_cliente and  SUBSTRING(almacen_envasado_entrada.id_marca,6,1)=marcas.cve_marca  WHERE almacen_envasado_entrada.id_almacen='" + cmbBodegaEnvasado.SelectedValue + "' and almacen_envasado_movimientos.tipo in('salida','cambio') and almacen_envasado_movimientos.destino in('Nacional','Exportacion','Promocion')  and almacen_envasado_movimientos.botellas_existentes > 0 GROUP BY almacen_envasado_movimientos.id_almacen_envasado_movimientos");
+                    ConexionMysql.llenaDataset(ref Datos, "  SELECT almacen_envasado_entrada.id_planta,almacen_envasado_entrada.id_predio,almacen_envasado_entrada.id_marca,marcas.marca,almacen_envasado_entrada.id_almacen,almacen_envasado_movimientos.id_almacen_envasado_movimientos,almacen_envasado_movimientos.no_cliente, DATE_FORMAT(almacen_envasado_movimientos.fecha, '%d/%m/%Y') as fecha ,almacen_envasado_movimientos.destino,almacen_envasado_entrada.no_lote,almacen_envasado_entrada.fq,almacen_envasado_entrada.clase,almacen_envasado_entrada.categoria,almacen_envasado_entrada.abocante,almacen_envasado_entrada.ingrediente,almacen_envasado_entrada.unidad_medida,almacen_envasado_entrada.contenido_por_botella,almacen_envasado_entrada.litros,almacen_envasado_entrada.grado_alcoholico, almacen_envasado_entrada.grado_alcoholico_etiqueta,almacen_envasado_movimientos.botellas_existentes, comun.nombre as maguey, comun2.nombre as maguey_sin,GROUP_CONCAT(DISTINCT maguey.nombre) AS ensamble, GROUP_CONCAT(DISTINCT TABLA.nombre order by TABLA.id_almacen_envasado_entrada ASC ) as ensamble_maguey FROM almacen_envasado_entrada  inner  JOIN almacen_envasado_movimientos ON almacen_envasado_entrada.id_almacen_envasado_entrada=almacen_envasado_movimientos.id_almacen_envasado_entrada LEFT JOIN existenciaplanta ON almacen_envasado_entrada.id_planta=existenciaplanta.id_plantas  LEFT JOIN comun ON existenciaplanta.id_comun=comun.id_comun  LEFT JOIN comun as comun2 ON almacen_envasado_entrada.id_comun=comun2.id_comun  LEFT JOIN ( SELECT almacen_envasado_ensamble.id_almacen_envasado_entrada,almacen_envasado_ensamble.litros,almacen_envasado_ensamble.agave_coccion_kg,comun.nombre  FROM almacen_envasado_ensamble  INNER JOIN existenciaplanta ON almacen_envasado_ensamble.id_planta=existenciaplanta.id_plantas   INNER JOIN comun ON existenciaplanta.id_comun=comun.id_comun  order by almacen_envasado_ensamble.id_almacen_envasado_entrada asc, almacen_envasado_ensamble.litros desc, almacen_envasado_ensamble.agave_coccion_kg desc) TABLA   ON almacen_envasado_entrada.id_almacen_envasado_entrada=TABLA.id_almacen_envasado_entrada  LEFT JOIN  (SELECT almacen_envasado_ensamble.id_almacen_envasado_entrada,almacen_envasado_ensamble.id_planta,almacen_envasado_ensamble.id_predio,almacen_envasado_ensamble.litros,almacen_envasado_ensamble.agave_coccion_kg,comun3.nombre FROM almacen_envasado_ensamble LEFT JOIN existenciaplanta ON almacen_envasado_ensamble.id_planta = existenciaplanta.id_plantas LEFT JOIN comun AS comun3 ON existenciaplanta.id_comun = comun3.id_comun OR almacen_envasado_ensamble.id_comun = comun3.id_comun ORDER BY almacen_envasado_ensamble.litros DESC , almacen_envasado_ensamble.agave_coccion_kg DESC) AS maguey ON almacen_envasado_entrada.id_almacen_envasado_entrada = maguey.id_almacen_envasado_entrada   INNER JOIN marcas ON SUBSTRING(almacen_envasado_entrada.id_marca,1,5) =marcas.no_cliente and  SUBSTRING(almacen_envasado_entrada.id_marca,7,2)=marcas.cve_marca  WHERE almacen_envasado_entrada.id_almacen='" + cmbBodegaEnvasado.SelectedValue + "' and almacen_envasado_movimientos.tipo in('salida','cambio') and almacen_envasado_movimientos.destino in('Nacional','Exportacion','Promocion')  and almacen_envasado_movimientos.botellas_existentes > 0 GROUP BY almacen_envasado_movimientos.id_almacen_envasado_movimientos");
                     // ConexionMysql.llenaDataset(ref Datos, "SELECT * FROM view_envasado_salio WHERE id_envasadora='" + CmbEnvasadoraEnvasadora.SelectedValue + "'");
 
                     DataRow fila;
@@ -12504,6 +12512,7 @@ namespace Crm.Inventario
 
         private void tabControl3_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // MessageBox.Show("Escoge tipo almacen envasado: "+tabControl3.SelectedTab + ":" + tabPage9 + ":" + tabPage10 + ":" + tabPage17);
             if (tabControl3.SelectedTab == tabPage9)
             {
                 BanderaAlmacenEnvasado = false;
@@ -12525,6 +12534,7 @@ namespace Crm.Inventario
                 BanderaAlmacenEnvasadoNoTerminado = false;
                 cmbBodegaEnvasado_SelectedIndexChanged(null, null);
             }
+            //MessageBox.Show("Escoge tipo almacen envasado: AE:" + BanderaAlmacenEnvasado + "|AES:" + BanderaAlmacenEnvasadoSalio + "|AENT:" + BanderaAlmacenEnvasadoNoTerminado);
 
         }
 
@@ -12680,7 +12690,7 @@ namespace Crm.Inventario
 
 
 
-                        txtMarcaEnvasado.Text = ConexionMysql.regresaCampoConsulta("select marca from envasado_entrada inner join  marcas  ON SUBSTRING(envasado_entrada.id_marca,1,4) =marcas.no_cliente and  SUBSTRING(envasado_entrada.id_marca,6,1)=marcas.cve_marca where envasado_entrada.id_envasado_entrada='" + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["ID_ENVASADO_ENTRADA"].Value.ToString() + "';");
+                        txtMarcaEnvasado.Text = ConexionMysql.regresaCampoConsulta("select marca from envasado_entrada inner join  marcas  ON SUBSTRING(envasado_entrada.id_marca,1,5) =marcas.no_cliente and  SUBSTRING(envasado_entrada.id_marca,7,2)=marcas.cve_marca where envasado_entrada.id_envasado_entrada='" + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["ID_ENVASADO_ENTRADA"].Value.ToString() + "';");
 
 
 
@@ -12702,7 +12712,7 @@ namespace Crm.Inventario
                             String etiq_como = ConexionMysql.regresaCampoConsulta("Select etiquetado_como FROM envasado_entrada WHERE id_envasado_entrada='" + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["ID_ENVASADO_ENTRADA"].Value.ToString() + "';");
 
 
-                            MessageBox.Show(etiq_como);
+                            //MessageBox.Show(etiq_como);
 
                             if (etiq_como != "")
                             {
@@ -12808,7 +12818,7 @@ namespace Crm.Inventario
                             ///--- entra si el envasado es terminado
                             if (dtaLoteparaAlmacen_Envasado.Rows[0].Cells["ID_MARCA"].Value.ToString() == dtaLoteparaAlmacen_Envasado.Rows[x].Cells["ID_MARCA"].Value.ToString())
                             {
-                                txtMarcaEnvasado.Text = ConexionMysql.regresaCampoConsulta("select marca from envasado_entrada inner join  marcas  ON SUBSTRING(envasado_entrada.id_marca,1,4) =marcas.no_cliente and  SUBSTRING(envasado_entrada.id_marca,6,1)=marcas.cve_marca where envasado_entrada.id_envasado_entrada='" + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["ID_ENVASADO_ENTRADA"].Value.ToString() + "';");
+                                txtMarcaEnvasado.Text = ConexionMysql.regresaCampoConsulta("select marca from envasado_entrada inner join  marcas  ON SUBSTRING(envasado_entrada.id_marca,1,5) =marcas.no_cliente and  SUBSTRING(envasado_entrada.id_marca,7,2)=marcas.cve_marca where envasado_entrada.id_envasado_entrada='" + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["ID_ENVASADO_ENTRADA"].Value.ToString() + "';");
 
 
                             }
@@ -13019,7 +13029,7 @@ namespace Crm.Inventario
 
 
 
-                        txtMarcaEnvasado.Text = ConexionMysql.regresaCampoConsulta("select marca from envasado_entrada inner join  marcas  ON SUBSTRING(envasado_entrada.id_marca,1,4) =marcas.no_cliente and  SUBSTRING(envasado_entrada.id_marca,6,1)=marcas.cve_marca where envasado_entrada.id_envasado_entrada='" + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["ID_ENVASADO_ENTRADA"].Value.ToString() + "';");
+                        txtMarcaEnvasado.Text = ConexionMysql.regresaCampoConsulta("select marca from envasado_entrada inner join  marcas  ON SUBSTRING(envasado_entrada.id_marca,1,5) =marcas.no_cliente and  SUBSTRING(envasado_entrada.id_marca,7,2)=marcas.cve_marca where envasado_entrada.id_envasado_entrada='" + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["ID_ENVASADO_ENTRADA"].Value.ToString() + "';");
 
                         // txtgradoAlcoholetiqueta.Text = dtaLoteparaAlmacen_Envasado.Rows[0].Cells["%_VOL_ETIQUETA"].Value.ToString();
                         //}
@@ -13365,7 +13375,7 @@ namespace Crm.Inventario
 
                         if (DBNull.Value.Equals(row["ff1"]))
                         {
-                            MessageBox.Show("No se ah encontrado registro alguno de hologramas para la marca : " + Environment.NewLine + cmbMarcaEnvasadoparaAlmacen.Text, "¡¡AVISO!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("No se ha encontrado registro alguno de hologramas para la marca : " + Environment.NewLine + cmbMarcaEnvasadoparaAlmacen.Text, "¡¡AVISO!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             return;
                         }
 
@@ -13537,7 +13547,7 @@ namespace Crm.Inventario
             }
             if (dtaLoteparaAlmacen_Envasado.Rows.Count == 0)
             {
-                MessageBox.Show("No ha seleccionado ninguna producción");
+                MessageBox.Show("No ha seleccionado ningún envasado");
                 return;
             }
             if (TxtNoLoteAlmacen.Text == "")
@@ -13575,7 +13585,6 @@ namespace Crm.Inventario
             string litros_env = ConexionMysql.regresaCampoConsulta("Select litros from envasado_entrada where id_envasado_entrada='" + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["ID_ENVASADO_ENTRADA"].Value + "';");
 
             string no_loteGranel = ConexionMysql.regresaCampoConsulta("Select no_lote_granel from envasado_entrada where id_envasado_entrada='" + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["ID_ENVASADO_ENTRADA"].Value + "';");
-
 
 
             if (chkTerminaEnvasadoparaAlmacen.Toggled == true)
@@ -13651,7 +13660,6 @@ namespace Crm.Inventario
             }
             else
             {
-
                 marcaterminado = ConexionMysql.regresaCampoConsulta("Select id_marca from envasado_entrada where id_envasado_entrada='" + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["ID_ENVASADO_ENTRADA"].Value + "';");
                 fechaMovimiento = ConexionMysql.regresaCampoConsulta("Select DATE_FORMAT(fecha_movimiento,'%Y/%m/%d') as fecha_movimiento from envasado_entrada where id_envasado_entrada='" + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["ID_ENVASADO_ENTRADA"].Value + "';");
                 fechaEnvasadofin = ConexionMysql.regresaCampoConsulta("Select  DATE_FORMAT(fecha_envasado_fin,'%Y/%m/%d') as fecha_envasado_fin  from envasado_entrada where id_envasado_entrada='" + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["ID_ENVASADO_ENTRADA"].Value + "';");
@@ -13754,11 +13762,9 @@ namespace Crm.Inventario
             }
 
 
-
-
             if (chkTerminaEnvasadoparaAlmacen.Toggled == true)
             {
-
+                
                 if (chkOstentaEnvasadoAlmacen.Toggled == true)
                 {
                     q = txtHologramaInicioAlmacen.Text;
@@ -13786,7 +13792,7 @@ namespace Crm.Inventario
                + "\n\n--->-Fecha envasado-<---" + "\nInicio: " + fei + "   Fin: " + fef + "\n\n--->-Hologramas-<---" + "\nInicio: " + q 
                +"\nFin: " + q1+"\nSerie: " + q2 ,"---", "Aceptar","Cancelar");
           */
-
+            
             string dto = f + "!" + o + "!" + p + "!" + pp + "!" + p3 + "!" + tmdo + "!" + a + "!" + t + "!" + c + "!" + um + "!" + cont + "!" + b + "!" + nb + "!" + m + "!" + fei + "!" + fef + "!" + q + "!" + q1 + "!" + q2;
 
             MsgBxGranelenvasado msg = new MsgBxGranelenvasado();
@@ -13795,18 +13801,22 @@ namespace Crm.Inventario
             if (msg.DialogResult == DialogResult.Cancel) { return; }
             else
             {
-
-
                 ObtenerIdMaximoAlmacenEnvasadoEntrada();
                 if (dtaLoteparaAlmacen_Envasado.Rows.Count == 1)// compara si tiene un solo registro el dtaLoteparaAlmacen_Envasado
                 {
-                    if (int.Parse(dtaLoteparaAlmacen_Envasado.Rows[0].Cells["ID_PLANTA"].Value.ToString()) == 0)
+                    //MessageBox.Show("aCÁ 6 ");
+                    int idPlanta_dtaLAE;
+                    //dtaLoteparaAlmacen_Envasado.Rows[0].Cells["ID_PLANTA"].Value = (dtaLoteparaAlmacen_Envasado.Rows[0].Cells["ID_PLANTA"].Value.ToString() == "") ? 0 : dtaLoteparaAlmacen_Envasado.Rows[0].Cells["ID_PLANTA"].Value;
+                    idPlanta_dtaLAE = int.Parse(dtaLoteparaAlmacen_Envasado.Rows[0].Cells["ID_PLANTA"].Value.ToString());
+                    //if (int.Parse(dtaLoteparaAlmacen_Envasado.Rows[0].Cells["ID_PLANTA"].Value.ToString()) == 0 || dtaLoteparaAlmacen_Envasado.Rows[0].Cells["ID_PLANTA"].Value.ToString() == "")
+                    if (idPlanta_dtaLAE == 0)
                     {
-
-
+                        //MessageBox.Show("aCÁ 7");
+                        //MessageBox.Show("INSERT INTO  almacen_envasado_entrada(id_almacen_envasado_entrada, id_almacen, id_marca, no_cliente, fecha_movimiento, fecha, fecha_envasado_ini, fecha_envasado_fin, id_comun, no_lote_granel, id_solicitud, no_lote, fq, clase, categoria, abocante, ingrediente, etiquetado_como, unidad_medida, contenido_por_botella, litros, grado_alcoholico, grado_alcoholico_etiqueta, botellas_iniciales, botellas, botellas_existentes, id_verificador, actualizado) VALUES('" + id_max_almacen_envasado_entrada + "', '" + cmbBodegaEnvasado.SelectedValue + "', '" + marcaterminado + "', '" + CmbNoClienteBodegaEnvasado.SelectedValue + "', '" + fechaMovimiento + "', now(), '" + fechaEnvIni + "', '" + fechaEnvasadofin + "', " + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["ID_COMUN"].Value.ToString() + ", '" + no_loteGranel + "', 0, '" + TxtNoLoteAlmacen.Text + "', '" + TxtClaveFqEnvasado.Text + "', '" + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["CLASE"].Value.ToString() + "', '" + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["CATEGORIA"].Value.ToString() + "', '" + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["ABOCANTE"].Value.ToString() + "', '" + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["INGREDIENTE"].Value.ToString() + "', '" + CmbAlmacenEtiquetadocomo.Text + "', '" + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["UNIDAD_MEDIDA"].Value.ToString() + "', " + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["CONTENIDO_BOTELLA"].Value.ToString() + ",if (" + litros_env + " is null OR " + litros_env + " = 0,'0', ROUND(" + ltspor_restar + ", 2)), " + dtaLoteparaAlmacen_Envasado.Rows[0].Cells[" % _ALCOHOLICO"].Value.ToString() + ",'" + gradoalcoholicoEtiqueta + "'," + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["BOTELLAS"].Value.ToString() + "," + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["BOTELLAS"].Value.ToString() + "," + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["BOTELLAS"].Value.ToString() + "," + Usuario.IdUsuario + ",0");
                         //--- entra si es un ensamble el lote   que proviene de granel --- 
                         if (ConexionMysql.insUpd_transaccion("INSERT INTO  almacen_envasado_entrada(id_almacen_envasado_entrada,id_almacen,id_marca,no_cliente,fecha_movimiento,fecha,fecha_envasado_ini,fecha_envasado_fin,id_comun,no_lote_granel,id_solicitud,no_lote,fq,clase,categoria,abocante,ingrediente,etiquetado_como,unidad_medida,contenido_por_botella,litros,grado_alcoholico,grado_alcoholico_etiqueta,botellas_iniciales,botellas,botellas_existentes,id_verificador,actualizado) VALUES('" + id_max_almacen_envasado_entrada + "', '" + cmbBodegaEnvasado.SelectedValue + "','" + marcaterminado + "','" + CmbNoClienteBodegaEnvasado.SelectedValue + "','" + fechaMovimiento + "',now(),'" + fechaEnvIni + "','" + fechaEnvasadofin + "'," + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["ID_COMUN"].Value.ToString() + ",'" + no_loteGranel + "',0,'" + TxtNoLoteAlmacen.Text + "','" + TxtClaveFqEnvasado.Text + "' , '" + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["CLASE"].Value.ToString() + "' , '" + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["CATEGORIA"].Value.ToString() + "','" + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["ABOCANTE"].Value.ToString() + "','" + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["INGREDIENTE"].Value.ToString() + "','" + CmbAlmacenEtiquetadocomo.Text + "','" + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["UNIDAD_MEDIDA"].Value.ToString() + "'," + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["CONTENIDO_BOTELLA"].Value.ToString() + ",if(" + litros_env + " is null OR " + litros_env + "= 0,'0', ROUND(" + ltspor_restar + ",2)), " + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["%_ALCOHOLICO"].Value.ToString() + ",'" + gradoalcoholicoEtiqueta + "'," + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["BOTELLAS"].Value.ToString() + "," + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["BOTELLAS"].Value.ToString() + "," + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["BOTELLAS"].Value.ToString() + "," + Usuario.IdUsuario + ",0)") == "Error")//--- seagrego fecha movimineto y botellas_iniciales
                         {
+                            //MessageBox.Show("aCÁ 8");
                             //MessageBox.Show("voendo qu hace aqui 1");
                             return;
                         }
@@ -13823,6 +13833,7 @@ namespace Crm.Inventario
 
                             ///  ---- aqui checar sesa columna de LITROS  causa que no la puede encontrar 
                             {
+                                //MessageBox.Show("aCÁ 9");
                                 return;
                             }
                         }
@@ -13831,9 +13842,9 @@ namespace Crm.Inventario
                     {
 
 
-
-                        if (ConexionMysql.insUpd_transaccion("INSERT INTO  almacen_envasado_entrada (id_almacen_envasado_entrada,id_almacen,id_marca,no_cliente,fecha_movimiento,fecha,fecha_envasado_ini,fecha_envasado_fin,id_comun,no_lote_granel,id_solicitud,no_lote,id_planta,id_predio,fq,clase,categoria,abocante,ingrediente,etiquetado_como,unidad_medida,contenido_por_botella,litros,grado_alcoholico,grado_alcoholico_etiqueta,botellas_iniciales,botellas,botellas_existentes,id_verificador,actualizado,holograma_inicio,holograma_fin) VALUES('" + id_max_almacen_envasado_entrada + "','" + cmbBodegaEnvasado.SelectedValue + "', '" + marcaterminado + "','" + CmbNoClienteBodegaEnvasado.SelectedValue + "','" + fechaMovimiento + "',now(),'" + fechaEnvIni + "','" + fechaEnvasadofin + "'," + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["ID_COMUN"].Value.ToString() + ",'" + no_loteGranel + "',0,'" + TxtNoLoteAlmacen.Text + "' ," + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["ID_PLANTA"].Value.ToString() + "," + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["ID_PREDIO"].Value.ToString() + ",'" + TxtClaveFqEnvasado.Text + "' , '" + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["CLASE"].Value.ToString() + "' , '" + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["CATEGORIA"].Value.ToString() + "','" + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["ABOCANTE"].Value.ToString() + "','" + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["INGREDIENTE"].Value.ToString() + "','" + CmbAlmacenEtiquetadocomo.Text + "','" + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["UNIDAD_MEDIDA"].Value.ToString() + "'," + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["CONTENIDO_BOTELLA"].Value.ToString() + ",if(" + litros_env + " is null OR " + litros_env + "= 0,'0', ROUND(" + ltspor_restar + ",2)), " + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["%_ALCOHOLICO"].Value.ToString() + "," + gradoalcoholicoEtiqueta + "," + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["BOTELLAS"].Value.ToString() + "," + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["BOTELLAS"].Value.ToString() + "," + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["BOTELLAS"].Value.ToString() + "," + Usuario.IdUsuario + ",0,'" + TxtHologramaInicio.Text + "','" + TxtHologramaFin.Text + "')") == "Error")//--- seagrego fecha movimineto y botellas_iniciales
+                        if (ConexionMysql.insUpd_transaccion("INSERT INTO  almacen_envasado_entrada (id_almacen_envasado_entrada,id_almacen,id_marca,no_cliente,fecha_movimiento,fecha,fecha_envasado_ini,fecha_envasado_fin,id_comun,no_lote_granel,id_solicitud,no_lote,id_planta,id_predio,fq,clase,categoria,abocante,ingrediente,etiquetado_como,unidad_medida,contenido_por_botella,litros,grado_alcoholico,grado_alcoholico_etiqueta,botellas_iniciales,botellas,botellas_existentes,id_verificador,actualizado,holograma_inicio,holograma_fin) VALUES('" + id_max_almacen_envasado_entrada + "','" + cmbBodegaEnvasado.SelectedValue + "', '" + marcaterminado + "','" + CmbNoClienteBodegaEnvasado.SelectedValue + "','" + fechaMovimiento + "',now(),'" + fechaEnvIni + "','" + fechaEnvasadofin + "'," + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["ID_COMUN"].Value.ToString() + ",'" + no_loteGranel + "',0,'" + TxtNoLoteAlmacen.Text + "' ," + idPlanta_dtaLAE + ",'" + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["ID_PREDIO"].Value.ToString() + "','" + TxtClaveFqEnvasado.Text + "' , '" + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["CLASE"].Value.ToString() + "' , '" + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["CATEGORIA"].Value.ToString() + "','" + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["ABOCANTE"].Value.ToString() + "','" + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["INGREDIENTE"].Value.ToString() + "','" + CmbAlmacenEtiquetadocomo.Text + "','" + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["UNIDAD_MEDIDA"].Value.ToString() + "'," + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["CONTENIDO_BOTELLA"].Value.ToString() + ",if(" + litros_env + " is null OR " + litros_env + "= 0,'0', ROUND(" + ltspor_restar + ",2)), " + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["%_ALCOHOLICO"].Value.ToString() + "," + gradoalcoholicoEtiqueta + "," + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["BOTELLAS"].Value.ToString() + "," + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["BOTELLAS"].Value.ToString() + "," + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["BOTELLAS"].Value.ToString() + "," + Usuario.IdUsuario + ",0,'" + TxtHologramaInicio.Text + "','" + TxtHologramaFin.Text + "')") == "Error")//--- seagrego fecha movimineto y botellas_iniciales
                         {
+                            MessageBox.Show("aCÁ 10");
                             //MessageBox.Show("voendo qu hace aqui 2");
                             return;
                         }
@@ -13858,7 +13869,6 @@ namespace Crm.Inventario
 
 
 
-
                     if (ConexionMysql.insUpd_transaccion("UPDATE  envasado_entrada SET litros=if(litros is null OR litros = 0,'0', ROUND(litros - " + ltspor_restar + ",2)),botellas_iniciales=if(botellas_iniciales is null OR botellas_iniciales=0,'0',ROUND(botellas_iniciales- " + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["BOTELLAS"].Value.ToString() + ",2)), botellas=ROUND(botellas - " + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["BOTELLAS"].Value.ToString() + ",2), botellas_existentes=ROUND(botellas_existentes - " + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["BOTELLAS"].Value.ToString() + ",2),actualizado=0 WHERE id_envasado_entrada='" + dtaLoteparaAlmacen_Envasado.Rows[0].Cells["ID_ENVASADO_ENTRADA"].Value + "'") == "Error")
                     {
                         return;
@@ -13867,6 +13877,7 @@ namespace Crm.Inventario
 
 
                 }   ///--- fin del if de dtaLoteparaAlmacen_Envasado.Rows.Count == 1
+                
                 /* else
                 {
                     ///==== ENTRA SI ES UN ENSAMBLE MAS DE UNLOTE
@@ -14048,7 +14059,10 @@ namespace Crm.Inventario
                         no_cliente = no_cliente.Substring(0, 4);
 
                         string cve_marca = cmbMarcaEnvasadoparaAlmacen.SelectedValue.ToString();
-                        cve_marca = cve_marca.Substring(5, 1);
+
+                        int lenght = cve_marca.Length;
+                        int mark = lenght == 7 ? 1 : 2;
+                        cve_marca = cve_marca.Substring(6, mark);
                         if (ConexionMysql.insUpd_transaccion("INSERT INTO  almacen_envasado_holograma(id_almacen_envasado_holograma, id_almacen_envasado_entrada,no_cliente,cve_marca, holograma_inicio, holograma_fin,serie, id_verificador, actualizado) VALUES( '" + id_max_almacen_hologramas + "','" + id_max_almacen_envasado_entrada + "','','','" + txtHologramaInicioAlmacen.Text + "' , '" + txthologramaFinAlmacen.Text + "',''," + Usuario.IdUsuario + ",0)") == "Error")
                         {
                             return;
@@ -14487,6 +14501,51 @@ namespace Crm.Inventario
             mermas.cliente = CmbNoCliente.Text;
            
             mermas.ShowDialog();
+        }
+
+        private void DtaProduccion_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void PanelEnvasado_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void label82_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label59_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlAlmacen_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void DtaProductoEnvasado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void DtaProductoVidrioEnvasado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void pnlAlmacendeGraneles_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -53,7 +53,7 @@ namespace Crm.Inventario
 
         private void FrmNuevaEnvasadora_Load(object sender, EventArgs e)
         {
-            CmbEstado.Items.Insert(0, "CIUDAD DE MÉXICO");
+            /*CmbEstado.Items.Insert(0, "CIUDAD DE MÉXICO");
             CmbEstado.Items.Insert(1, "DURANGO");
             CmbEstado.Items.Insert(2, "ESTADO DE MÉXICO");
             CmbEstado.Items.Insert(3, "GUERRERO");
@@ -63,7 +63,8 @@ namespace Crm.Inventario
             CmbEstado.Items.Insert(7, "PUEBLA");
             CmbEstado.Items.Insert(8, "SAN LUIS POTOSÍ");
             CmbEstado.Items.Insert(9, "TAMAULIPAS");
-            CmbEstado.Items.Insert(10,"ZACATECAS");
+            CmbEstado.Items.Insert(10,"ZACATECAS");*/
+            ConexionMysql.llenaComboAutocomplit(ref CmbEstado, "SELECT clave, nombre FROM estados WHERE dom = '1' ", "clave", "nombre");
         }
 
         private void BtnGuardar_Click(object sender, EventArgs e)

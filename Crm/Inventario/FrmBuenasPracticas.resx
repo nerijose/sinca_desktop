@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="label21.Text" xml:space="preserve">
+    <value>Los baños deben contar con separaciones físicas completas, sin comunicación directa con producción o envasado. Debe contar con agua, retrete, lavabo, jabón, papel higiénico y depósito para basura con bolsa.Rótulos donde se promueva la higiene personal haciendo hincapié en el lavado de manos después del uso de sanitarios. (Preferente)</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>En caso de existir tuberías, conductos, rieles, vigas, cables, etc. que pasen por encima de tanques y áreas de producción o elaboración donde el producto sin envasar este expuesto deben estar limpios y en buenas condiciones de mantenimiento.</value>
+  </data>
+  <data name="label37.Text" xml:space="preserve">
+    <value>Las fábricas deben identificar las fases de operación, generar procedimientos de fases de producción, definir controles de inocuidad para producción, supervisar fases y controles para evaluar eficacia, actualizar los procedimientos y controles de acuerdo a las necesidades. Los procedimientos y controles deben estar escritos en español y de tal forma para que se puedan llevar acabo sistemáticamente. (Preferente)</value>
+  </data>
+  <data name="label58.Text" xml:space="preserve">
+    <value>El agua que esté en contacto directo con el mezcal debe ser potable y cumplir con los límites permisibles de cloro residual libre y de organismos CT y CF establecidos en la NOM-127-SSA1-1994 mínimo 1 al año.
+-CT y CF un análisis de agua cada 12 meses (Preferente).
+-Cloro residual determinaciones diarias.
+</value>
+  </data>
+  <data name="label56.Text" xml:space="preserve">
+    <value>Se debe contar con registros e información de recepción de materias primas, material de envase y empaque, fabricación, rechazos, equipo e instrumentos, limpieza, control de plagas, capacitación de personal y retiro de producto. (Preferente)</value>
+  </data>
+  <data name="label53.Text" xml:space="preserve">
+    <value>Los envases vacíos que contuvieron medicamentos, plaguicidas, agentes de limpieza, agentes de desinfección o cualquier sustancia tóxica no deben ser reutilizados y deben ser dispuestos de tal manera que no contaminen la materia prima, productos y materiales de empaque.</value>
+  </data>
+  <data name="label52.Text" xml:space="preserve">
+    <value>Los materiales de empaque y envases de materias primas no deben utilizarse para fines diferentes a los destinados originalmente a menos que se eliminen etiquetas, leyendas y se habiliten para el nuevo uso en forma correcta.</value>
+  </data>
+  <data name="label70.Text" xml:space="preserve">
+    <value>No se debe permitir la presencia de mascotas, animales domésticos y de corral dentro de las áreas de elaboración de los productos; a menos que se utilicen en el proceso de producción y que antes de su uso sean aseados y equipados para su labor.</value>
+  </data>
+  <data name="label69.Text" xml:space="preserve">
+    <value>Los agentes de limpieza y desinfección para los equipos y utensilios deben utilizarse de acuerdo a las instrucciones del fabricante o procedimientos que garanticen su efectividad evitando que entre en contacto directo con el mezcal o agua de dilución.</value>
+  </data>
+  <data name="label93.Text" xml:space="preserve">
+    <value>El personal debe presentarse aseado en el área de trabajo, con ropa y calzado limpio, cabellos corto o recogido, uñas recortadas, sin esmalte, sin accesorios. Prescindir de objetos desprendibles en bolsillos superiores de vestimenta. En visitantes y personal deben usar cubre pelo, cubre bocas y ropa protectora. (Preferente)</value>
+  </data>
+  <data name="label89.Text" xml:space="preserve">
+    <value>Todo personal con las manos sucias y contaminadas debe lavarse antes de entrar a las áreas de producción y envasado. El lavado de manos debe ser con jabón o detergente, frotarse vigorosamente hasta los codos, enjuagarse con agua limpia y cuidando que no queden residuos de jabón o detergente y por último secarse con toallas desechables o secadores. (Preferente)</value>
+  </data>
+  <data name="label82.Text" xml:space="preserve">
+    <value>Debe excluirse de cualquier operación a persona que presente signos como tos frecuente, vómito, diarrea, secreción nasal, fiebre, ictericia o lesiones en áreas corporales que entren en contacto directo con el producto.</value>
+  </data>
+</root>

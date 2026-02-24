@@ -681,7 +681,9 @@ namespace Crm.Inventario
                         no_cliente = no_cliente.Substring(0, 5);
 
                         string cve_marca = CmbMarca.SelectedValue.ToString();
-                        cve_marca = cve_marca.Substring(6, 1);
+                        int lenght = cve_marca.Length;
+                        int mark = lenght == 7 ? 1 : 2;
+                        cve_marca = cve_marca.Substring(6, mark);
                         if (ConexionMysql.insUpd_transaccion("INSERT INTO  envasado_holograma(id_envasado_holograma, id_envasado_entrada,holograma_inicio, holograma_fin, id_verificador, actualizado) VALUES( '" + id_max_hologramas + "','" + id_max_envasado_entrada + "','" + TxtHologramaInicio.Text + "' , '" + TxtHologramaFin.Text + "'," + Usuario.IdUsuario + ",0)") == "Error")
                         {
                             return;
@@ -698,8 +700,10 @@ namespace Crm.Inventario
                             no_cliente = no_cliente.Substring(0, 5);
 
                             string cve_marca = CmbMarca.SelectedValue.ToString();
-                            cve_marca = cve_marca.Substring(6, 1);
-
+                            int lenght = cve_marca.Length;
+                            int mark = lenght == 7 ? 1 : 2;
+                            cve_marca = cve_marca.Substring(6, mark);
+                            
                             if (ConexionMysql.insUpd_transaccion("INSERT INTO  envasado_holograma(id_envasado_holograma, id_envasado_entrada,no_cliente,cve_marca, holograma_inicio, holograma_fin,serie, id_verificador, actualizado) VALUES( '" + id_max_hologramas + "','" + id_max_envasado_entrada + "','" + no_cliente + "','" + cve_marca + "','" + DtaHologramas.Rows[x].Cells["INICIO"].Value + "' , '" + DtaHologramas.Rows[x].Cells["FIN"].Value + "','" + DtaHologramas.Rows[x].Cells["SERIE"].Value + "'," + Usuario.IdUsuario + ",0)") == "Error")
                             {
                                 return;
@@ -757,7 +761,10 @@ namespace Crm.Inventario
                         no_cliente = no_cliente.Substring(0, 5);
 
                         string cve_marca = CmbMarca.SelectedValue.ToString();
-                        cve_marca = cve_marca.Substring(6, 1);
+                        int lenght = cve_marca.Length;
+                        int mark = lenght == 7 ? 1 : 2;
+                        cve_marca = cve_marca.Substring(6, mark);
+                        //cve_marca = cve_marca.Substring(6, 1);
                         if (ConexionMysql.insUpd_transaccion("INSERT INTO  almacen_envasado_holograma(id_almacen_envasado_holograma, id_almacen_envasado_entrada,holograma_inicio, holograma_fin, id_verificador, actualizado) VALUES( '" + id_max_almacen_hologramas + "','" + id_max_almacen_envasado_entrada + "','" + TxtHologramaInicio.Text + "' , '" + TxtHologramaFin.Text + "'," + Usuario.IdUsuario + ",0)") == "Error")
                         {
                             return;
@@ -774,7 +781,10 @@ namespace Crm.Inventario
                             no_cliente = no_cliente.Substring(0, 5);
 
                             string cve_marca = CmbMarca.SelectedValue.ToString();
-                            cve_marca = cve_marca.Substring(6, 1);
+                            int lenght = cve_marca.Length;
+                            int mark = lenght == 7 ? 1 : 2;
+                            cve_marca = cve_marca.Substring(6, mark);
+                            //cve_marca = cve_marca.Substring(6, 1);
 
                             if (ConexionMysql.insUpd_transaccion("INSERT INTO  almacen_envasado_holograma(id_almacen_envasado_holograma, id_almacen_envasado_entrada,no_cliente,cve_marca, holograma_inicio, holograma_fin,serie, id_verificador, actualizado) VALUES( '" + id_max_almacen_hologramas + "','" + id_max_almacen_envasado_entrada + "','" + no_cliente + "','" + cve_marca + "','" + DtaHologramas.Rows[x].Cells["INICIO"].Value + "' , '" + DtaHologramas.Rows[x].Cells["FIN"].Value + "','" + DtaHologramas.Rows[x].Cells["SERIE"].Value + "'," + Usuario.IdUsuario + ",0)") == "Error")
                             {
@@ -876,16 +886,19 @@ namespace Crm.Inventario
                 no_cliente = no_cliente.Substring(0, 5);
 
                 string cve_marca = CmbMarca.SelectedValue.ToString();
-                cve_marca = cve_marca.Substring(6, 1);
+                int lenght = cve_marca.Length;
+                int mark = lenght == 7 ? 1 : 2;
+                cve_marca = cve_marca.Substring(6, mark);
+                //cve_marca = cve_marca.Substring(6, 1);
 
                 DataSet Datos = new DataSet();
 
                 ///// --- BUSCA SI EXISTE  OLOGRAMAS OCUPADOS DE ESA MARCA EN ENVASASO HOLOGRAMAS 
                 //if (tipo_instalacion == "envasadora")
                 // {
-
-                ConexionMysql.llenaDataset(ref Datos, "select eh.holograma_inicio,eh.holograma_fin, ee.no_lote, em.marca,ee.contenido_por_botella,ee.unidad_medida from envasado_holograma eh inner join envasado_entrada ee on eh.id_envasado_entrada = ee.id_envasado_entrada inner join marcas em on  SUBSTRING(ee.id_marca,1,5) = em.no_cliente and  SUBSTRING(ee.id_marca,7,1)=em.cve_marca  where eh.no_cliente='" + no_cliente + "' and eh.cve_marca='" + cve_marca + "' and eh.serie='" + TxtSerie.Text.ToUpper() + "'");
-
+                
+                ConexionMysql.llenaDataset(ref Datos, "select eh.holograma_inicio,eh.holograma_fin, ee.no_lote, em.marca,ee.contenido_por_botella,ee.unidad_medida from envasado_holograma eh inner join envasado_entrada ee on eh.id_envasado_entrada = ee.id_envasado_entrada inner join marcas em on  SUBSTRING(ee.id_marca,1,5) = em.no_cliente and  SUBSTRING(ee.id_marca,7,2)=em.cve_marca  where eh.no_cliente='" + no_cliente + "' and eh.cve_marca='" + cve_marca + "' and eh.serie='" + TxtSerie.Text.ToUpper() + "'");
+                //MessageBox.Show("select eh.holograma_inicio,eh.holograma_fin, ee.no_lote, em.marca,ee.contenido_por_botella,ee.unidad_medida from envasado_holograma eh inner join envasado_entrada ee on eh.id_envasado_entrada = ee.id_envasado_entrada inner join marcas em on  SUBSTRING(ee.id_marca,1,5) = em.no_cliente and  SUBSTRING(ee.id_marca,7,2)=em.cve_marca  where eh.no_cliente='" + no_cliente + "' and eh.cve_marca='" + cve_marca + "' and eh.serie='" + TxtSerie.Text.ToUpper() + "'");
                 /* }
                  else if (tipo_instalacion == "almacen_envasado")
                  {
@@ -897,11 +910,8 @@ namespace Crm.Inventario
 
 
 
-
                 foreach (DataRow row in Datos.Tables[0].Rows)
                 {
-
-
 
                     holograma_inicio = Convert.ToInt32(row["holograma_inicio"]);
                     holograma_fin = Convert.ToInt32(row["holograma_fin"]);
@@ -937,8 +947,8 @@ namespace Crm.Inventario
 
                 DataSet Datos3 = new DataSet();
 
-                ConexionMysql.llenaDataset(ref Datos3, "select aeh.holograma_inicio,aeh.holograma_fin, aee.no_lote, em.marca,aee.contenido_por_botella,aee.unidad_medida from almacen_envasado_holograma aeh inner join almacen_envasado_entrada aee on aeh.id_almacen_envasado_entrada = aee.id_almacen_envasado_entrada inner join marcas em on  SUBSTRING(aee.id_marca,1,5) = em.no_cliente and  SUBSTRING(aee.id_marca,7,1)=em.cve_marca  where aeh.no_cliente='" + no_cliente + "' and aeh.cve_marca='" + cve_marca + "' and aeh.serie='" + TxtSerie.Text.ToUpper() + "'");
-
+                ConexionMysql.llenaDataset(ref Datos3, "select aeh.holograma_inicio,aeh.holograma_fin, aee.no_lote, em.marca,aee.contenido_por_botella,aee.unidad_medida from almacen_envasado_holograma aeh inner join almacen_envasado_entrada aee on aeh.id_almacen_envasado_entrada = aee.id_almacen_envasado_entrada inner join marcas em on  SUBSTRING(aee.id_marca,1,5) = em.no_cliente and aeh.cve_marca=em.cve_marca  where aeh.no_cliente='" + no_cliente + "' and aeh.cve_marca='" + cve_marca + "' and aeh.serie='" + TxtSerie.Text.ToUpper() + "'");
+                //MessageBox.Show("3");
 
 
                 foreach (DataRow row in Datos3.Tables[0].Rows)

@@ -528,3 +528,244 @@ C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.csproj.Cor
 C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\Crm.csproj.CopyComplete
 C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\SInCa.exe
 C:\Users\Administrador\Documents\SInCa\2.4.2Crm\Crm\Crm\obj\Debug\SInCa.pdb
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\bin\Debug\SInCa.exe.config
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\bin\Debug\SInCa.exe
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\bin\Debug\SInCa.pdb
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\bin\Debug\MaterialSkin.dll
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.csproj.AssemblyReference.cache
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Administrador.FrmAdministrador.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Bitacora.Bitacora.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Consultas.FrmConsultasNuevas.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Consultas.FrmConsultas.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.ExtraccionAgave.FrmExtraccionAgave.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.FrmInicio.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inicio.FrmPrincipal.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.DatoMagueyGuiaAntigua.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.DatosPredioAntiguo.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.Dialogs.MsgBxGranelenvasado.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.editaFechas.FrmEditaFechas.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.editar.FrmCambioNombre.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.editar.FrmCambioTanques.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.editar.FrmEditar_Produccion.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmAgaveSobrante.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmClienteMaquila.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmCompletarTapda.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmEditarTanques.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmEnsamblePredio.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmExtraccionAgaveDos.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmGranelNuevo.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMensajes.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimienEnvasado.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimienEnvasadoNoTerminado.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientoEnvasadoSalio.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosBarrica.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosGranel.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosVidrio.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNewMaestroMezcalero.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNoFolioGranel.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoAlmacen.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevaEnvasadora.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoArt.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoEnvasado.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoMaestroFabrica.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmRendimientoTapada.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarDestilacion.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmInventario.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarCoccion.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarFormulacion.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarMolienda.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.FrmTransaccion.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.mermasHologramas.frmMermasHologramas.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Inventario.Obsevaciones.Observaciones.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Mensajes.FrmNuevoMensaje.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.PlanDeTrabajo.FrmPlanDeTrabajo.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Properties.Resources.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.Subida.FrmSubida.resources
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.csproj.GenerateResource.cache
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\Crm.csproj.CopyComplete
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\SInCa.exe
+C:\Users\Admin\Documents\2.4.2Crm\Crm\Crm\obj\Debug\SInCa.pdb
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\bin\Debug\SInCa.exe.config
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\bin\Debug\SInCa.exe
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\bin\Debug\SInCa.pdb
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\bin\Debug\MaterialSkin.dll
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.csproj.AssemblyReference.cache
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Administrador.FrmAdministrador.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Bitacora.Bitacora.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Consultas.FrmConsultasNuevas.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Consultas.FrmConsultas.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.ExtraccionAgave.FrmExtraccionAgave.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.FrmInicio.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Inicio.FrmPrincipal.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Inventario.DatoMagueyGuiaAntigua.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Inventario.DatosPredioAntiguo.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Inventario.Dialogs.MsgBxGranelenvasado.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Inventario.editaFechas.FrmEditaFechas.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Inventario.editar.FrmCambioNombre.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Inventario.editar.FrmCambioTanques.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Inventario.editar.FrmEditar_Produccion.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Inventario.FrmAgaveSobrante.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Inventario.FrmClienteMaquila.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Inventario.FrmCompletarTapda.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Inventario.FrmEditarTanques.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Inventario.FrmEnsamblePredio.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Inventario.FrmExtraccionAgaveDos.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Inventario.FrmGranelNuevo.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Inventario.FrmMensajes.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimienEnvasado.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimienEnvasadoNoTerminado.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientoEnvasadoSalio.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosBarrica.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosGranel.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosVidrio.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Inventario.FrmNewMaestroMezcalero.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Inventario.FrmNoFolioGranel.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoAlmacen.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevaEnvasadora.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoArt.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoEnvasado.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoMaestroFabrica.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Inventario.FrmRendimientoTapada.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarDestilacion.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Inventario.FrmInventario.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarCoccion.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarFormulacion.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarMolienda.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Inventario.FrmTransaccion.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Inventario.mermasHologramas.frmMermasHologramas.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Inventario.Obsevaciones.Observaciones.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Mensajes.FrmNuevoMensaje.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.PlanDeTrabajo.FrmPlanDeTrabajo.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Properties.Resources.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.Subida.FrmSubida.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.csproj.GenerateResource.cache
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\Crm.csproj.CopyComplete
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\SInCa.exe
+C:\Users\Admin\Documents\2.4.2Crm_MALO\Crm\Crm\obj\Debug\SInCa.pdb
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\bin\Debug\SInCa.exe.config
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\bin\Debug\SInCa.exe
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\bin\Debug\SInCa.pdb
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\bin\Debug\MaterialSkin.dll
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.csproj.AssemblyReference.cache
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Administrador.FrmAdministrador.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Bitacora.Bitacora.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Consultas.FrmConsultasNuevas.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Consultas.FrmConsultas.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.ExtraccionAgave.FrmExtraccionAgave.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.FrmInicio.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Inicio.FrmPrincipal.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Inventario.DatoMagueyGuiaAntigua.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Inventario.DatosPredioAntiguo.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Inventario.Dialogs.MsgBxGranelenvasado.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Inventario.editaFechas.FrmEditaFechas.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Inventario.editar.FrmCambioNombre.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Inventario.editar.FrmCambioTanques.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Inventario.editar.FrmEditar_Produccion.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Inventario.FrmAgaveSobrante.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Inventario.FrmClienteMaquila.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Inventario.FrmCompletarTapda.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Inventario.FrmEditarTanques.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Inventario.FrmEnsamblePredio.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Inventario.FrmExtraccionAgaveDos.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Inventario.FrmGranelNuevo.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Inventario.FrmMensajes.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimienEnvasado.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimienEnvasadoNoTerminado.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientoEnvasadoSalio.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosBarrica.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosGranel.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosVidrio.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Inventario.FrmNewMaestroMezcalero.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Inventario.FrmNoFolioGranel.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoAlmacen.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevaEnvasadora.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoArt.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoEnvasado.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoMaestroFabrica.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Inventario.FrmRendimientoTapada.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarDestilacion.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Inventario.FrmInventario.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarCoccion.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarFormulacion.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarMolienda.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Inventario.FrmTransaccion.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Inventario.mermasHologramas.frmMermasHologramas.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Inventario.Obsevaciones.Observaciones.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Mensajes.FrmNuevoMensaje.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.PlanDeTrabajo.FrmPlanDeTrabajo.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Properties.Resources.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.Subida.FrmSubida.resources
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.csproj.GenerateResource.cache
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\Crm.csproj.CopyComplete
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\SInCa.exe
+C:\Users\Admin\Documents\2.4.2Crm_MALOQUESIESBUENO\Crm\Crm\obj\Debug\SInCa.pdb
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.csproj.AssemblyReference.cache
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Administrador.FrmAdministrador.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Bitacora.Bitacora.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Consultas.FrmConsultasNuevas.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Consultas.FrmConsultas.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.ExtraccionAgave.FrmExtraccionAgave.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.FrmInicio.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inicio.FrmPrincipal.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.DatoMagueyGuiaAntigua.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.DatosPredioAntiguo.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.Dialogs.MsgBxGranelenvasado.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.editaFechas.FrmEditaFechas.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.editar.FrmCambioNombre.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.editar.FrmCambioTanques.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.editar.FrmEditar_Produccion.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.FrmActaDetallada.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.FrmAgaveSobrante.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.FrmAgregarImagen.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.FrmBuenasPracticas.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.FrmCierreActaDetallado.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.FrmClienteMaquila.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.FrmCompletarTapda.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.FrmDictamen.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.FrmEditarInstalacion.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.FrmEditarTanques.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.FrmEnsamblePredio.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.FrmExtraccionAgaveDos.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.FrmGranelNuevo.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.FrmInstalaciones.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.FrmListaInstalaciones.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.FrmMensajes.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimienEnvasado.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimienEnvasadoNoTerminado.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientoEnvasadoSalio.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosBarrica.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosGranel.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.FrmMovimientosVidrio.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.FrmNewMaestroMezcalero.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.FrmNoFolioGranel.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoAlmacen.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevaEnvasadora.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoArt.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoEnvasado.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.FrmNuevoMaestroFabrica.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.FrmRendimientoTapada.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarDestilacion.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.FrmInventario.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarCoccion.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarFormulacion.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.FrmTerminarMolienda.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.FrmTransaccion.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.mermasHologramas.frmMermasHologramas.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Inventario.Obsevaciones.Observaciones.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Mensajes.FrmNuevoMensaje.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.PlanDeTrabajo.FrmPlanDeTrabajo.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Properties.Resources.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.Subida.FrmSubida.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.csproj.GenerateResource.cache
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.csproj.CoreCompileInputs.cache
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\SInCa.exe
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\SInCa.pdb
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.FrmSolicitudes_instalacion.resources
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\bin\Debug\SInCa.exe.config
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\bin\Debug\SInCa.exe
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\bin\Debug\SInCa.pdb
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\bin\Debug\MaterialSkin.dll
+C:\Users\Administrador\Desktop\sinca definitivo\Crm\Crm\obj\Debug\Crm.csproj.Up2Date

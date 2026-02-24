@@ -2042,24 +2042,24 @@ namespace Crm.Inventario
                 else
                 {
 
-                ObtenerIdMaximoGuiasDesconocidas();
-                string id_comun_crm = cmbEspecieMaguey.SelectedValue.ToString();
-                string tipo_tapadacrm = ConexionMysql.regresaCampoConsulta("SELECT tipo FROM  produccion_entrada  WHERE id_produccion_entrada='" + id_produccion + "' ");
-                if (tipo_tapadacrm == "1")
-                {
-                    // id_comun='" + id_comun_crm + "',
-                    if (ConexionMysql.insUpd_transaccion("UPDATE  produccion_entrada SET id_comun='" + id_comun_crm + "', gcrm='1',no_guia='0',actualizado=0 WHERE id_produccion_entrada='" + id_produccion + "'") == "Error")
+                    ObtenerIdMaximoGuiasDesconocidas();
+                    string id_comun_crm = cmbEspecieMaguey.SelectedValue.ToString();
+                    string tipo_tapadacrm = ConexionMysql.regresaCampoConsulta("SELECT tipo FROM  produccion_entrada  WHERE id_produccion_entrada='" + id_produccion + "' ");
+                    if (tipo_tapadacrm == "1")
                     {
-                        return;
-                    }
+                        // id_comun='" + id_comun_crm + "',
+                        if (ConexionMysql.insUpd_transaccion("UPDATE  produccion_entrada SET id_comun='" + id_comun_crm + "', gcrm='1',no_guia='0',actualizado=0 WHERE id_produccion_entrada='" + id_produccion + "'") == "Error")
+                        {
+                            return;
+                        }
 
-                    if (ConexionMysql.insUpd_transaccion("INSERT INTO  guias_desconocidas (id_guia_desconocida,id_produccion_entrada,no_guia,predio,fecha_ingreso, verificador_id, actualizado) VALUES( '" + id_max_guias_desconocidas + "','" + id_produccion + "','" + TxtNoGuia.Text.ToString() + "','" + txtPredioCrm.Text.ToString() + "', NOW(), '" + Usuario.IdUsuario + "',0)") == "Error")
-                    {
-                        return;
-                    }
+                        if (ConexionMysql.insUpd_transaccion("INSERT INTO  guias_desconocidas (id_guia_desconocida,id_produccion_entrada,no_guia,predio,fecha_ingreso, verificador_id, actualizado) VALUES( '" + id_max_guias_desconocidas + "','" + id_produccion + "','" + TxtNoGuia.Text.ToString() + "','" + txtPredioCrm.Text.ToString() + "', NOW(), '" + Usuario.IdUsuario + "',0)") == "Error")
+                        {
+                            return;
+                        }
 
 
-                }// fin del if tipo de tapada crm
+                    }// fin del if tipo de tapada crm
                 }
                 ConexionMysql.transCompleta();
                 MessageBox.Show("Éxito");

@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Crm.Utilerias;
 using Crm.Inventario.Dialogs;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using ComboBox = System.Windows.Forms.ComboBox;
 
 namespace Crm.Inventario
 {
@@ -28,6 +30,8 @@ namespace Crm.Inventario
         string predio_sobrante = "";
         string porcen_art_sobrante = "";
         string planta_sobrante = "";
+        string seleccionTipoMaguey = "";
+        string no_predio = "";
 
         string no_guia = "";
         Validacion valida = new Validacion();
@@ -192,6 +196,23 @@ namespace Crm.Inventario
                     CmbFabrica.SelectedValue = Usuario.FabricaSeleccionada;
                 }
 
+                CmbTipoMaguey.Items.Insert(0, "Ingresar Guía AMMA y Antigua");
+                CmbTipoMaguey.Items.Insert(1, "Ingresar Guía Externa");
+                CmbTipoMaguey.Items.Insert(2, "Maguey Comprado");
+                CmbTipoMaguey.Items.Insert(3, "Maguey Sobrante");
+                //CmbTipoMaguey.Items.Insert(3, "Guía Externa");
+                //ConexionMysql.llenaComboAutocomplit(ref CmbTipoMaguey, "SELECT clave, nombre FROM estados WHERE dom = '1' ", "clave", "nombre");
+                AplicarEstilosGroupBox();
+                MejorarDataGridView();
+                MejorarBotones();
+                ConfigurarValidacionesVisuales();
+                InicializarToolTips();
+
+                TxtNoGuia.Enabled = false;
+                TxtNoPredio.Enabled = false;
+                CmbNoPredio.Enabled = false;
+                CmbMaguey.Enabled = false;
+                TxtExtraccion.Enabled = false;
             }
             catch (Exception ex)
             {
@@ -212,7 +233,7 @@ namespace Crm.Inventario
                 }
                 else
                 {
-                    ConexionMysql.llenaCombo(ref CmbMaguey, "SELECT existenciaplanta.id_plantas,CONCAT(comun.nombre, '  ', existenciaplanta.edad,'  años (', especie.genespecie,')' ) as Maguey      FROM  existenciaplanta INNER JOIN comun  ON existenciaplanta.id_comun=comun.id_comun INNER JOIN especie on comun.id_especie=especie.id_especie WHERE   existenciaplanta.id_paraje='" + CmbNoPredio.SelectedValue + "' AND edad>=5 and existenciaplanta.existenciaplantas > 0", "id_plantas", "Maguey");
+                    ConexionMysql.llenaCombo(ref CmbMaguey, "SELECT existenciaplanta.id_plantas,CONCAT(comun.nombre, '  ', existenciaplanta.edad,'  años (', especie.genespecie,')' ) as Maguey, existenciaplanta.paraje_id paraje_id FROM  existenciaplanta INNER JOIN comun  ON existenciaplanta.id_comun=comun.id_comun INNER JOIN especie on comun.id_especie=especie.id_especie WHERE   existenciaplanta.id_paraje='" + CmbNoPredio.SelectedValue + "' AND edad>=5 and existenciaplanta.existenciaplantas > 0", "id_plantas", "Maguey");
                 }
             }
             catch (Exception ex)
@@ -231,42 +252,66 @@ namespace Crm.Inventario
                 TxtExtraccion.Text = "";
                 if (CmbMaguey.DataSource != null)
                 {
-                    if (ChekMagueyComprado.Checked == true)
-                    {
-                        if (chkGuiaAntigua.Checked == true)
-                        {
-                            string clienteCrm = ConexionMysql.regresaCampoConsulta("SELECT cliente_antiguo FROM clientes WHERE no_cliente ='" + no_cliente + "'");
-                            TxtExistencia.Text = ConexionMysql.regresaCampoConsulta("SELECT existenciaplantas FROM  reveca2_existenciaplanta_comprada  WHERE id_existenciaplanta_comprada='" + CmbMaguey.SelectedValue + "' and no_cliente='" + clienteCrm + "'");
-                            //no_guia = ConexionMysql.regresaCampoConsulta("SELECT no_guia FROM  existenciaplanta_comprada  WHERE id_existenciaplanta_comprada='" + CmbMaguey.SelectedValue + "' and no_cliente='" + no_cliente + "'");
-                            no_guia = ConexionMysql.regresaCampoConsulta("SELECT no_guia FROM  reveca2_existenciaplanta_comprada  WHERE id_existenciaplanta_comprada='" + CmbMaguey.SelectedValue + "' and no_cliente='" + clienteCrm + "'");
 
-                        //-- id_predio_comprado = ConexionMysql.regresaCampoConsulta("SELECT id_paraje FROM  existenciaplanta  WHERE id_plantas=" + CmbMaguey.SelectedValue + "");
-                        id_predio_comprado = ConexionMysql.regresaCampoConsulta("SELECT id_paraje FROM  reveca2_existenciaplanta inner join reveca2_existenciaplanta_comprada on reveca2_existenciaplanta_comprada.id_planta=reveca2_existenciaplanta.id_plantas WHERE reveca2_existenciaplanta_comprada.id_existenciaplanta_comprada='" + CmbMaguey.SelectedValue + "'");
-                        predio_comprado = ConexionMysql.regresaCampoConsulta("SELECT paraje FROM  reveca2_paraje  WHERE id_paraje='" + id_predio_comprado + "'");
-                        }
-                        else
-                        {
-                            TxtExistencia.Text = ConexionMysql.regresaCampoConsulta("SELECT existenciaplantas FROM  existenciaplanta_comprada  WHERE id_existenciaplanta_comprada='" + CmbMaguey.SelectedValue + "' and no_cliente='" + no_cliente + "'");
-                            no_guia = ConexionMysql.regresaCampoConsulta("SELECT no_guia FROM  existenciaplanta_comprada  WHERE id_existenciaplanta_comprada='" + CmbMaguey.SelectedValue + "' and no_cliente='" + no_cliente + "'");
-                            id_predio_comprado = ConexionMysql.regresaCampoConsulta("SELECT id_paraje FROM  existenciaplanta inner join existenciaplanta_comprada on existenciaplanta_comprada.id_planta=existenciaplanta.id_plantas WHERE existenciaplanta_comprada.id_existenciaplanta_comprada='" + CmbMaguey.SelectedValue + "'");
-                            predio_comprado = ConexionMysql.regresaCampoConsulta("SELECT paraje FROM  paraje  WHERE id_paraje='" + id_predio_comprado + "'");
-                        }
+
+                    
+                    Console.WriteLine("seleccionCMbMaguey:" + "Selected item: " + CmbMaguey.SelectedIndex.ToString());
+
+                    DataTable miTabla = (DataTable)CmbMaguey.DataSource;
+                    if (miTabla != null && miTabla.Rows.Count > 0)
+                    {
+                        // La tabla tiene datos
+                        Console.WriteLine("La tabla contiene " + miTabla.Rows.Count + " filas.");
                     }
                     else
                     {
+                        // La tabla está vacía o es nula
+                        Console.WriteLine("La tabla está vacía o es nula.");
+                    }
+                    /*foreach (DataRow fila in miTabla.Rows)
+                    {
+                        Console.WriteLine("fila:"+fila.ToString());
+                        // Accede a las celdas de la fila como lo harías normalmente
+                        // Por ejemplo, si tienes una columna llamada "Nombre"
+                        //string id_plantas = fila["id_plantas"].ToString();
+                        /*string nombre = fila["Maguey"].ToString();
+                        string id_paraje = fila["id_paraje"].ToString();
+                        Console.WriteLine("Valor Seleccionado:"+CmbMaguey.SelectedValue);
+                        Console.WriteLine(id_paraje);
+                    }*/
+
+                    object valorSeleccionado = CmbTipoMaguey.SelectedItem;
+                    string valor = valorSeleccionado.ToString();
+                    if (valor == "Maguey Comprado" || valor == "Maguey Sobrante")
+                    {
+                        TxtExistencia.Text = ConexionMysql.regresaCampoConsulta("SELECT existenciaplantas FROM  reveca2_existenciaplanta_comprada  WHERE id_existenciaplanta_comprada='" + CmbMaguey.SelectedValue + "' and no_cliente IN (SELECT cliente_antiguo FROM clientes WHERE no_cliente ='" + no_cliente + "') UNION " +
+                                                                                " SELECT existenciaplantas FROM  existenciaplanta_comprada  WHERE id_existenciaplanta_comprada='" + CmbMaguey.SelectedValue + "' and no_cliente='" + no_cliente + "'");
+                        no_guia = ConexionMysql.regresaCampoConsulta("SELECT no_guia FROM  reveca2_existenciaplanta_comprada  WHERE id_existenciaplanta_comprada='" + CmbMaguey.SelectedValue + "' and no_cliente IN (SELECT cliente_antiguo FROM clientes WHERE no_cliente ='" + no_cliente + "') UNION " +
+                                                                     " SELECT no_guia FROM  existenciaplanta_comprada  WHERE id_existenciaplanta_comprada='" + CmbMaguey.SelectedValue + "' and no_cliente='" + no_cliente + "'");
+                        id_predio_comprado = ConexionMysql.regresaCampoConsulta("SELECT id_paraje FROM  reveca2_existenciaplanta inner join reveca2_existenciaplanta_comprada on reveca2_existenciaplanta_comprada.id_planta=reveca2_existenciaplanta.id_plantas WHERE reveca2_existenciaplanta_comprada.id_existenciaplanta_comprada='" + CmbMaguey.SelectedValue + "' UNION " +
+                                                                                " SELECT id_paraje FROM  existenciaplanta inner join existenciaplanta_comprada on existenciaplanta_comprada.id_planta=existenciaplanta.id_plantas WHERE existenciaplanta_comprada.id_existenciaplanta_comprada='" + CmbMaguey.SelectedValue + "'");
+                        predio_comprado = ConexionMysql.regresaCampoConsulta("SELECT paraje FROM  paraje  WHERE id_paraje='" + id_predio_comprado + "' UNION" +
+                                                                                            " SELECT paraje FROM  reveca2_paraje  WHERE id_paraje='" + id_predio_comprado + "'");
+                    }
+                    else if (valor != "Ingresar Guía Externa")
+                    {
+                        Console.WriteLine("DOnde no sea guía externa");
                         if (TxtNoGuia.Text.Substring(0, 1) == "g" || TxtNoGuia.Text.Substring(0, 1) == "G")
-                        { 
-                        TxtExistencia.Text = ConexionMysql.regresaCampoConsulta("SELECT existenciaplantas FROM  existenciaplanta  WHERE id_plantas=" + CmbMaguey.SelectedValue + "");
-                        id_predio_comprado = "";
-                        predio_comprado = "";
+                        {
+                            Console.WriteLine("DOnde no sea guía externa con G");
+                            TxtExistencia.Text = ConexionMysql.regresaCampoConsulta("SELECT existenciaplantas FROM  existenciaplanta  WHERE id_plantas=" + CmbMaguey.SelectedValue + "");
+                            id_predio_comprado = "";
+                            predio_comprado = "";
                         }
                         else
                         {
+                            Console.WriteLine("DOnde no sea guía externa sin G");
                             TxtExistencia.Text = ConexionMysql.regresaCampoConsulta("SELECT existenciaplantas FROM  reveca2_existenciaplanta  WHERE id_plantas=" + CmbMaguey.SelectedValue + "");
                             id_predio_comprado = "";
                             predio_comprado = "";
                         }
                     }
+                    TxtExtraccion.Enabled = true;
                 }
             }
             catch (Exception ex)
@@ -280,224 +325,257 @@ namespace Crm.Inventario
         {
             try
             {
-                if (ChekAgaveSobrante.Checked == true)
+                object valorSeleccionado = CmbTipoMaguey.SelectedItem;
+                if (valorSeleccionado != null)
                 {
-                    if (TxtAgaveEntranteKg.Text == "")
-                    {
-                        MessageBox.Show("No ha introduccido Kg de agave entrante");
-                        return;
-                    }
-                    if (TxtAgaveCoccion.Text == "")
-                    {
-                        MessageBox.Show("No ha introduccido Kg de agave a cocción");
-                        return;
-                    }
-                    if (TxtAgaveEntranteKg.Text == ".")
-                    {
-                        MessageBox.Show("Introduce un valor de agave entrante(KG) real");
-                        return;
-                    }
-                    if (TxtAgaveCoccion.Text == ".")
-                    {
-                        MessageBox.Show("Introduce un valor de agave a cocción(KG) real");
-                        return;
-                    }
-                    double entrada = Math.Round(double.Parse(TxtAgaveEntranteKg.Text), 2);
-                    double salida = Math.Round(double.Parse(TxtAgaveCoccion.Text), 2);
-                    if (entrada < salida)
-                    {
-                        MessageBox.Show("Kg de agave insificiente");
-                        return;
-                    }
-                    if (TxtArt.Text == ".")
-                    {
-                        MessageBox.Show("Introduce un valor ART real");
-                        return;
-                    }
-                    if (TxtArt.Text == "")
-                    {
-                        TxtArt.Text = "0";
-                    }
-                }
-                else
-                {
+                    string valor = valorSeleccionado.ToString();
 
-
-                    if (ChekMagueyComprado.Checked == false)
+                    //if (valor == "Maguey Comprado" || valor == "Maguey Sobrante")
+                    //if (ChekAgaveSobrante.Checked == true)
+                    if (valor == "Maguey Sobrante")
                     {
-                        if (TxtNoGuia.Text == "")
+                        if (TxtAgaveEntranteKg.Text == "")
                         {
-
-                            MessageBox.Show("No tiene numero de guia");
-                            return;
-
-                        }
-                    }
-
-                    if (CmbMaguey.SelectedValue != null)
-                    {
-                        if (TxtExistencia.Text == "")
-                        {
-                            MessageBox.Show("No tienes existencia de maguey");
+                            MessageBox.Show("No ha introduccido Kg de agave entrante");
                             return;
                         }
-                        if (TxtExtraccion.Text == "0")
+                        if (TxtAgaveCoccion.Text == "")
                         {
-                            MessageBox.Show("No puede extraer 0 piñas");
+                            MessageBox.Show("No ha introduccido Kg de agave a cocción");
                             return;
                         }
-                        if (TxtExtraccion.Text == "")
+                        if (TxtAgaveEntranteKg.Text == ".")
                         {
-                            MessageBox.Show("No ha introduccido extracción de piñas");
+                            MessageBox.Show("Introduce un valor de agave entrante(KG) real");
                             return;
                         }
-                        int existencia = int.Parse(TxtExistencia.Text);
-                        int extraccion = int.Parse(TxtExtraccion.Text);
-
-                        if (existencia < extraccion)
+                        if (TxtAgaveCoccion.Text == ".")
                         {
-                            MessageBox.Show("Existencia insificiente");
+                            MessageBox.Show("Introduce un valor de agave a cocción(KG) real");
                             return;
                         }
-                    }
-
-                    if (TxtAgaveEntranteKg.Text == "")
-                    {
-                        MessageBox.Show("No ha introduccido Kg de agave entrante");
-                        return;
-                    }
-                    if (TxtAgaveCoccion.Text == "")
-                    {
-                        MessageBox.Show("No ha introduccido Kg de agave a cocción");
-                        return;
-                    }
-                    if (TxtAgaveEntranteKg.Text == ".")
-                    {
-                        MessageBox.Show("Introduce un valor de agave entrante(KG) real");
-                        return;
-                    }
-                    if (TxtAgaveCoccion.Text == ".")
-                    {
-                        MessageBox.Show("Introduce un valor de agave a cocción(KG) real");
-                        return;
-                    }
-                    double entrada = Math.Round(double.Parse(TxtAgaveEntranteKg.Text), 2);
-                    double salida = Math.Round(double.Parse(TxtAgaveCoccion.Text), 2);
-                    if (entrada < salida)
-                    {
-                        MessageBox.Show("Kg de agave insificiente");
-                        return;
-                    }
-                    if (TxtArt.Text == ".")
-                    {
-                        MessageBox.Show("Introduce un valor ART real");
-                        return;
-                    }
-                    if (TxtArt.Text == "")
-                    {
-                        TxtArt.Text = "0";
-                    }
-
-
-                }
-
-
-                DataRow fila = dts.Tables["ENSAMBLE"].NewRow();
-
-                if (ChekMagueyComprado.Checked == true && ChekAgaveSobrante.Checked == false)
-                {
-                    fila["ID_PARAJE"] = id_predio_comprado;
-                    fila["PREDIO"] = predio_comprado;
-                    if (chkGuiaAntigua.Checked == true)
-                    {
-                        fila["ID_PLANTA"] = ConexionMysql.regresaCampoConsulta("SELECT id_planta FROM  reveca2_existenciaplanta_comprada  WHERE id_existenciaplanta_comprada='" + CmbMaguey.SelectedValue + "'");
+                        double entrada = Math.Round(double.Parse(TxtAgaveEntranteKg.Text), 2);
+                        double salida = Math.Round(double.Parse(TxtAgaveCoccion.Text), 2);
+                        if (entrada < salida)
+                        {
+                            MessageBox.Show("Kg de agave insificiente");
+                            return;
+                        }
+                        if (TxtArt.Text == ".")
+                        {
+                            MessageBox.Show("Introduce un valor ART real");
+                            return;
+                        }
+                        if (TxtArt.Text == "")
+                        {
+                            TxtArt.Text = "0";
+                        }
                     }
                     else
                     {
-                        fila["ID_PLANTA"] = ConexionMysql.regresaCampoConsulta("SELECT id_planta FROM  existenciaplanta_comprada  WHERE id_existenciaplanta_comprada='" + CmbMaguey.SelectedValue + "'");
-                    }
-                    
-                    fila["TIPO"] = 3;
-                    fila["MAGUEY"] = CmbMaguey.Text;
 
-                    // fila["NO_GUIA"] = no_guia;
-                    if (chkGuiaAntigua.Checked == true)
-                    {
-                        fila["NO_GUIA"] = ConexionMysql.regresaCampoConsulta("SELECT no_guia FROM  reveca2_existenciaplanta_comprada  WHERE id_existenciaplanta_comprada='" + CmbMaguey.SelectedValue + "'");
+
+                        //if (ChekMagueyComprado.Checked == false)
+                        if (valor != "Maguey Comprado" && valor != "Ingresar Guía Externa")
+                        {
+                            if (TxtNoGuia.Text == "")
+                            {
+
+                                MessageBox.Show("No tiene numero de guia");
+                                return;
+
+                            }
+                        }
+
+                        if (CmbMaguey.SelectedValue != null)
+                        {
+                            if (valor != "Ingresar Guía Externa")
+                            {
+                                if (TxtExistencia.Text == "")
+                                {
+                                    MessageBox.Show("No tienes existencia de maguey");
+                                    return;
+                                }
+                                if (TxtExtraccion.Text == "0")
+                                {
+                                    MessageBox.Show("No puede extraer 0 piñas");
+                                    return;
+                                }
+                                if (TxtExtraccion.Text == "")
+                                {
+                                    MessageBox.Show("No ha introduccido extracción de piñas");
+                                    return;
+                                }
+                                int existencia = int.Parse(TxtExistencia.Text);
+                                int extraccion = int.Parse(TxtExtraccion.Text);
+
+                                if (existencia < extraccion)
+                                {
+                                    MessageBox.Show("Existencia insificiente");
+                                    return;
+                                }
+                            }
+                        }
+
+                        if (TxtAgaveEntranteKg.Text == "")
+                        {
+                            MessageBox.Show("No ha introduccido Kg de agave entrante");
+                            return;
+                        }
+                        if (TxtAgaveCoccion.Text == "")
+                        {
+                            MessageBox.Show("No ha introduccido Kg de agave a cocción");
+                            return;
+                        }
+                        if (TxtAgaveEntranteKg.Text == ".")
+                        {
+                            MessageBox.Show("Introduce un valor de agave entrante(KG) real");
+                            return;
+                        }
+                        if (TxtAgaveCoccion.Text == ".")
+                        {
+                            MessageBox.Show("Introduce un valor de agave a cocción(KG) real");
+                            return;
+                        }
+                        double entrada = Math.Round(double.Parse(TxtAgaveEntranteKg.Text), 2);
+                        double salida = Math.Round(double.Parse(TxtAgaveCoccion.Text), 2);
+                        if (entrada < salida)
+                        {
+                            MessageBox.Show("Kg de agave insificiente");
+                            return;
+                        }
+                        if (TxtArt.Text == ".")
+                        {
+                            MessageBox.Show("Introduce un valor ART real");
+                            return;
+                        }
+                        if (TxtArt.Text == "")
+                        {
+                            TxtArt.Text = "0";
+                        }
+
+
                     }
-                    else { 
-                    fila["NO_GUIA"] = ConexionMysql.regresaCampoConsulta("SELECT no_guia FROM  existenciaplanta_comprada  WHERE id_existenciaplanta_comprada='" + CmbMaguey.SelectedValue + "'");
-                    }
-                    fila["ID_PLANTA_COMPRADA"]= CmbMaguey.SelectedValue;
-                }
-                else if (ChekAgaveSobrante.Checked == true)
-                {
-                    if (id_predio_agave_sobrante == "")
+
+
+                    DataRow fila = dts.Tables["ENSAMBLE"].NewRow();
+
+                    //if (ChekMagueyComprado.Checked == true && ChekAgaveSobrante.Checked == false)
+                    if (valor == "Maguey Comprado")
                     {
+                        fila["ID_PARAJE"] = id_predio_comprado;
+                        fila["PREDIO"] = predio_comprado;
+                        
+                        if (id_predio_comprado.Substring(0, 1) == "P")
+                        {
+                            fila["ID_PLANTA"] = ConexionMysql.regresaCampoConsulta("SELECT id_planta FROM  existenciaplanta_comprada  WHERE id_existenciaplanta_comprada='" + CmbMaguey.SelectedValue + "'");
+                            fila["NO_GUIA"] = ConexionMysql.regresaCampoConsulta("SELECT no_guia FROM  existenciaplanta_comprada  WHERE id_existenciaplanta_comprada='" + CmbMaguey.SelectedValue + "'");
+                        }
+                        else
+                        {
+                            fila["ID_PLANTA"] = ConexionMysql.regresaCampoConsulta("SELECT id_planta FROM  reveca2_existenciaplanta_comprada  WHERE id_existenciaplanta_comprada='" + CmbMaguey.SelectedValue + "'");
+                            fila["NO_GUIA"] = ConexionMysql.regresaCampoConsulta("SELECT no_guia FROM  reveca2_existenciaplanta_comprada  WHERE id_existenciaplanta_comprada='" + CmbMaguey.SelectedValue + "'");
+                        }
+                        fila["TIPO"] = 3; // MAGUEY COMPRADO
+                        fila["MAGUEY"] = CmbMaguey.Text;
+                        fila["ID_PLANTA_COMPRADA"] = CmbMaguey.SelectedValue;
+                    }
+                    else if (valor == "Maguey Sobrante")
+                    {
+                        //else if (ChekAgaveSobrante.Checked == true)
+                        if (id_predio_agave_sobrante == "")
+                        {
+                            fila["ID_PARAJE"] = 0;
+                            fila["PRODUCCION_SALIO"] = id_produccion_entrada_sobrante;
+                        }
+                        else
+                        {
+                            fila["ID_PARAJE"] = id_predio_agave_sobrante;
+                            fila["PRODUCCION_SALIO"] = "";
+                        }
+
+                        fila["PREDIO"] = predio_sobrante;
+                        fila["ID_PLANTA"] = id_plnata_agave_sobrante;
+                        fila["TIPO"] = 4;
+                        fila["MAGUEY"] = planta_sobrante;
+                        fila["NO_GUIA"] = "";
+                    }
+                    else if (valor == "Ingresar Guía Externa")
+                    {
+                        
                         fila["ID_PARAJE"] = 0;
-                        fila["PRODUCCION_SALIO"] = id_produccion_entrada_sobrante;
-                    }
-                    else
-                    {
-                        fila["ID_PARAJE"] = id_predio_agave_sobrante;
                         fila["PRODUCCION_SALIO"] = "";
-                    }
 
-                    fila["PREDIO"] = predio_sobrante;
-                    fila["ID_PLANTA"] = id_plnata_agave_sobrante;
-                    fila["TIPO"] = 4;
-                    fila["MAGUEY"] = planta_sobrante;
-                    fila["NO_GUIA"] = "";
-                }
-                else
-                {
-
-
-                    fila["NO_GUIA"] = TxtNoGuia.Text;
-
-                    fila["ID_PARAJE"] = TxtNoPredio.Text;
-
-                    fila["PREDIO"] = TxtPredio.Text;
-                    if (CmbMaguey.SelectedValue == null)
-                    {
+                        //fila["PREDIO"] = predio_sobrante;
+                        fila["PREDIO"] = TxtPredio.Text;
+                        //fila["ID_PLANTA"] = id_plnata_agave_sobrante;
                         fila["ID_PLANTA"] = 0;
+                        fila["TIPO"] = 4;
+                        fila["MAGUEY"] = CmbMaguey.Text;
+                        fila["ID_PLANTA_COMPRADA"] = CmbMaguey.SelectedValue;
+                        fila["NO_GUIA"] = TxtNoGuia.Text;
                     }
                     else
                     {
-                        fila["ID_PLANTA"] = CmbMaguey.SelectedValue;
+
+
+                        fila["NO_GUIA"] = TxtNoGuia.Text;
+
+                        fila["ID_PARAJE"] = TxtNoPredio.Text;
+
+                        fila["PREDIO"] = TxtPredio.Text;
+                        if (CmbMaguey.SelectedValue == null)
+                        {
+                            fila["ID_PLANTA"] = 0;
+                        }
+                        else
+                        {
+                            fila["ID_PLANTA"] = CmbMaguey.SelectedValue;
+                        }
+
+                        fila["TIPO"] = 1;
+                        fila["MAGUEY"] = CmbMaguey.Text;
+
                     }
+                    fila["ID_AGAVE_SOBRANTE"] = id_agave_sobrante;
+                    fila["%_ART"] = TxtArt.Text;
+                    fila["NUMERO_PIÑA"] = TxtExtraccion.Text;
+                    fila["MAGUEY_ENTRANTE"] = TxtAgaveEntranteKg.Text;
+                    fila["MAGUEY_COCCION"] = TxtAgaveCoccion.Text;
 
-                    fila["TIPO"] = 1;
-                    fila["MAGUEY"] = CmbMaguey.Text;
+                    fila["QUITAR"] = ConvertImageToByteArray(Properties.Resources.delete, System.Drawing.Imaging.ImageFormat.Png);
 
-                }
-                fila["ID_AGAVE_SOBRANTE"] = id_agave_sobrante;
-                fila["%_ART"] = TxtArt.Text;
-                fila["NUMERO_PIÑA"] = TxtExtraccion.Text;
-                fila["MAGUEY_ENTRANTE"] = TxtAgaveEntranteKg.Text;
-                fila["MAGUEY_COCCION"] = TxtAgaveCoccion.Text;
-
-                fila["QUITAR"] = ConvertImageToByteArray(Properties.Resources.delete, System.Drawing.Imaging.ImageFormat.Png);
-                dts.Tables["ENSAMBLE"].Rows.Add(fila);
-                CmbMaguey.DataSource = null;
-                PlantasNoMostrar();
-                LimpiarDespuesDeAgregarPlanta();
-
-                string produccion = "";
-                string coma = "";
-                if (ChekMagueyComprado.Checked == true)
-                {
-                    for (int x = 0; x < DtaEnsamble.Rows.Count; x++)
+                    string idParaje = fila["ID_PARAJE"].ToString();
+                    if (idParaje.Substring(0, 1) == "P")
                     {
-                        produccion += coma + "'" + DtaEnsamble.Rows[x].Cells["ID_PLANTA_COMPRADA"].Value + "'";
-                        coma = ",";
+                        fila["REGAMMA"] = "si";
+                    }
+                    else
+                    {
+                        fila["REGAMMA"] = "no";
                     }
 
+                    dts.Tables["ENSAMBLE"].Rows.Add(fila);
+                    CmbMaguey.DataSource = null;
+                    PlantasNoMostrar();
+                    LimpiarDespuesDeAgregarPlanta();
 
-                    ConexionMysql.llenaCombo(ref CmbMaguey, "SELECT existenciaplanta_comprada.id_existenciaplanta_comprada as id_planta,CONCAT(comun.nombre, '  ', existenciaplanta.edad,'  años (',especie.genespecie,')') as Maguey  FROM  existenciaplanta INNER JOIN comun  ON existenciaplanta.id_comun=comun.id_comun INNER JOIN existenciaplanta_comprada ON existenciaplanta_comprada.id_planta =existenciaplanta.id_plantas INNER JOIN especie on comun.id_especie=especie.id_especie WHERE existenciaplanta_comprada.id_existenciaplanta_comprada NOT IN (" + produccion + ")  and   existenciaplanta_comprada.no_cliente='" + no_cliente + "' AND existenciaplanta.edad>=5 and existenciaplanta_comprada.existenciaplantas > 0 ", "id_planta", "Maguey");
+                    string produccion = "";
+                    string coma = "";
+                    //if (ChekMagueyComprado.Checked == true)
+                    /*if (valor == "Maguey Comprado")
+                    {
+                        for (int x = 0; x < DtaEnsamble.Rows.Count; x++)
+                        {
+                            produccion += coma + "'" + DtaEnsamble.Rows[x].Cells["ID_PLANTA_COMPRADA"].Value + "'";
+                            coma = ",";
+                        }
 
+
+                        ConexionMysql.llenaCombo(ref CmbMaguey, "SELECT existenciaplanta_comprada.id_existenciaplanta_comprada as id_planta,CONCAT(comun.nombre, '  ', existenciaplanta.edad,'  años (',especie.genespecie,')') as Maguey  FROM  existenciaplanta INNER JOIN comun  ON existenciaplanta.id_comun=comun.id_comun INNER JOIN existenciaplanta_comprada ON existenciaplanta_comprada.id_planta =existenciaplanta.id_plantas INNER JOIN especie on comun.id_especie=especie.id_especie WHERE existenciaplanta_comprada.id_existenciaplanta_comprada NOT IN (" + produccion + ")  and   existenciaplanta_comprada.no_cliente='" + no_cliente + "' AND existenciaplanta.edad>=5 and existenciaplanta_comprada.existenciaplantas > 0 ", "id_planta", "Maguey");
+
+                    }*/
                 }
-                
             }
             catch (Exception ex)
             {
@@ -524,14 +602,15 @@ namespace Crm.Inventario
             dts.Tables["ENSAMBLE"].Columns.Add("NO_GUIA", Type.GetType("System.String"));
             dts.Tables["ENSAMBLE"].Columns.Add("ID_PLANTA_COMPRADA", Type.GetType("System.String"));
             dts.Tables["ENSAMBLE"].Columns.Add("QUITAR", Type.GetType("System.Byte[]"));
+            dts.Tables["ENSAMBLE"].Columns.Add("REGAMMA", Type.GetType("System.String"));
             DtaEnsamble.DataSource = dts.Tables["ENSAMBLE"];
-            DtaEnsamble.Columns[0].Visible = false;
+            /*DtaEnsamble.Columns[0].Visible = false;
             DtaEnsamble.Columns[1].Visible = false;
             DtaEnsamble.Columns[2].Visible = false;
             DtaEnsamble.Columns[3].Visible = false;
             DtaEnsamble.Columns[4].Visible = false;
             DtaEnsamble.Columns[11].Visible = false;
-            DtaEnsamble.Columns[12].Visible = false;
+            DtaEnsamble.Columns[12].Visible = false;*/
 
         }
 
@@ -560,20 +639,32 @@ namespace Crm.Inventario
                 }
 
             }
-            if (ChekMagueyComprado.Checked == true)
+            object valorSeleccionado = CmbTipoMaguey.SelectedItem;
+            if (valorSeleccionado != null)
             {
-                ConexionMysql.llenaCombo(ref CmbMaguey, "SELECT existenciaplanta_comprada.id_existenciaplanta_comprada as id_planta,CONCAT(comun.nombre, '  ', existenciaplanta.edad,'  años (',especie.genespecie,')' ) as Maguey  FROM  existenciaplanta INNER JOIN comun  ON existenciaplanta.id_comun=comun.id_comun INNER JOIN existenciaplanta_comprada ON existenciaplanta_comprada.id_planta =existenciaplanta.id_plantas INNER JOIN especie on comun.id_especie=especie.id_especie WHERE  existenciaplanta_comprada.id_existenciaplanta_comprada NOT IN(" + plantas + ")  AND   existenciaplanta_comprada.no_cliente='" + no_cliente + "' AND existenciaplanta.edad>=5 and existenciaplanta_comprada.existenciaplantas > 0 ", "id_planta", "Maguey");
-            }
-            else
-            {
-                ConexionMysql.llenaCombo(ref CmbMaguey, "SELECT existenciaplanta.id_plantas,CONCAT(comun.nombre, '  ', existenciaplanta.edad,'  años (',especie.genespecie,')' ) as Maguey      FROM  existenciaplanta INNER JOIN comun  ON existenciaplanta.id_comun=comun.id_comun INNER JOIN especie on comun.id_especie=especie.id_especie WHERE existenciaplanta.id_plantas NOT IN(" + plantas + ")  AND  existenciaplanta.id_paraje='" + (CmbNoPredio.SelectedValue == null ? 0 : CmbNoPredio.SelectedValue) + "' AND edad>=5 and existenciaplanta.existenciaplantas > 0", "id_plantas", "Maguey");
-
-
-
-            }
-            if (CmbMaguey.Items.Count == 0)
-            {
-                TxtExistencia.Text = "";
+                string valor = valorSeleccionado.ToString();
+                // if (ChekMagueyComprado.Checked == true)
+                if (valor == "Maguey Comprado")
+                {
+                    ConexionMysql.llenaCombo(ref CmbMaguey, 
+                        "SELECT existenciaplanta_comprada.id_existenciaplanta_comprada as id_planta," +
+                        " CONCAT(comun.nombre, '  ', existenciaplanta.edad,'  años (',especie.genespecie,')' ) as Maguey, " +
+                        " existenciaplanta.id_paraje id_paraje FROM  existenciaplanta " +
+                        " INNER JOIN comun  ON existenciaplanta.id_comun=comun.id_comun " +
+                        " INNER JOIN existenciaplanta_comprada ON existenciaplanta_comprada.id_planta =existenciaplanta.id_plantas " +
+                        " INNER JOIN especie on comun.id_especie=especie.id_especie " +
+                        " WHERE  existenciaplanta_comprada.id_existenciaplanta_comprada NOT IN(" + plantas + ")  " +
+                        " AND   existenciaplanta_comprada.no_cliente='" + no_cliente + "' " +
+                        " AND existenciaplanta.edad>=5 and existenciaplanta_comprada.existenciaplantas > 0 ", "id_planta", "Maguey");
+                }
+                else
+                {
+                    ConexionMysql.llenaCombo(ref CmbMaguey, "SELECT existenciaplanta.id_plantas,CONCAT(comun.nombre, '  ', existenciaplanta.edad,'  años (',especie.genespecie,')' ) as Maguey, existenciaplanta.id_paraje id_paraje FROM  existenciaplanta INNER JOIN comun  ON existenciaplanta.id_comun=comun.id_comun INNER JOIN especie on comun.id_especie=especie.id_especie WHERE existenciaplanta.id_plantas NOT IN(" + plantas + ")  AND  existenciaplanta.id_paraje='" + (CmbNoPredio.SelectedValue == null ? 0 : CmbNoPredio.SelectedValue) + "' AND edad>=5 and existenciaplanta.existenciaplantas > 0", "id_plantas", "Maguey");
+                }
+                if (CmbMaguey.Items.Count == 0)
+                {
+                    TxtExistencia.Text = "";
+                }
             }
         }
 
@@ -589,7 +680,16 @@ namespace Crm.Inventario
             TxtNoGuia.Text = "";
             CmbMaguey.DataSource = null;
             TxtExistencia.Text = "";
-            
+            TxtExtraccion.Text = "";
+            TxtNoGuia.Enabled = false;
+            TxtExtraccion.Enabled = false;
+            CmbMaguey.Enabled = false;
+            CmbTipoMaguey.DataSource = null;
+            CmbTipoMaguey.Items.Clear();
+            CmbTipoMaguey.Items.Insert(0, "Ingresar Guía AMMA y Antigua");
+            CmbTipoMaguey.Items.Insert(1, "Ingresar Guía Externa");
+            CmbTipoMaguey.Items.Insert(2, "Maguey Comprado");
+            CmbTipoMaguey.Items.Insert(3, "Maguey Sobrante");
 
 
 
@@ -631,7 +731,7 @@ namespace Crm.Inventario
                         }
                         else
                         {
-                            ConexionMysql.llenaCombo(ref CmbMaguey, "SELECT existenciaplanta_comprada.id_existenciaplanta_comprada as id_planta,CONCAT(comun.nombre, '  ', existenciaplanta.edad,'  años (',especie.genespecie,')' ) as Maguey  FROM  existenciaplanta INNER JOIN comun  ON existenciaplanta.id_comun=comun.id_comun INNER JOIN existenciaplanta_comprada ON existenciaplanta_comprada.id_planta =existenciaplanta.id_plantas INNER JOIN especie on comun.id_especie=especie.id_especie WHERE   existenciaplanta_comprada.no_cliente='" + no_cliente + "' AND existenciaplanta.edad>=5 and existenciaplanta_comprada.existenciaplantas > 0 ", "id_planta", "Maguey");
+                            ConexionMysql.llenaCombo(ref CmbMaguey, "SELECT existenciaplanta_comprada.id_existenciaplanta_comprada as id_planta,CONCAT(comun.nombre, '  ', existenciaplanta.edad,'  años (',especie.genespecie,')' ) as Maguey, existenciaplanta.id_paraje id_paraje  FROM  existenciaplanta INNER JOIN comun  ON existenciaplanta.id_comun=comun.id_comun INNER JOIN existenciaplanta_comprada ON existenciaplanta_comprada.id_planta =existenciaplanta.id_plantas INNER JOIN especie on comun.id_especie=especie.id_especie WHERE   existenciaplanta_comprada.no_cliente='" + no_cliente + "' AND existenciaplanta.edad>=5 and existenciaplanta_comprada.existenciaplantas > 0 ", "id_planta", "Maguey");
                         }
                     }
                     else
@@ -642,7 +742,7 @@ namespace Crm.Inventario
                         }
                         else
                         {
-                            ConexionMysql.llenaCombo(ref CmbMaguey, "SELECT existenciaplanta.id_plantas,CONCAT(comun.nombre, '  ', existenciaplanta.edad,'  años (', especie.genespecie,')' ) as Maguey      FROM  existenciaplanta INNER JOIN comun  ON existenciaplanta.id_comun=comun.id_comun INNER JOIN especie on comun.id_especie=especie.id_especie WHERE   existenciaplanta.id_paraje='" + CmbNoPredio.SelectedValue + "' AND edad>=5 and existenciaplanta.existenciaplantas > 0", "id_plantas", "Maguey");
+                            ConexionMysql.llenaCombo(ref CmbMaguey, "SELECT existenciaplanta.id_plantas,CONCAT(comun.nombre, '  ', existenciaplanta.edad,'  años (', especie.genespecie,')' ) as Maguey, existenciaplanta.id_paraje id_paraje FROM  existenciaplanta INNER JOIN comun  ON existenciaplanta.id_comun=comun.id_comun INNER JOIN especie on comun.id_especie=especie.id_especie WHERE   existenciaplanta.id_paraje='" + CmbNoPredio.SelectedValue + "' AND edad>=5 and existenciaplanta.existenciaplantas > 0", "id_plantas", "Maguey");
                         }
                     }
                 }
@@ -881,11 +981,60 @@ namespace Crm.Inventario
                         }
 
 
-
-                        //ObtenerIdMaximoProduccionEnsamble();
-                        if (ConexionMysql.insUpd_transaccion("INSERT INTO  produccion_ensamble(id_produccion_entrada,id_ensamble_union,id_agave_sobrante,id_predio,id_planta,no_guia,no_pinas_agave,agave_kg,agave_coccion_kg,porcentaje_art,tipo,id_verificador) VALUES('" + id_max_produccion_entrada + "','" + id_max_produccion_ensamble_union + "','" + (DtaEnsamble.Rows[x].Cells["ID_PLANTA"].Value.ToString() == "0" ? DtaEnsamble.Rows[x].Cells["ID_AGAVE_SOBRANTE"].Value.ToString() : "") + "','" + DtaEnsamble.Rows[x].Cells["ID_PARAJE"].Value + "'," + DtaEnsamble.Rows[x].Cells["ID_PLANTA"].Value + ",'" + DtaEnsamble.Rows[x].Cells["NO_GUIA"].Value.ToString() + "'," + (DtaEnsamble.Rows[x].Cells["NUMERO_PIÑA"].Value.ToString() == "" ? "0" : DtaEnsamble.Rows[x].Cells["NUMERO_PIÑA"].Value) + "," + DtaEnsamble.Rows[x].Cells["MAGUEY_ENTRANTE"].Value + "," + DtaEnsamble.Rows[x].Cells["MAGUEY_COCCION"].Value + "," + DtaEnsamble.Rows[x].Cells["%_ART"].Value + "," + DtaEnsamble.Rows[x].Cells["TIPO"].Value + "," + Usuario.IdUsuario + ")") == "Error")
+                        /*
+                        ObtenerIdMaximoGuiasDesconocidas();
+                        string id_comun_crm = cmbEspecieMaguey.SelectedValue.ToString();
+                        string tipo_tapadacrm = ConexionMysql.regresaCampoConsulta("SELECT tipo FROM  produccion_entrada  WHERE id_produccion_entrada='" + id_produccion + "' ");
+                        if (tipo_tapadacrm == "1")
                         {
-                            return;
+                            // id_comun='" + id_comun_crm + "',
+                            if (ConexionMysql.insUpd_transaccion("UPDATE  produccion_entrada SET id_comun='" + id_comun_crm + "', gcrm='1',no_guia='0',actualizado=0 WHERE id_produccion_entrada='" + id_produccion + "'") == "Error")
+                            {
+                                return;
+                            }
+
+                            if (ConexionMysql.insUpd_transaccion("INSERT INTO  guias_desconocidas (id_guia_desconocida,id_produccion_entrada,no_guia,predio,fecha_ingreso, verificador_id, actualizado) VALUES( '" + id_max_guias_desconocidas + "','" + id_produccion + "','" + TxtNoGuia.Text.ToString() + "','" + txtPredioCrm.Text.ToString() + "', NOW(), '" + Usuario.IdUsuario + "',0)") == "Error")
+                            {
+                                return;
+                            }
+
+
+                        }// fin del if tipo de tapada crm
+                        */
+                        // "REGAMMA"
+                        if (DtaEnsamble.Rows[x].Cells["REGAMMA"].Value.ToString() == "si")
+                        {
+                            //ObtenerIdMaximoProduccionEnsamble();
+                            if (ConexionMysql.insUpd_transaccion(
+                                "INSERT INTO  produccion_ensamble(" +
+                                "id_produccion_entrada, id_ensamble_union,  id_agave_sobrante,  id_predio,      id_planta,    " +
+                                "no_guia,               no_pinas_agave,     agave_kg,           agave_coccion_kg,   porcentaje_art, " +
+                                "tipo,                  id_verificador) VALUES ( " +
+                                "'" + id_max_produccion_entrada + "','" + id_max_produccion_ensamble_union + "','" + (DtaEnsamble.Rows[x].Cells["ID_PLANTA"].Value.ToString() == "0" ? DtaEnsamble.Rows[x].Cells["ID_AGAVE_SOBRANTE"].Value.ToString() : "") + "','" + DtaEnsamble.Rows[x].Cells["ID_PARAJE"].Value + "'," + DtaEnsamble.Rows[x].Cells["ID_PLANTA"].Value + ", " +
+                                "'" + DtaEnsamble.Rows[x].Cells["NO_GUIA"].Value.ToString() + "'," + (DtaEnsamble.Rows[x].Cells["NUMERO_PIÑA"].Value.ToString() == "" ? "0" : DtaEnsamble.Rows[x].Cells["NUMERO_PIÑA"].Value) + "," + DtaEnsamble.Rows[x].Cells["MAGUEY_ENTRANTE"].Value + "," + DtaEnsamble.Rows[x].Cells["MAGUEY_COCCION"].Value + "," + DtaEnsamble.Rows[x].Cells["%_ART"].Value + ", " +
+                                "" + DtaEnsamble.Rows[x].Cells["TIPO"].Value + "," + Usuario.IdUsuario + ")") == "Error")
+                            {
+                                return;
+                            }
+                        } else
+                        {
+                            // GUÍAS EXTERNAS
+                            if (ConexionMysql.insUpd_transaccion(
+                                "INSERT INTO  produccion_ensamble(" +
+                                "id_produccion_entrada, id_ensamble_union,  id_agave_sobrante,  id_comun,   gcrm    " +
+                                "no_guia,               no_pinas_agave,     agave_kg,           agave_coccion_kg,   porcentaje_art, " +
+                                "tipo,                  id_verificador) VALUES ( " +
+                                "'" + id_max_produccion_entrada + "','" + id_max_produccion_ensamble_union + "','" + (DtaEnsamble.Rows[x].Cells["ID_PLANTA"].Value.ToString() == "0" ? DtaEnsamble.Rows[x].Cells["ID_AGAVE_SOBRANTE"].Value.ToString() : "") + "','0','1', " +
+                                "'0'," + (DtaEnsamble.Rows[x].Cells["NUMERO_PIÑA"].Value.ToString() == "" ? "0" : DtaEnsamble.Rows[x].Cells["NUMERO_PIÑA"].Value) + "," + DtaEnsamble.Rows[x].Cells["MAGUEY_ENTRANTE"].Value + "," + DtaEnsamble.Rows[x].Cells["MAGUEY_COCCION"].Value + "," + DtaEnsamble.Rows[x].Cells["%_ART"].Value + ", " +
+                                "" + DtaEnsamble.Rows[x].Cells["TIPO"].Value + "," + Usuario.IdUsuario + ")") == "Error")
+                            {
+                                return;
+                            }
+                            //ObtenerIdMaximoGuiasDesconocidas();
+                            /*if (ConexionMysql.insUpd_transaccion("INSERT INTO  guias_desconocidas (id_guia_desconocida,id_produccion_entrada,no_guia,predio,fecha_ingreso, verificador_id, actualizado) VALUES( '" + id_max_guias_desconocidas + "','" + id_produccion + "','" + TxtNoGuia.Text.ToString() + "','" + txtPredioCrm.Text.ToString() + "', NOW(), '" + Usuario.IdUsuario + "',0)") == "Error")
+                            {
+                                return;
+                            }*/
                         }
                     }
 
@@ -938,14 +1087,14 @@ namespace Crm.Inventario
                 else
                 {
                     // --  ConexionMysql.llenaCombo(ref CmbMaguey, "SELECT existenciaplanta_comprada.id_planta,CONCAT(comun.nombre, '  ', existenciaplanta.edad,'  años (',especie.genespecie,')' ) as Maguey  FROM  existenciaplanta INNER JOIN comun  ON existenciaplanta.id_comun=comun.id_comun INNER JOIN existenciaplanta_comprada ON existenciaplanta_comprada.id_planta =existenciaplanta.id_plantas INNER JOIN especie on comun.id_especie=especie.id_especie WHERE   existenciaplanta_comprada.no_cliente='" + no_cliente + "' AND existenciaplanta.edad>=5 and existenciaplanta_comprada.existenciaplantas > 0 ", "id_planta", "Maguey");
-                    if (chkGuiaAntigua.Checked == true) 
+                    if (chkGuiaExterna.Checked == true) 
                     {
                         string clienteCrm = ConexionMysql.regresaCampoConsulta("SELECT cliente_antiguo FROM clientes WHERE no_cliente ='" + no_cliente + "'");
-                        ConexionMysql.llenaCombo(ref CmbMaguey, "SELECT reveca2_existenciaplanta_comprada.id_existenciaplanta_comprada as id_planta,CONCAT(comun.nombre, '  ', reveca2_existenciaplanta.edad,'  años (',especie.genespecie,')') as Maguey  FROM  reveca2_existenciaplanta INNER JOIN comun  ON reveca2_existenciaplanta.id_comun=comun.id_comun INNER JOIN reveca2_existenciaplanta_comprada ON reveca2_existenciaplanta_comprada.id_planta =reveca2_existenciaplanta.id_plantas INNER JOIN especie on comun.id_especie=especie.id_especie WHERE   reveca2_existenciaplanta_comprada.no_cliente='" + clienteCrm + "' AND reveca2_existenciaplanta.edad>=5 and reveca2_existenciaplanta_comprada.existenciaplantas > 0 ", "id_planta", "Maguey");
+                        ConexionMysql.llenaCombo(ref CmbMaguey, "SELECT reveca2_existenciaplanta_comprada.id_existenciaplanta_comprada as id_planta,CONCAT(comun.nombre, '  ', reveca2_existenciaplanta.edad,'  años (',especie.genespecie,')') as Maguey, reveca2_existenciaplanta.id_paraje id_paraje FROM  reveca2_existenciaplanta INNER JOIN comun  ON reveca2_existenciaplanta.id_comun=comun.id_comun INNER JOIN reveca2_existenciaplanta_comprada ON reveca2_existenciaplanta_comprada.id_planta =reveca2_existenciaplanta.id_plantas INNER JOIN especie on comun.id_especie=especie.id_especie WHERE   reveca2_existenciaplanta_comprada.no_cliente='" + clienteCrm + "' AND reveca2_existenciaplanta.edad>=5 and reveca2_existenciaplanta_comprada.existenciaplantas > 0 ", "id_planta", "Maguey");
                     }
                     else
                     {
-                        ConexionMysql.llenaCombo(ref CmbMaguey, "SELECT existenciaplanta_comprada.id_existenciaplanta_comprada as id_planta,CONCAT(comun.nombre, '  ', existenciaplanta.edad,'  años (',especie.genespecie,')') as Maguey  FROM  existenciaplanta INNER JOIN comun  ON existenciaplanta.id_comun=comun.id_comun INNER JOIN existenciaplanta_comprada ON existenciaplanta_comprada.id_planta =existenciaplanta.id_plantas INNER JOIN especie on comun.id_especie=especie.id_especie WHERE   existenciaplanta_comprada.no_cliente='" + no_cliente + "' AND existenciaplanta.edad>=5 and existenciaplanta_comprada.existenciaplantas > 0 ", "id_planta", "Maguey");
+                        ConexionMysql.llenaCombo(ref CmbMaguey, "SELECT existenciaplanta_comprada.id_existenciaplanta_comprada as id_planta,CONCAT(comun.nombre, '  ', existenciaplanta.edad,'  años (',especie.genespecie,')') as Maguey, existenciaplanta.id_paraje id_paraje FROM  existenciaplanta INNER JOIN comun  ON existenciaplanta.id_comun=comun.id_comun INNER JOIN existenciaplanta_comprada ON existenciaplanta_comprada.id_planta =existenciaplanta.id_plantas INNER JOIN especie on comun.id_especie=especie.id_especie WHERE   existenciaplanta_comprada.no_cliente='" + no_cliente + "' AND existenciaplanta.edad>=5 and existenciaplanta_comprada.existenciaplantas > 0 ", "id_planta", "Maguey");
                     }
                 }
 
@@ -966,7 +1115,7 @@ namespace Crm.Inventario
                     }
                     else
                     {
-                        ConexionMysql.llenaCombo(ref CmbMaguey, "SELECT existenciaplanta.id_plantas,CONCAT(comun.nombre, '  ', existenciaplanta.edad,'  años (',especie.genespecie,')' ) as Maguey      FROM  existenciaplanta INNER JOIN comun  ON existenciaplanta.id_comun=comun.id_comun INNER JOIN especie on comun.id_especie=especie.id_especie WHERE   existenciaplanta.id_paraje='" + CmbNoPredio.SelectedValue + "' AND edad>=5 and existenciaplanta.existenciaplantas > 0", "id_plantas", "Maguey");
+                        ConexionMysql.llenaCombo(ref CmbMaguey, "SELECT existenciaplanta.id_plantas,CONCAT(comun.nombre, '  ', existenciaplanta.edad,'  años (',especie.genespecie,')' ) as Maguey, existenciaplanta.id_paraje id_paraje FROM  existenciaplanta INNER JOIN comun  ON existenciaplanta.id_comun=comun.id_comun INNER JOIN especie on comun.id_especie=especie.id_especie WHERE   existenciaplanta.id_paraje='" + CmbNoPredio.SelectedValue + "' AND edad>=5 and existenciaplanta.existenciaplantas > 0", "id_plantas", "Maguey");
                     }
                 }
             }
@@ -1088,90 +1237,341 @@ namespace Crm.Inventario
                         return;
                     }
 
-                    if (TxtNoGuia.Text.Substring(0, 1) == "g" || TxtNoGuia.Text.Substring(0, 1) == "G")
-                    { 
-                        DataSet DatosMaguey = new DataSet();
-                    ConexionMysql.llenaDataset(ref DatosMaguey, "SELECT paraje.id_paraje,paraje.paraje,paraje.id_cliente,paraje.nombrep FROM cextracciones  INNER JOIN paraje ON cextracciones.id_paraje=paraje.id_paraje  where cextracciones.status=1 and  cextracciones.id_extraccion ='" + TxtNoGuia.Text.Trim() + "'");
-                    if (DatosMaguey.Tables[0].Rows.Count == 0)
+                    object valorSeleccionado = CmbTipoMaguey.SelectedItem;
+                    if (valorSeleccionado != null)
                     {
-                        /* + los valores de de status son:
-                         * 0 - ya utilizada
-                         * 1 - no utilizada
-                         */
-                        string guia_utilizada = ConexionMysql.regresaCampoConsulta("SELECT paraje.id_paraje,paraje.paraje,paraje.id_cliente,paraje.nombrep FROM cextracciones  INNER JOIN paraje ON cextracciones.id_paraje=paraje.id_paraje  where cextracciones.status=0 and  cextracciones.id_extraccion ='" + TxtNoGuia.Text.Trim() + "'");
-
-                        if (guia_utilizada == "") { MessageBox.Show("Guia inexistente"); } else { MessageBox.Show("Guia ya utilizada"); };
-
-                        // MessageBox.Show("Guia inexistente o ya utilizada");
-                        TxtNoPredio.Text = "";
-                        //TxtNoCliente.Text = "";
-                        //TxtNombre.Text = "";
-                        TxtPredio.Text = "";
-                        CmbMaguey.DataSource = null;
-                        TxtExistencia.Text = "";
-                        TxtExtraccion.Text = "";
-                        // TxtDireccion.Text = "";
-                        // dts.Tables["EXTRACCION"].Rows.Clear();
-                        return;
-                    }
-                    
-                    TxtNoPredio.Text = DatosMaguey.Tables[0].Rows[0]["id_paraje"].ToString();
-                    // TxtNoCliente.Text = DatosMaguey.Tables[0].Rows[0]["id_cliente"].ToString();
-                    //TxtNombre.Text = DatosMaguey.Tables[0].Rows[0]["nombrep"].ToString();
-                    TxtPredio.Text = DatosMaguey.Tables[0].Rows[0]["paraje"].ToString();
-                    DatosMaguey.Tables[0].Rows.Clear();
-                    CmbMaguey.DataSource = null;
-                    TxtExistencia.Text = "";
-                    TxtExtraccion.Text = "";
-                    //ConexionMysql.llenaCombo(ref CmbMaguey, "SELECT existenciaplanta.id_plantas,CONCAT(comun.nombre, '  ', existenciaplanta.edad,'  años (',especie.genespecie,')' ) as Maguey      FROM  existenciaplanta INNER JOIN comun  ON existenciaplanta.id_comun=comun.id_comun INNER JOIN especie on comun.id_especie=especie.id_especie WHERE existenciaplanta.id_paraje='" + int.Parse(TxtNoPredio.Text.Trim()) + "' AND edad>=5", "id_plantas", "Maguey");
-                    ConexionMysql.llenaCombo(ref CmbMaguey, "SELECT existenciaplanta.id_plantas,CONCAT(comun.nombre, '  ', existenciaplanta.edad,'  años (',especie.genespecie,')' ) as Maguey      FROM  existenciaplanta INNER JOIN comun  ON existenciaplanta.id_comun=comun.id_comun INNER JOIN especie on comun.id_especie=especie.id_especie WHERE existenciaplanta.id_paraje='" + TxtNoPredio.Text.Trim() + "' AND edad>=5", "id_plantas", "Maguey");
-                    }
-
-                    else
-                    {
-                        DataSet DatosMaguey = new DataSet();
-                        ConexionMysql.llenaDataset(ref DatosMaguey, "SELECT reveca2_paraje.id_paraje,reveca2_paraje.paraje,reveca2_paraje.id_cliente,reveca2_paraje.nombrep FROM reveca2_cextracciones  INNER JOIN reveca2_paraje ON reveca2_cextracciones.id_paraje=reveca2_paraje.id_paraje  where reveca2_cextracciones.status=1 and  reveca2_cextracciones.id_extraccion ='" + TxtNoGuia.Text.Trim() + "'");
-                        if (DatosMaguey.Tables[0].Rows.Count == 0)
+                        string valor = valorSeleccionado.ToString();
+                        if (valor == "Ingresar Guía AMMA y Antigua")
                         {
-                            /* + los valores de de status son:
-                             * 0 - ya utilizada
-                             * 1 - no utilizada
-                             */
-                            string guia_utilizada = ConexionMysql.regresaCampoConsulta("SELECT reveca2_paraje.id_paraje,reveca2_paraje.paraje,reveca2_paraje.id_cliente,reveca2_paraje.nombrep FROM reveca2_cextracciones  INNER JOIN reveca2_paraje ON reveca2_cextracciones.id_paraje=reveca2_paraje.id_paraje  where reveca2_cextracciones.status=0 and  reveca2_cextracciones.id_extraccion ='" + TxtNoGuia.Text.Trim() + "'");
+                            if (TxtNoGuia.Text.Substring(0, 1) == "g" || TxtNoGuia.Text.Substring(0, 1) == "G")
+                            {
+                                DataSet DatosMaguey = new DataSet();
+                                ConexionMysql.llenaDataset(ref DatosMaguey, "SELECT paraje.id_paraje,paraje.paraje,paraje.id_cliente,paraje.nombrep FROM cextracciones  INNER JOIN paraje ON cextracciones.id_paraje=paraje.id_paraje  where cextracciones.status=1 and  cextracciones.id_extraccion ='" + TxtNoGuia.Text.Trim() + "'");
+                                if (DatosMaguey.Tables[0].Rows.Count == 0)
+                                {
+                                    /* + los valores de de status son:
+                                     * 0 - ya utilizada
+                                     * 1 - no utilizada
+                                     */
+                                    string guia_utilizada = ConexionMysql.regresaCampoConsulta("SELECT paraje.id_paraje,paraje.paraje,paraje.id_cliente,paraje.nombrep FROM cextracciones  INNER JOIN paraje ON cextracciones.id_paraje=paraje.id_paraje  where cextracciones.status=0 and  cextracciones.id_extraccion ='" + TxtNoGuia.Text.Trim() + "'");
 
-                            if (guia_utilizada == "") { MessageBox.Show("Guia inexistente"); } else { MessageBox.Show("Guia ya utilizada"); };
+                                    if (guia_utilizada == "") { MessageBox.Show("Guia inexistente"); } else { MessageBox.Show("Guia ya utilizada"); };
 
-                            // MessageBox.Show("Guia inexistente o ya utilizada");
-                            TxtNoPredio.Text = "";
-                            //TxtNoCliente.Text = "";
-                            //TxtNombre.Text = "";
-                            TxtPredio.Text = "";
-                            CmbMaguey.DataSource = null;
-                            TxtExistencia.Text = "";
-                            TxtExtraccion.Text = "";
-                            // TxtDireccion.Text = "";
-                            // dts.Tables["EXTRACCION"].Rows.Clear();
-                            return;
+                                    // MessageBox.Show("Guia inexistente o ya utilizada");
+                                    TxtNoPredio.Text = "";
+                                    //TxtNoCliente.Text = "";
+                                    //TxtNombre.Text = "";
+                                    TxtPredio.Text = "";
+                                    CmbMaguey.DataSource = null;
+                                    TxtExistencia.Text = "";
+                                    TxtExtraccion.Text = "";
+                                    // TxtDireccion.Text = "";
+                                    // dts.Tables["EXTRACCION"].Rows.Clear();
+                                    return;
+                                }
+                                TxtNoPredio.Text = DatosMaguey.Tables[0].Rows[0]["id_paraje"].ToString();
+                                // TxtNoCliente.Text = DatosMaguey.Tables[0].Rows[0]["id_cliente"].ToString();
+                                //TxtNombre.Text = DatosMaguey.Tables[0].Rows[0]["nombrep"].ToString();
+                                TxtPredio.Text = DatosMaguey.Tables[0].Rows[0]["paraje"].ToString();
+                                DatosMaguey.Tables[0].Rows.Clear();
+                                CmbMaguey.DataSource = null;
+                                TxtExistencia.Text = "";
+                                TxtExtraccion.Text = "";
+                                //ConexionMysql.llenaCombo(ref CmbMaguey, "SELECT existenciaplanta.id_plantas,CONCAT(comun.nombre, '  ', existenciaplanta.edad,'  años (',especie.genespecie,')' ) as Maguey      FROM  existenciaplanta INNER JOIN comun  ON existenciaplanta.id_comun=comun.id_comun INNER JOIN especie on comun.id_especie=especie.id_especie WHERE existenciaplanta.id_paraje='" + int.Parse(TxtNoPredio.Text.Trim()) + "' AND edad>=5", "id_plantas", "Maguey");
+                                ConexionMysql.llenaCombo(ref CmbMaguey, "SELECT existenciaplanta.id_plantas,CONCAT(comun.nombre, '  ', existenciaplanta.edad,'  años (',especie.genespecie,')' ) as Maguey, existenciaplanta.id_paraje id_paraje FROM  existenciaplanta INNER JOIN comun  ON existenciaplanta.id_comun=comun.id_comun INNER JOIN especie on comun.id_especie=especie.id_especie WHERE existenciaplanta.id_paraje='" + TxtNoPredio.Text.Trim() + "' AND edad>=5", "id_plantas", "Maguey");
+                            }
+                            else
+                            {
+                                DataSet DatosMaguey = new DataSet();
+                                ConexionMysql.llenaDataset(ref DatosMaguey, "SELECT reveca2_paraje.id_paraje,reveca2_paraje.paraje,reveca2_paraje.id_cliente,reveca2_paraje.nombrep FROM reveca2_cextracciones  INNER JOIN reveca2_paraje ON reveca2_cextracciones.id_paraje=reveca2_paraje.id_paraje  where reveca2_cextracciones.status=1 and  reveca2_cextracciones.id_extraccion ='" + TxtNoGuia.Text.Trim() + "'");
+                                if (DatosMaguey.Tables[0].Rows.Count == 0)
+                                {
+                                    /* + los valores de de status son:
+                                     * 0 - ya utilizada
+                                     * 1 - no utilizada
+                                     */
+                                    string guia_utilizada = ConexionMysql.regresaCampoConsulta("SELECT reveca2_paraje.id_paraje,reveca2_paraje.paraje,reveca2_paraje.id_cliente,reveca2_paraje.nombrep FROM reveca2_cextracciones  INNER JOIN reveca2_paraje ON reveca2_cextracciones.id_paraje=reveca2_paraje.id_paraje  where reveca2_cextracciones.status=0 and  reveca2_cextracciones.id_extraccion ='" + TxtNoGuia.Text.Trim() + "'");
+
+                                    if (guia_utilizada == "") { MessageBox.Show("Guia inexistente"); } else { MessageBox.Show("Guia ya utilizada"); };
+
+                                    // MessageBox.Show("Guia inexistente o ya utilizada");
+                                    TxtNoPredio.Text = "";
+                                    //TxtNoCliente.Text = "";
+                                    //TxtNombre.Text = "";
+                                    TxtPredio.Text = "";
+                                    CmbMaguey.DataSource = null;
+                                    TxtExistencia.Text = "";
+                                    TxtExtraccion.Text = "";
+                                    // TxtDireccion.Text = "";
+                                    // dts.Tables["EXTRACCION"].Rows.Clear();
+                                    return;
+                                }
+
+                                TxtNoPredio.Text = DatosMaguey.Tables[0].Rows[0]["id_paraje"].ToString();
+                                // TxtNoCliente.Text = DatosMaguey.Tables[0].Rows[0]["id_cliente"].ToString();
+                                //TxtNombre.Text = DatosMaguey.Tables[0].Rows[0]["nombrep"].ToString();
+                                TxtPredio.Text = DatosMaguey.Tables[0].Rows[0]["paraje"].ToString();
+                                DatosMaguey.Tables[0].Rows.Clear();
+                                CmbMaguey.DataSource = null;
+                                TxtExistencia.Text = "";
+                                TxtExtraccion.Text = "";
+                                //ConexionMysql.llenaCombo(ref CmbMaguey, "SELECT existenciaplanta.id_plantas,CONCAT(comun.nombre, '  ', existenciaplanta.edad,'  años (',especie.genespecie,')' ) as Maguey      FROM  existenciaplanta INNER JOIN comun  ON existenciaplanta.id_comun=comun.id_comun INNER JOIN especie on comun.id_especie=especie.id_especie WHERE existenciaplanta.id_paraje='" + int.Parse(TxtNoPredio.Text.Trim()) + "' AND edad>=5", "id_plantas", "Maguey");
+                                ConexionMysql.llenaCombo(ref CmbMaguey, "SELECT reveca2_existenciaplanta.id_plantas,CONCAT(comun.nombre, '  ', reveca2_existenciaplanta.edad,'  años (',especie.genespecie,')' ) as Maguey, reveca2_existenciaplanta.id_paraje id_paraje FROM  reveca2_existenciaplanta INNER JOIN comun  ON reveca2_existenciaplanta.id_comun=comun.id_comun INNER JOIN especie on comun.id_especie=especie.id_especie WHERE reveca2_existenciaplanta.id_paraje='" + TxtNoPredio.Text.Trim() + "' AND edad>=5", "id_plantas", "Maguey");
+
+                            }
                         }
-
-                        TxtNoPredio.Text = DatosMaguey.Tables[0].Rows[0]["id_paraje"].ToString();
-                        // TxtNoCliente.Text = DatosMaguey.Tables[0].Rows[0]["id_cliente"].ToString();
-                        //TxtNombre.Text = DatosMaguey.Tables[0].Rows[0]["nombrep"].ToString();
-                        TxtPredio.Text = DatosMaguey.Tables[0].Rows[0]["paraje"].ToString();
-                        DatosMaguey.Tables[0].Rows.Clear();
-                        CmbMaguey.DataSource = null;
-                        TxtExistencia.Text = "";
-                        TxtExtraccion.Text = "";
-                        //ConexionMysql.llenaCombo(ref CmbMaguey, "SELECT existenciaplanta.id_plantas,CONCAT(comun.nombre, '  ', existenciaplanta.edad,'  años (',especie.genespecie,')' ) as Maguey      FROM  existenciaplanta INNER JOIN comun  ON existenciaplanta.id_comun=comun.id_comun INNER JOIN especie on comun.id_especie=especie.id_especie WHERE existenciaplanta.id_paraje='" + int.Parse(TxtNoPredio.Text.Trim()) + "' AND edad>=5", "id_plantas", "Maguey");
-                        ConexionMysql.llenaCombo(ref CmbMaguey, "SELECT reveca2_existenciaplanta.id_plantas,CONCAT(comun.nombre, '  ', reveca2_existenciaplanta.edad,'  años (',especie.genespecie,')' ) as Maguey      FROM  reveca2_existenciaplanta INNER JOIN comun  ON reveca2_existenciaplanta.id_comun=comun.id_comun INNER JOIN especie on comun.id_especie=especie.id_especie WHERE reveca2_existenciaplanta.id_paraje='" + TxtNoPredio.Text.Trim() + "' AND edad>=5", "id_plantas", "Maguey");
-
                     }
+                    CmbMaguey.Enabled = true;
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Aviso Importante", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void chkGuiaAntigua_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CmbTipoMaguey_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TxtPredio.ReadOnly = true;
+            object valorSeleccionado = CmbTipoMaguey.SelectedItem;
+            if (valorSeleccionado != null)
+            {
+                //MessageBox.Show("Obtener seleccionado: ");
+                // Si el elemento es un string, puedes imprimirlo directamente
+                string valor = valorSeleccionado.ToString();
+                MessageBox.Show("Elemento seleccionado: " + valor);
+                if (valor == "Ingresar Guía AMMA y Antigua")
+                {
+                    TxtNoGuia.Enabled = true;
+                    TxtNoGuia.Focus();
+                    TxtNoPredio.Enabled = false;
+                    TxtNoGuia.Text = "";
+                    TxtNoPredio.Text = "";
+                    CmbNoPredio.Enabled = false;
+                    CmbMaguey.DataSource = null;
+                    CmbNoPredio.Enabled = false;
+                    TxtAgaveEntranteKg.Enabled = true;
+                    TxtPredio.Text = "";
+                    CmbMaguey.Enabled = false;
+                    TxtExtraccion.Enabled = false;
+                    //ChekMagueyComprado.Enabled = false;
+                }
+                else if (valor == "Ingresar Guía Externa")
+                {
+                    TxtPredio.Enabled = true;
+                    TxtPredio.ReadOnly = false      ;
+                    TxtNoGuia.Enabled = true;
+                    MessageBox.Show("Pausa");
+                    TxtNoGuia.Focus();
+                    TxtNoPredio.Enabled = false;
+                    TxtNoGuia.Text = "";
+                    TxtNoPredio.Text = "";
+                    TxtPredio.Text = "";
+                    TxtExtraccion.Enabled = true;
+                    CmbNoPredio.Enabled = false;
+                    CmbMaguey.DataSource = null;
+                    CmbMaguey.Enabled = true;
+                    CmbNoPredio.Enabled = false;
+                    TxtAgaveEntranteKg.Enabled = true;
+                    //ConexionMysql.llenaCombo(ref CmbMaguey, "SELECT comun.id_comun,CONCAT(comun.nombre, ' (',especie.genespecie,')' ) as Maguey FROM comun INNER JOIN especie on comun.id_especie=especie.id_especie where status = '1' ", "id_comun", "Maguey");
+                    ConexionMysql.llenaCombo(ref CmbMaguey, " SELECT id_comun,CONCAT (comun.nombre,' (',especie.genespecie,')') as nombre FROM comun INNER JOIN especie ON especie.id_especie=comun.id_especie WHERE comun.status=1 ORDER BY comun.nombre ASC", "id_comun", "nombre");
+                }
+                else if (valor == "Maguey Comprado")
+                {
+
+                    TxtNoGuia.Enabled = false;
+                    TxtNoPredio.Enabled = false;
+                    TxtNoGuia.Text = "";
+                    TxtNoPredio.Text = "";
+                    CmbNoPredio.Enabled = false;
+                    CmbMaguey.DataSource = null;
+                    TxtAgaveEntranteKg.Enabled = true;
+                    if (DtaEnsamble.Rows.Count > 0)
+                    {
+                        PlantasNoMostrar();
+                    }
+                    else
+                    {
+                        // --  ConexionMysql.llenaCombo(ref CmbMaguey, "SELECT existenciaplanta_comprada.id_planta,CONCAT(comun.nombre, '  ', existenciaplanta.edad,'  años (',especie.genespecie,')' ) as Maguey  FROM  existenciaplanta INNER JOIN comun  ON existenciaplanta.id_comun=comun.id_comun INNER JOIN existenciaplanta_comprada ON existenciaplanta_comprada.id_planta =existenciaplanta.id_plantas INNER JOIN especie on comun.id_especie=especie.id_especie WHERE   existenciaplanta_comprada.no_cliente='" + no_cliente + "' AND existenciaplanta.edad>=5 and existenciaplanta_comprada.existenciaplantas > 0 ", "id_planta", "Maguey");
+                        if (chkGuiaExterna.Checked == true)
+                        {
+                            string clienteCrm = ConexionMysql.regresaCampoConsulta("SELECT cliente_antiguo FROM clientes WHERE no_cliente ='" + no_cliente + "'");
+                            ConexionMysql.llenaCombo(ref CmbMaguey, "SELECT reveca2_existenciaplanta_comprada.id_existenciaplanta_comprada as id_planta,CONCAT(comun.nombre, '  ', reveca2_existenciaplanta.edad,'  años (',especie.genespecie,')') as Maguey, reveca2_existenciaplanta.id_paraje id_paraje FROM  reveca2_existenciaplanta INNER JOIN comun  ON reveca2_existenciaplanta.id_comun=comun.id_comun INNER JOIN reveca2_existenciaplanta_comprada ON reveca2_existenciaplanta_comprada.id_planta =reveca2_existenciaplanta.id_plantas INNER JOIN especie on comun.id_especie=especie.id_especie WHERE   reveca2_existenciaplanta_comprada.no_cliente='" + clienteCrm + "' AND reveca2_existenciaplanta.edad>=5 and reveca2_existenciaplanta_comprada.existenciaplantas > 0 ", "id_planta", "Maguey");
+                        }
+                        else
+                        {
+                            ConexionMysql.llenaCombo(ref CmbMaguey, "SELECT existenciaplanta_comprada.id_existenciaplanta_comprada as id_planta,CONCAT(comun.nombre, '  ', existenciaplanta.edad,'  años (',especie.genespecie,')') as Maguey, existenciaplanta.id_paraje id_paraje FROM  existenciaplanta INNER JOIN comun  ON existenciaplanta.id_comun=comun.id_comun INNER JOIN existenciaplanta_comprada ON existenciaplanta_comprada.id_planta =existenciaplanta.id_plantas INNER JOIN especie on comun.id_especie=especie.id_especie WHERE   existenciaplanta_comprada.no_cliente='" + no_cliente + "' AND existenciaplanta.edad>=5 and existenciaplanta_comprada.existenciaplantas > 0 ", "id_planta", "Maguey");
+                        }
+                    }
+                    CmbMaguey.Enabled = true;
+                } 
+                else if(valor == "Maguey Sobrante")
+                {
+                    TxtNoGuia.Enabled = false;
+                    TxtNoPredio.Enabled = false;
+                    TxtNoGuia.Text = "";
+                    TxtNoPredio.Text = "";
+
+                    CmbNoPredio.Enabled = false;
+
+                    CmbMaguey.Enabled = false;
+                    TxtExtraccion.Enabled = false;
+
+                    TxtAgaveEntranteKg.Enabled = false;
+                    ChekMagueyComprado.Enabled = false;
+                    FrmAgaveSobrante frm = new FrmAgaveSobrante();
+
+                    frm.no_cliente = no_cliente;
+
+                    frm.ShowDialog();
+                    if (frm.agave_kg == "")
+                    {
+                        MessageBox.Show("Maguey Sobrante, condición 1: ");
+                        TxtNoGuia.Enabled = false;
+                        TxtNoPredio.Enabled = false;
+                        CmbNoPredio.Enabled = false;
+                        CmbMaguey.Enabled = true;
+                        TxtExtraccion.Enabled = false;
+                        TxtAgaveEntranteKg.Enabled = false;
+                        ChekAgaveSobrante.Checked = false;
+                        ChekMagueyComprado.Enabled = true;
+                        TxtAgaveEntranteKg.Text = "";
+                        id_predio_agave_sobrante = "";
+                        id_plnata_agave_sobrante = "";
+                        id_produccion_entrada_sobrante = "";
+                        id_agave_sobrante = "";
+                        predio_sobrante = "";
+                        planta_sobrante = "";
+                        porcen_art_sobrante = "";
+
+                        CmbMaguey.DataSource = null;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Maguey Sobrante, condición 2: ");
+                        TxtAgaveEntranteKg.Text = frm.agave_kg;
+                        id_predio_agave_sobrante = frm.predio;
+                        id_plnata_agave_sobrante = frm.planta;
+                        id_produccion_entrada_sobrante = frm.produccion;
+                        id_agave_sobrante = frm.id;
+                        porcen_art_sobrante = frm.art;
+                        if (porcen_art_sobrante != "0")
+                        {
+                            TxtArt.Text = porcen_art_sobrante;
+                            TxtArt.Enabled = false;
+                        }
+                        predio_sobrante = ConexionMysql.regresaCampoConsulta("SELECT paraje FROM  paraje  WHERE id_paraje='" + (id_predio_agave_sobrante == "" ? "0" : id_predio_agave_sobrante) + "'");
+                        planta_sobrante = ConexionMysql.regresaCampoConsulta("SELECT nombre FROM  comun INNER JOIN existenciaplanta ON existenciaplanta.id_comun=comun.id_comun   WHERE existenciaplanta.id_plantas=" + id_plnata_agave_sobrante + "");
+                    }
+                    
+                    /*else
+                    {
+
+                        TxtNoGuia.Enabled = true;
+                        TxtNoPredio.Enabled = true;
+                        CmbNoPredio.Enabled = true;
+                        CmbMaguey.Enabled = true;
+                        TxtExtraccion.Enabled = true;
+                        TxtAgaveEntranteKg.Enabled = true;
+                        ChekMagueyComprado.Enabled = true;
+                        TxtAgaveEntranteKg.Text = "";
+                        id_predio_agave_sobrante = "";
+                        id_plnata_agave_sobrante = "";
+                        id_produccion_entrada_sobrante = "";
+                        id_agave_sobrante = "";
+                        predio_sobrante = "";
+                        planta_sobrante = "";
+                        porcen_art_sobrante = "";
+                        TxtArt.Text = "";
+                        TxtArt.Enabled = true;
+
+                    }*/
+                }
+                else
+                {
+
+
+                    TxtNoGuia.Enabled = true;
+                    TxtNoPredio.Enabled = true;
+                    CmbMaguey.DataSource = null;
+                    CmbNoPredio.Enabled = true;
+                    if (CmbNoPredio.SelectedValue != null)
+                    {
+                        if (DtaEnsamble.Rows.Count > 0)
+                        {
+                            PlantasNoMostrar();
+                        }
+                        else
+                        {
+                            ConexionMysql.llenaCombo(ref CmbMaguey, "SELECT existenciaplanta.id_plantas,CONCAT(comun.nombre, '  ', existenciaplanta.edad,'  años (',especie.genespecie,')' ) as Maguey, existenciaplanta.id_paraje id_paraje FROM  existenciaplanta INNER JOIN comun  ON existenciaplanta.id_comun=comun.id_comun INNER JOIN especie on comun.id_especie=especie.id_especie WHERE   existenciaplanta.id_paraje='" + CmbNoPredio.SelectedValue + "' AND edad>=5 and existenciaplanta.existenciaplantas > 0", "id_plantas", "Maguey");
+                        }
+                    }
+                }
+            }
+            //MessageBox.Show(CmbTipoMaguey.SelectedValue.ToString());
+            /*try
+            {
+                TxtExistencia.Text = "";
+                TxtExtraccion.Text = "";
+                if (CmbMaguey.DataSource != null)
+                {
+                    if (ChekMagueyComprado.Checked == true)
+                    {
+                        if (chkGuiaExterna.Checked == true)
+                        {
+                            string clienteCrm = ConexionMysql.regresaCampoConsulta("SELECT cliente_antiguo FROM clientes WHERE no_cliente ='" + no_cliente + "'");
+                            TxtExistencia.Text = ConexionMysql.regresaCampoConsulta("SELECT existenciaplantas FROM  reveca2_existenciaplanta_comprada  WHERE id_existenciaplanta_comprada='" + CmbMaguey.SelectedValue + "' and no_cliente='" + clienteCrm + "'");
+                            //no_guia = ConexionMysql.regresaCampoConsulta("SELECT no_guia FROM  existenciaplanta_comprada  WHERE id_existenciaplanta_comprada='" + CmbMaguey.SelectedValue + "' and no_cliente='" + no_cliente + "'");
+                            no_guia = ConexionMysql.regresaCampoConsulta("SELECT no_guia FROM  reveca2_existenciaplanta_comprada  WHERE id_existenciaplanta_comprada='" + CmbMaguey.SelectedValue + "' and no_cliente='" + clienteCrm + "'");
+
+                            //-- id_predio_comprado = ConexionMysql.regresaCampoConsulta("SELECT id_paraje FROM  existenciaplanta  WHERE id_plantas=" + CmbMaguey.SelectedValue + "");
+                            id_predio_comprado = ConexionMysql.regresaCampoConsulta("SELECT id_paraje FROM  reveca2_existenciaplanta inner join reveca2_existenciaplanta_comprada on reveca2_existenciaplanta_comprada.id_planta=reveca2_existenciaplanta.id_plantas WHERE reveca2_existenciaplanta_comprada.id_existenciaplanta_comprada='" + CmbMaguey.SelectedValue + "'");
+                            predio_comprado = ConexionMysql.regresaCampoConsulta("SELECT paraje FROM  reveca2_paraje  WHERE id_paraje='" + id_predio_comprado + "'");
+                        }
+                        else
+                        {
+                            TxtExistencia.Text = ConexionMysql.regresaCampoConsulta("SELECT existenciaplantas FROM  existenciaplanta_comprada  WHERE id_existenciaplanta_comprada='" + CmbMaguey.SelectedValue + "' and no_cliente='" + no_cliente + "'");
+                            no_guia = ConexionMysql.regresaCampoConsulta("SELECT no_guia FROM  existenciaplanta_comprada  WHERE id_existenciaplanta_comprada='" + CmbMaguey.SelectedValue + "' and no_cliente='" + no_cliente + "'");
+                            id_predio_comprado = ConexionMysql.regresaCampoConsulta("SELECT id_paraje FROM  existenciaplanta inner join existenciaplanta_comprada on existenciaplanta_comprada.id_planta=existenciaplanta.id_plantas WHERE existenciaplanta_comprada.id_existenciaplanta_comprada='" + CmbMaguey.SelectedValue + "'");
+                            predio_comprado = ConexionMysql.regresaCampoConsulta("SELECT paraje FROM  paraje  WHERE id_paraje='" + id_predio_comprado + "'");
+                        }
+                    }
+                    else
+                    {
+                        if (TxtNoGuia.Text.Substring(0, 1) == "g" || TxtNoGuia.Text.Substring(0, 1) == "G")
+                        {
+                            TxtExistencia.Text = ConexionMysql.regresaCampoConsulta("SELECT existenciaplantas FROM  existenciaplanta  WHERE id_plantas=" + CmbMaguey.SelectedValue + "");
+                            id_predio_comprado = "";
+                            predio_comprado = "";
+                        }
+                        else
+                        {
+                            TxtExistencia.Text = ConexionMysql.regresaCampoConsulta("SELECT existenciaplantas FROM  reveca2_existenciaplanta  WHERE id_plantas=" + CmbMaguey.SelectedValue + "");
+                            id_predio_comprado = "";
+                            predio_comprado = "";
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Aviso Importante", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }*/
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

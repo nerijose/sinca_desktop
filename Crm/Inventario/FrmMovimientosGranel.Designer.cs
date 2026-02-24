@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMovimientosGranel));
             this.PanelDilucion = new System.Windows.Forms.Panel();
             this.lblNoloteDilucion = new System.Windows.Forms.Label();
@@ -110,6 +110,7 @@
             this.DataFechaTridestilacionFin = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.BtnGuardarTridestilacion = new System.Windows.Forms.Button();
+            this.TxtMensajeTridestilacion = new iTalk_ChatBubble_L();
             this.BtnInformacionTridestilacion = new System.Windows.Forms.Button();
             this.PanelUnion = new System.Windows.Forms.Panel();
             this.lblNoloteUnion = new System.Windows.Forms.Label();
@@ -131,6 +132,8 @@
             this.CmbLotesGranel = new System.Windows.Forms.ComboBox();
             this.BtnGuardarGranel = new System.Windows.Forms.Button();
             this.PanelSalida = new System.Windows.Forms.Panel();
+            this.chbTrasladoClientExt = new System.Windows.Forms.CheckBox();
+            this.chbBedidasCon = new System.Windows.Forms.CheckBox();
             this.lblBebidasCon = new System.Windows.Forms.Label();
             this.txtDestinoBebidaMzcl = new System.Windows.Forms.TextBox();
             this.txtRazonSocialExterna = new System.Windows.Forms.TextBox();
@@ -192,9 +195,6 @@
             this.BtnBarrica = new System.Windows.Forms.Button();
             this.BtnDilucion = new System.Windows.Forms.Button();
             this.BtnMuestreo = new System.Windows.Forms.Button();
-            this.chbBedidasCon = new System.Windows.Forms.CheckBox();
-            this.TxtMensajeTridestilacion = new iTalk_ChatBubble_L();
-            this.chbTrasladoClientExt = new System.Windows.Forms.CheckBox();
             this.PanelDilucion.SuspendLayout();
             this.PanelMuestreo.SuspendLayout();
             this.PanelBarrica.SuspendLayout();
@@ -1123,6 +1123,19 @@
             this.BtnGuardarTridestilacion.UseVisualStyleBackColor = false;
             this.BtnGuardarTridestilacion.Click += new System.EventHandler(this.BtnGuardarTridestilacion_Click);
             // 
+            // TxtMensajeTridestilacion
+            // 
+            this.TxtMensajeTridestilacion.BackColor = System.Drawing.Color.Transparent;
+            this.TxtMensajeTridestilacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.TxtMensajeTridestilacion.BubbleColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(206)))), ((int)(((byte)(215)))));
+            this.TxtMensajeTridestilacion.DrawBubbleArrow = true;
+            this.TxtMensajeTridestilacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtMensajeTridestilacion.Location = new System.Drawing.Point(550, 174);
+            this.TxtMensajeTridestilacion.Name = "TxtMensajeTridestilacion";
+            this.TxtMensajeTridestilacion.Size = new System.Drawing.Size(195, 106);
+            this.TxtMensajeTridestilacion.TabIndex = 453;
+            this.TxtMensajeTridestilacion.Visible = false;
+            // 
             // BtnInformacionTridestilacion
             // 
             this.BtnInformacionTridestilacion.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -1272,14 +1285,14 @@
             this.DtaTanques.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DtaTanques.BackgroundColor = System.Drawing.SystemColors.Control;
             this.DtaTanques.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DarkSeaGreen;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DtaTanques.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSeaGreen;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DtaTanques.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DtaTanques.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DtaTanques.EnableHeadersVisualStyles = false;
             this.DtaTanques.Location = new System.Drawing.Point(164, 240);
@@ -1382,14 +1395,14 @@
             this.DtaProduccionParaDividirAgranel.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DtaProduccionParaDividirAgranel.BackgroundColor = System.Drawing.SystemColors.Control;
             this.DtaProduccionParaDividirAgranel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkSeaGreen;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DtaProduccionParaDividirAgranel.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkSeaGreen;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DtaProduccionParaDividirAgranel.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DtaProduccionParaDividirAgranel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DtaProduccionParaDividirAgranel.EnableHeadersVisualStyles = false;
             this.DtaProduccionParaDividirAgranel.Location = new System.Drawing.Point(62, 91);
@@ -1463,6 +1476,30 @@
             this.PanelSalida.Name = "PanelSalida";
             this.PanelSalida.Size = new System.Drawing.Size(822, 379);
             this.PanelSalida.TabIndex = 277;
+            // 
+            // chbTrasladoClientExt
+            // 
+            this.chbTrasladoClientExt.AutoSize = true;
+            this.chbTrasladoClientExt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbTrasladoClientExt.ForeColor = System.Drawing.Color.Maroon;
+            this.chbTrasladoClientExt.Location = new System.Drawing.Point(137, 205);
+            this.chbTrasladoClientExt.Name = "chbTrasladoClientExt";
+            this.chbTrasladoClientExt.Size = new System.Drawing.Size(181, 19);
+            this.chbTrasladoClientExt.TabIndex = 308;
+            this.chbTrasladoClientExt.Text = "Traslado cliente externo";
+            this.chbTrasladoClientExt.UseVisualStyleBackColor = true;
+            // 
+            // chbBedidasCon
+            // 
+            this.chbBedidasCon.AutoSize = true;
+            this.chbBedidasCon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbBedidasCon.ForeColor = System.Drawing.Color.Blue;
+            this.chbBedidasCon.Location = new System.Drawing.Point(528, 214);
+            this.chbBedidasCon.Name = "chbBedidasCon";
+            this.chbBedidasCon.Size = new System.Drawing.Size(254, 19);
+            this.chbBedidasCon.TabIndex = 307;
+            this.chbBedidasCon.Text = "Traslados para bebidas con mezcal";
+            this.chbBedidasCon.UseVisualStyleBackColor = true;
             // 
             // lblBebidasCon
             // 
@@ -2218,43 +2255,6 @@
             this.BtnMuestreo.UseVisualStyleBackColor = false;
             this.BtnMuestreo.Click += new System.EventHandler(this.BtnMuestreo_Click);
             // 
-            // chbBedidasCon
-            // 
-            this.chbBedidasCon.AutoSize = true;
-            this.chbBedidasCon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbBedidasCon.ForeColor = System.Drawing.Color.Blue;
-            this.chbBedidasCon.Location = new System.Drawing.Point(528, 214);
-            this.chbBedidasCon.Name = "chbBedidasCon";
-            this.chbBedidasCon.Size = new System.Drawing.Size(254, 19);
-            this.chbBedidasCon.TabIndex = 307;
-            this.chbBedidasCon.Text = "Traslados para bebidas con mezcal";
-            this.chbBedidasCon.UseVisualStyleBackColor = true;
-            // 
-            // TxtMensajeTridestilacion
-            // 
-            this.TxtMensajeTridestilacion.BackColor = System.Drawing.Color.Transparent;
-            this.TxtMensajeTridestilacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.TxtMensajeTridestilacion.BubbleColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(206)))), ((int)(((byte)(215)))));
-            this.TxtMensajeTridestilacion.DrawBubbleArrow = true;
-            this.TxtMensajeTridestilacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtMensajeTridestilacion.Location = new System.Drawing.Point(550, 174);
-            this.TxtMensajeTridestilacion.Name = "TxtMensajeTridestilacion";
-            this.TxtMensajeTridestilacion.Size = new System.Drawing.Size(195, 106);
-            this.TxtMensajeTridestilacion.TabIndex = 453;
-            this.TxtMensajeTridestilacion.Visible = false;
-            // 
-            // chbTrasladoClientExt
-            // 
-            this.chbTrasladoClientExt.AutoSize = true;
-            this.chbTrasladoClientExt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbTrasladoClientExt.ForeColor = System.Drawing.Color.Maroon;
-            this.chbTrasladoClientExt.Location = new System.Drawing.Point(137, 205);
-            this.chbTrasladoClientExt.Name = "chbTrasladoClientExt";
-            this.chbTrasladoClientExt.Size = new System.Drawing.Size(181, 19);
-            this.chbTrasladoClientExt.TabIndex = 308;
-            this.chbTrasladoClientExt.Text = "Traslado cliente externo";
-            this.chbTrasladoClientExt.UseVisualStyleBackColor = true;
-            // 
             // FrmMovimientosGranel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2270,6 +2270,8 @@
             this.Controls.Add(this.BtnBarrica);
             this.Controls.Add(this.BtnDilucion);
             this.Controls.Add(this.BtnMuestreo);
+            this.Controls.Add(this.PanelMuestreo);
+            this.Controls.Add(this.PanelUnion);
             this.Controls.Add(this.PanelSalida);
             this.Controls.Add(this.panelAbocante);
             this.Controls.Add(this.PanelTridestilacion);
@@ -2278,8 +2280,6 @@
             this.Controls.Add(this.PanelDilucion);
             this.Controls.Add(this.PanelFq);
             this.Controls.Add(this.PanelMensajes);
-            this.Controls.Add(this.PanelMuestreo);
-            this.Controls.Add(this.PanelUnion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmMovimientosGranel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

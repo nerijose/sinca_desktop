@@ -30,9 +30,9 @@ namespace Crm.Utilerias
                 conexionRemota = new MySqlConnection();
                 Clave er = new Clave();
 
-                //string cadenaconex = "Server=localhost;Database=bdEstacionamiento; Uid=root;Pwd=toor;";
-               // string cadenaconex = "Database=crmreg;Data Source=50.63.227.48;User Id=crmreg;Password=CrM#bd2016JL";
-                string cadenaconex = er.remota();
+                string cadenaconex = "Server=localhost;Database=amma_nuevo; Uid=root;Pwd=N4vidad;";
+                //string cadenaconex = "Database=crmreg;Data Source=50.63.227.48;User Id=crmreg;Password=CrM#bd2016JL";
+                //string cadenaconex = er.remota();
                 conexionRemota.ConnectionString = cadenaconex;
                 conexionRemota.Open();
                 return true;

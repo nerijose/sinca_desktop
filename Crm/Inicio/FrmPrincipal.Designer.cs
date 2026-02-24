@@ -38,6 +38,7 @@
             this.BtnCerrar = new System.Windows.Forms.Button();
             this.BtnCambioUsuario = new System.Windows.Forms.Button();
             this.menu_lateral = new System.Windows.Forms.Panel();
+            this.btnDictaminacion = new System.Windows.Forms.Button();
             this.btnAdministrador = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.BtnPlanDeTrabajo = new System.Windows.Forms.Button();
@@ -204,6 +205,7 @@
             // menu_lateral
             // 
             this.menu_lateral.BackColor = System.Drawing.Color.SteelBlue;
+            this.menu_lateral.Controls.Add(this.btnDictaminacion);
             this.menu_lateral.Controls.Add(this.btnAdministrador);
             this.menu_lateral.Controls.Add(this.label2);
             this.menu_lateral.Controls.Add(this.BtnPlanDeTrabajo);
@@ -223,6 +225,25 @@
             this.menu_lateral.Name = "menu_lateral";
             this.menu_lateral.Size = new System.Drawing.Size(250, 788);
             this.menu_lateral.TabIndex = 18;
+            // 
+            // btnDictaminacion
+            // 
+            this.btnDictaminacion.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnDictaminacion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDictaminacion.FlatAppearance.BorderSize = 0;
+            this.btnDictaminacion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkTurquoise;
+            this.btnDictaminacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDictaminacion.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDictaminacion.ForeColor = System.Drawing.Color.White;
+            this.btnDictaminacion.Image = ((System.Drawing.Image)(resources.GetObject("btnDictaminacion.Image")));
+            this.btnDictaminacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDictaminacion.Location = new System.Drawing.Point(4, 310);
+            this.btnDictaminacion.Name = "btnDictaminacion";
+            this.btnDictaminacion.Size = new System.Drawing.Size(246, 45);
+            this.btnDictaminacion.TabIndex = 26;
+            this.btnDictaminacion.Text = "Dictaminación";
+            this.btnDictaminacion.UseVisualStyleBackColor = false;
+            this.btnDictaminacion.Click += new System.EventHandler(this.btnDictaminacion_Click);
             // 
             // btnAdministrador
             // 
@@ -265,7 +286,7 @@
             this.BtnPlanDeTrabajo.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnPlanDeTrabajo.ForeColor = System.Drawing.Color.White;
             this.BtnPlanDeTrabajo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnPlanDeTrabajo.Location = new System.Drawing.Point(4, 444);
+            this.BtnPlanDeTrabajo.Location = new System.Drawing.Point(4, 461);
             this.BtnPlanDeTrabajo.Name = "BtnPlanDeTrabajo";
             this.BtnPlanDeTrabajo.Size = new System.Drawing.Size(246, 45);
             this.BtnPlanDeTrabajo.TabIndex = 4;
@@ -357,7 +378,7 @@
             this.BtnMensajes.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnMensajes.ForeColor = System.Drawing.Color.White;
             this.BtnMensajes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnMensajes.Location = new System.Drawing.Point(4, 386);
+            this.BtnMensajes.Location = new System.Drawing.Point(4, 414);
             this.BtnMensajes.Name = "BtnMensajes";
             this.BtnMensajes.Size = new System.Drawing.Size(246, 45);
             this.BtnMensajes.TabIndex = 9;
@@ -397,7 +418,7 @@
             this.BtnConsulta.ForeColor = System.Drawing.Color.White;
             this.BtnConsulta.Image = global::Crm.Properties.Resources.icon__2_;
             this.BtnConsulta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnConsulta.Location = new System.Drawing.Point(4, 325);
+            this.BtnConsulta.Location = new System.Drawing.Point(0, 363);
             this.BtnConsulta.Name = "BtnConsulta";
             this.BtnConsulta.Size = new System.Drawing.Size(246, 45);
             this.BtnConsulta.TabIndex = 8;
@@ -615,5 +636,6 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Button btnAdministrador;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnDictaminacion;
     }
 }

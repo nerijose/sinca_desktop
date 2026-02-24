@@ -113,7 +113,7 @@ namespace Crm.Inventario
 
         private void FrmNuevoMaestroFabrica_Load(object sender, EventArgs e)
         {
-            CmbEstado.Items.Insert(0, "DURANGO");
+            /*CmbEstado.Items.Insert(0, "DURANGO");
             CmbEstado.Items.Insert(1, "GUERRERO");
             CmbEstado.Items.Insert(2, "GUANAJUATO");
             CmbEstado.Items.Insert(3, "MICHOACÁN");
@@ -121,7 +121,7 @@ namespace Crm.Inventario
             CmbEstado.Items.Insert(5, "PUEBLA");
             CmbEstado.Items.Insert(6, "SAN LUIS POTOSÍ");
             CmbEstado.Items.Insert(7, "TAMAULIPAS");
-            CmbEstado.Items.Insert(8, "ZACATECAS");
+            CmbEstado.Items.Insert(8, "ZACATECAS");*/
             /*
             CmbEstado.Items.Insert(0, "--Selecciona un estado -- ");
             CmbEstado.Items.Insert(10, "DURANGO");
@@ -133,6 +133,9 @@ namespace Crm.Inventario
             CmbEstado.Items.Insert(20, "SAN LUIS POTOSÍ");
             CmbEstado.Items.Insert(28, "TAMAULIPAS");
             CmbEstado.Items.Insert(32, "ZACATECAS");*/
+            //string clave_estado = ConexionMysql.regresaCampoConsulta("SELECT clave, nombre FROM estados ");
+
+            ConexionMysql.llenaComboAutocomplit(ref CmbEstado, "SELECT clave, nombre FROM estados WHERE dom = '1' ", "clave", "nombre");
         }
 
         private void CmbEstado_SelectedIndexChanged(object sender, EventArgs e)

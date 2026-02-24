@@ -691,8 +691,8 @@ namespace Crm.Inventario
 
                     ///// --- BUSCA SI EXISTE  HOLOGRAMAS OCUPADOS DE LA  MARCA EN ALMACEN DE ENVASASO HOLOGRAMAS 
 
-                    //DataSet Datos3 = new DataSet();
-                    ConexionMysql.llenaDataset(ref Datos3, "select aeh.holograma_inicio,aeh.holograma_fin, aee.no_lote, em.marca,aee.contenido_por_botella,aee.unidad_medida from almacen_envasado_holograma aeh inner join almacen_envasado_entrada aee on aeh.id_almacen_envasado_entrada = aee.id_almacen_envasado_entrada inner join marcas em on  SUBSTRING(aee.id_marca,1,5) = em.no_cliente and  SUBSTRING(aee.id_marca,7,1)=em.cve_marca  where aeh.no_cliente='" + no_cliente + "' and aeh.cliente_crm='' and aeh.cve_marca='" + cve_marca + "' and aeh.serie='" + TxtSerie.Text.ToUpper() + "'");
+                    
+                    ConexionMysql.llenaDataset(ref Datos3, "select aeh.holograma_inicio,aeh.holograma_fin, aee.no_lote, em.marca,aee.contenido_por_botella,aee.unidad_medida from almacen_envasado_holograma aeh inner join almacen_envasado_entrada aee on aeh.id_almacen_envasado_entrada = aee.id_almacen_envasado_entrada inner join marcas em on  SUBSTRING(aee.id_marca,1,5) = em.no_cliente and  aeh.cve_marca=em.cve_marca  where aeh.no_cliente='" + no_cliente + "' and aeh.cliente_crm='' and aeh.cve_marca='" + cve_marca + "' and aeh.serie='" + TxtSerie.Text.ToUpper() + "'");
 
                     foreach (DataRow row in Datos3.Tables[0].Rows)
                     {

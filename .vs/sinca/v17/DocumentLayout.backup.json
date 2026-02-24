@@ -1,0 +1,144 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Administrador\\Desktop\\sinca definitivo\\Sinca-final\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0080E1EA-FD38-45F9-B25B-6F2A88D31EFB}|Crm\\sinca.csproj|c:\\users\\administrador\\desktop\\sinca definitivo\\sinca-final\\crm\\inventario\\frmdictamen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0080E1EA-FD38-45F9-B25B-6F2A88D31EFB}|Crm\\sinca.csproj|solutionrelative:crm\\inventario\\frmdictamen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0080E1EA-FD38-45F9-B25B-6F2A88D31EFB}|Crm\\sinca.csproj|c:\\users\\administrador\\desktop\\sinca definitivo\\sinca-final\\crm\\inventario\\frmdictamen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{0080E1EA-FD38-45F9-B25B-6F2A88D31EFB}|Crm\\sinca.csproj|solutionrelative:crm\\inventario\\frmdictamen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0080E1EA-FD38-45F9-B25B-6F2A88D31EFB}|Crm\\sinca.csproj|C:\\Users\\Administrador\\Desktop\\sinca definitivo\\Sinca-final\\crm\\inventario\\frmbuenaspracticas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0080E1EA-FD38-45F9-B25B-6F2A88D31EFB}|Crm\\sinca.csproj|solutionrelative:crm\\inventario\\frmbuenaspracticas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0080E1EA-FD38-45F9-B25B-6F2A88D31EFB}|Crm\\sinca.csproj|C:\\Users\\Administrador\\Desktop\\sinca definitivo\\Sinca-final\\crm\\inventario\\frmactadetallada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0080E1EA-FD38-45F9-B25B-6F2A88D31EFB}|Crm\\sinca.csproj|solutionrelative:crm\\inventario\\frmactadetallada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0080E1EA-FD38-45F9-B25B-6F2A88D31EFB}|Crm\\sinca.csproj|C:\\Users\\Administrador\\Desktop\\sinca definitivo\\Sinca-final\\crm\\inventario\\frmagregarimagen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0080E1EA-FD38-45F9-B25B-6F2A88D31EFB}|Crm\\sinca.csproj|solutionrelative:crm\\inventario\\frmagregarimagen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0080E1EA-FD38-45F9-B25B-6F2A88D31EFB}|Crm\\sinca.csproj|C:\\Users\\Administrador\\Desktop\\sinca definitivo\\Sinca-final\\crm\\inventario\\frmactadetallada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{0080E1EA-FD38-45F9-B25B-6F2A88D31EFB}|Crm\\sinca.csproj|solutionrelative:crm\\inventario\\frmactadetallada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0080E1EA-FD38-45F9-B25B-6F2A88D31EFB}|Crm\\sinca.csproj|c:\\users\\administrador\\desktop\\sinca definitivo\\sinca-final\\crm\\inventario\\frmagregarimagen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{0080E1EA-FD38-45F9-B25B-6F2A88D31EFB}|Crm\\sinca.csproj|solutionrelative:crm\\inventario\\frmagregarimagen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FrmDictamen.cs",
+              "DocumentMoniker": "C:\\Users\\Administrador\\Desktop\\sinca definitivo\\Sinca-final\\Crm\\Inventario\\FrmDictamen.cs",
+              "RelativeDocumentMoniker": "Crm\\Inventario\\FrmDictamen.cs",
+              "ToolTip": "C:\\Users\\Administrador\\Desktop\\sinca definitivo\\Sinca-final\\Crm\\Inventario\\FrmDictamen.cs*",
+              "RelativeToolTip": "Crm\\Inventario\\FrmDictamen.cs*",
+              "ViewState": "AgIAAEQIAAAAAAAAAAAiwFsIAABzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T16:30:45.446Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FrmDictamen.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Administrador\\Desktop\\sinca definitivo\\Sinca-final\\Crm\\Inventario\\FrmDictamen.cs",
+              "RelativeDocumentMoniker": "Crm\\Inventario\\FrmDictamen.cs",
+              "ToolTip": "C:\\Users\\Administrador\\Desktop\\sinca definitivo\\Sinca-final\\Crm\\Inventario\\FrmDictamen.cs [Dise\u00F1o]*",
+              "RelativeToolTip": "Crm\\Inventario\\FrmDictamen.cs [Dise\u00F1o]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T16:30:30.635Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FrmAgregarImagen.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Administrador\\Desktop\\sinca definitivo\\Sinca-final\\Crm\\Inventario\\FrmAgregarImagen.cs",
+              "RelativeDocumentMoniker": "Crm\\Inventario\\FrmAgregarImagen.cs",
+              "ToolTip": "C:\\Users\\Administrador\\Desktop\\sinca definitivo\\Sinca-final\\Crm\\Inventario\\FrmAgregarImagen.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Crm\\Inventario\\FrmAgregarImagen.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T16:16:54.302Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FrmBuenasPracticas.cs",
+              "DocumentMoniker": "C:\\Users\\Administrador\\Desktop\\sinca definitivo\\Sinca-final\\Crm\\Inventario\\FrmBuenasPracticas.cs",
+              "RelativeDocumentMoniker": "Crm\\Inventario\\FrmBuenasPracticas.cs",
+              "ToolTip": "C:\\Users\\Administrador\\Desktop\\sinca definitivo\\Sinca-final\\Crm\\Inventario\\FrmBuenasPracticas.cs",
+              "RelativeToolTip": "Crm\\Inventario\\FrmBuenasPracticas.cs",
+              "ViewState": "AgIAAFsDAAAAAAAAAAAcwCEDAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T18:20:29.673Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FrmActaDetallada.cs",
+              "DocumentMoniker": "C:\\Users\\Administrador\\Desktop\\sinca definitivo\\Sinca-final\\Crm\\Inventario\\FrmActaDetallada.cs",
+              "RelativeDocumentMoniker": "Crm\\Inventario\\FrmActaDetallada.cs",
+              "ToolTip": "C:\\Users\\Administrador\\Desktop\\sinca definitivo\\Sinca-final\\Crm\\Inventario\\FrmActaDetallada.cs",
+              "RelativeToolTip": "Crm\\Inventario\\FrmActaDetallada.cs",
+              "ViewState": "AgIAAFMCAAAAAAAAAAAUwF4CAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-29T18:35:28.349Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FrmAgregarImagen.cs",
+              "DocumentMoniker": "C:\\Users\\Administrador\\Desktop\\sinca definitivo\\Sinca-final\\Crm\\Inventario\\FrmAgregarImagen.cs",
+              "RelativeDocumentMoniker": "Crm\\Inventario\\FrmAgregarImagen.cs",
+              "ToolTip": "C:\\Users\\Administrador\\Desktop\\sinca definitivo\\Sinca-final\\Crm\\Inventario\\FrmAgregarImagen.cs",
+              "RelativeToolTip": "Crm\\Inventario\\FrmAgregarImagen.cs",
+              "ViewState": "AgIAAMwBAAAAAAAAAAAqwOMBAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-16T18:27:15.226Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FrmActaDetallada.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Administrador\\Desktop\\sinca definitivo\\Sinca-final\\Crm\\Inventario\\FrmActaDetallada.cs",
+              "RelativeDocumentMoniker": "Crm\\Inventario\\FrmActaDetallada.cs",
+              "ToolTip": "C:\\Users\\Administrador\\Desktop\\sinca definitivo\\Sinca-final\\Crm\\Inventario\\FrmActaDetallada.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Crm\\Inventario\\FrmActaDetallada.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-19T18:36:06.382Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

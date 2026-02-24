@@ -1139,14 +1139,14 @@ namespace Crm.Inicio
             {
                 
                 string sep = "";
-                string values = "";
-                string sql_ins = "INSERT INTO clientes (no_cliente,asociado,nombre,cp,cliente_antiguo) VALUES";
+                string values = "";//moises
+                string sql_ins = "INSERT INTO clientes (no_cliente,asociado,nombre,cp,cliente_antiguo,rfc,tipo_persona,magueyero,mezcalero,envasador,comercializador,comercializador_bc) VALUES";
                 Boolean bandera_insert = false;//Se agrega
                 Boolean bandera_update = false;//Se agrega
                 DataSet NuevosClientes = new DataSet();
                 
                 //-- esta valida por el ide del consulta de id maximo---ConexionMysqlRemota2.llenaDataset(ref NuevosClientes, "SELECT no_cliente,nombre,cp FROM clientes where no_cliente>" + id_max_local + " and no_cliente != 9999");
-                ConexionMysqlRemota2.llenaDataset(ref NuevosClientes, "SELECT no_cliente,asociado,nombre,cp,actualizado,registro_crm FROM clientes where no_cliente != 'C9999'");
+                ConexionMysqlRemota2.llenaDataset(ref NuevosClientes, "SELECT no_cliente,asociado,nombre,cp,actualizado,registro_crm,rfc,tipo_persona,magueyero,mezcalero,envasador,comercializador,comercializador_bc FROM clientes where no_cliente != 'C9999'");
 
                 /*-----/ r@le----- la consulta de abajo se puede descomentar y la de arriba comentar para poder traer desde la base de datos el codigo postal de todos los cleintes */
                 /*SELECT clientes.no_cliente,clientes.nombre,domicilio.cp FROM clientes inner join domicilio on clientes.no_cliente=domicilio.no_cliente where clientes.no_cliente>" + id_max_local + " and domicilio.estatus=1 and clientes.no_cliente != 9999*/
@@ -1179,8 +1179,15 @@ namespace Crm.Inicio
                         string nombre = Convert.ToString(row["nombre"]);
                         string cp = Convert.ToString(row["cp"]);
                         string cliente_antiguo = Convert.ToString(row["registro_crm"]);
+                        string rfc = Convert.ToString(row["rfc"]);
+                        string tipo_persona = Convert.ToString(row["tipo_persona"]);
+                        string magueyero = Convert.ToString(row["magueyero"]); 
+                        string mezcalero = Convert.ToString(row["mezcalero"]); 
+                        string envasador = Convert.ToString(row["envasador"]);
+                        string comercializador = Convert.ToString(row["comercializador"]);
+                        string comercializador_bc = Convert.ToString(row["comercializador_bc"]);
 
-                        values += sep + "('" + no_cliente + "','" + asociado + "','" + nombre + "','" + cp + "','" + cliente_antiguo + "')";
+                        values += sep + "('" + no_cliente + "','" + asociado + "','" + nombre + "','" + cp + "','" + cliente_antiguo + "','" + rfc + "','" + tipo_persona + "','" + magueyero + "','" + mezcalero + "','" + envasador + "','" + comercializador + "','" + comercializador_bc + "')";
                         sep = ",";
                     }
                 }
@@ -1217,14 +1224,18 @@ namespace Crm.Inicio
                 Console.WriteLine("actualiza verificadores si no esta correcto el password");
                 string sep = "";
                 string values = "";
-                string sql = "INSERT INTO verificadores (id_us, nombre, dpto, login, password, cve_us, status,actualizado) VALUES";
+                string sql = "INSERT INTO verificadores (id_us, nombre, dpto, login, password, cve_us, status,actualizado,credencial,titulo) VALUES";
                 Boolean bandera_insert = false;
                 Boolean bandera_update = false;
                 DataSet datos = new DataSet();
+                
+                //cve_cred_2025
+                int anioActual = DateTime.Now.Year;
+                string creda="cve_cred_"+Convert.ToString(anioActual);
 
                 //ConexionMysqlRemota2.llenaDataset(ref datos, "SELECT id_granel_entrada, no_cliente, id_fabrica, DATE_FORMAT(fecha,'%Y-%m-%d') as fecha , id_comun, id_solicitud, no_lote, id_planta, agave_coccion_kg, id_predio, fq, clase, categoria, abocante, ingrediente, lts_entrada, grado_alcoholico_entrada, lts_existentes, grado_alcoholico_existente, id_verificador, actualizado from rv_granel_entrada ");
 
-                ConexionMysqlRemota2.llenaDataset(ref datos, "SELECT id_us, nombre, dpto, login, password, cve_us, status,actualizado from verificadores ");
+                ConexionMysqlRemota2.llenaDataset(ref datos, "SELECT v.id_us, v.nombre, v.dpto, v.login, v.password, v.cve_us, v.status,v.actualizado,p." + creda + " as credencial, p.titulo from verificadores v LEFT JOIN crm_personal p ON p.id_inspector=v.id_us");
 
                 if (datos.Tables[0].Rows.Count == 0)
                 {
@@ -1232,6 +1243,7 @@ namespace Crm.Inicio
                 }
                 foreach (DataRow row in datos.Tables[0].Rows) // itera los registros de la consulta remota de verificadores
                 {
+                    
                     string id = ConexionMysql.regresaCampoConsulta("select id_us from verificadores where id_us='" + Convert.ToString(row["id_us"]) + "'");
                     //string id = ConexionMysql.regresaCampoConsulta("select  id_granel_entrada from  granel_entrada where id_granel_entrada='" + Convert.ToString(row["id_granel_entrada"]) + "'");
                     if (id != "") // si encontro una conincidencia del id entonces solo debe de actualizar los datos
@@ -1239,8 +1251,10 @@ namespace Crm.Inicio
                         if (Convert.ToString(row["actualizado"]) == "0") // if campo actualizado en bd remota es actualizado=0
                         {
                             bandera_update = true;
+                            Console.WriteLine("UPDATE verificadores SET nombre='" + Convert.ToString(row["nombre"]) + "', dpto='" + Convert.ToString(row["dpto"]) + "', login='" + Convert.ToString(row["login"]) + "', password='" + Convert.ToString(row["password"]) + "', cve_us='" + Convert.ToString(row["cve_us"]) + "', status='" + Convert.ToString(row["status"]) + "', credencial='" + Convert.ToString(row["credencial"]) + "' WHERE id_us='" + Convert.ToString(row["id_us"]) + "' ");
+
                             //id_us, nombre, dpto, login, password, cve_us, status
-                            if (ConexionMysql.insUpd_transaccion("UPDATE verificadores SET nombre='" + Convert.ToString(row["nombre"]) + "', dpto='" + Convert.ToString(row["dpto"]) + "', login='" + Convert.ToString(row["login"]) + "', password='" + Convert.ToString(row["password"]) + "', cve_us='" + Convert.ToString(row["cve_us"]) + "', status='" + Convert.ToString(row["status"]) + "' WHERE id_us='" + Convert.ToString(row["id_us"]) + "' ") == "Error")
+                            if (ConexionMysql.insUpd_transaccion("UPDATE verificadores SET nombre='" + Convert.ToString(row["nombre"]) + "', dpto='" + Convert.ToString(row["dpto"]) + "', login='" + Convert.ToString(row["login"]) + "', password='" + Convert.ToString(row["password"]) + "', cve_us='" + Convert.ToString(row["cve_us"]) + "', status='" + Convert.ToString(row["status"]) + "', credencial='" + Convert.ToString(row["credencial"]) + "', titulo='" + Convert.ToString(row["titulo"]) + "' WHERE id_us='" + Convert.ToString(row["id_us"]) + "' ") == "Error")
                                 return false;
                         }
                     }
@@ -1255,8 +1269,10 @@ namespace Crm.Inicio
                         string password = Convert.ToString(row["password"]);
                         string cve_us = Convert.ToString(row["cve_us"]);
                         string status = Convert.ToString(row["status"]);
+                        string credencial = Convert.ToString(row["credencial"]);
+                        string titulo = Convert.ToString(row["titulo"]);
 
-                        values += sep + "('" + id_us + "','" + nombre + "','" + dpto + "','" + login + "','" + password + "','" + cve_us + "','" + status + "',1)";
+                        values += sep + "('" + id_us + "','" + nombre + "','" + dpto + "','" + login + "','" + password + "','" + cve_us + "','" + status + "',1,'" + credencial + "', '" + titulo + "')";
                         sep = ",";
                     }
                 }
@@ -1424,6 +1440,21 @@ namespace Crm.Inicio
                 {
                     id_max_local = "0";
                 }
+                // BUSCAR MARCAS SIN LETRA Y ACTUALIZARLAS
+                DataSet MarcasSin = new DataSet();
+                ConexionMysql.llenaDataset(ref MarcasSin, "SELECT id,no_cliente,cve_marca,marca,serie FROM marcas WHERE cve_marca = '' ");
+                foreach (DataRow row in MarcasSin.Tables[0].Rows)
+                {
+                    string cve_marca = ConexionMysqlRemota2.regresaCampoConsulta("SELECT cve_marca from marcas where no_cliente='" + Convert.ToString(row["no_cliente"]) + "' AND marca='" + Convert.ToString(row["marca"]) + "' ");
+                    if(cve_marca != "")
+                    {
+                        if (ConexionMysql.insUpd_transaccion("UPDATE marcas SET cve_marca='" + Convert.ToString(cve_marca) + "' WHERE id='" + Convert.ToString(row["id"]) + "' ") == "Error")
+                            return false;
+                        ConexionMysql.transCompleta();
+
+                    }
+                }
+                // */
                 string sep = "";
                 string values = "";
                 Boolean bandera_insert = false;
@@ -1861,9 +1892,9 @@ namespace Crm.Inicio
                 }
                 string sep = "";
                 string values = "";
-                string sql_ins = "INSERT INTO instalaciones (id,tipo,alias,calle,colonia,responsable) VALUES";
+                string sql_ins = "INSERT INTO instalaciones (id,tipo,alias,calle,colonia,responsable,municipio,noexterior,nointerior,cp,referencia,telefono,granel,maduracion,producto_terminado,correo,rv_instalaciones) VALUES";
                 DataSet NuevosDatos = new DataSet();
-                ConexionMysqlRemota2.llenaDataset(ref NuevosDatos, "SELECT id,tipo,alias,calle,colonia,responsable FROM instalaciones where id>" + id_max_local + "");
+                ConexionMysqlRemota2.llenaDataset(ref NuevosDatos, "SELECT id,tipo,alias,calle,colonia,responsable,municipio,noexterior,nointerior,cp,referencia,telefono,granel,maduracion,producto_terminado,correo,rv_instalaciones FROM instalaciones where id>" + id_max_local + "");
                 if (NuevosDatos.Tables[0].Rows.Count == 0)
                 {
                     return true;
@@ -1876,7 +1907,18 @@ namespace Crm.Inicio
                     string calle = Convert.ToString(row["calle"]);
                     string colonia = Convert.ToString(row["colonia"]);
                     string responsable = Convert.ToString(row["responsable"]);
-                    values += sep + "(" + id + "," + tipo + ",'" + alias + "','" + calle + "','" + colonia + "','" + responsable + "')";
+                    string municipio = Convert.ToString(row["municipio"]);
+                    string noexterior = Convert.ToString(row["noexterior"]);
+                    string nointerior = Convert.ToString(row["nointerior"]);
+                    string cp = Convert.ToString(row["cp"]);
+                    string telefono = Convert.ToString(row["telefono"]);
+                    string referencia = Convert.ToString(row["referencia"]);
+                    string granel = Convert.ToString(row["granel"]);
+                    string maduracion = Convert.ToString(row["maduracion"]);
+                    string producto_terminado = Convert.ToString(row["producto_terminado"]);
+                    string correo = Convert.ToString(row["correo"]);
+                    string rv_instalaciones = Convert.ToString(row["rv_instalaciones"]);
+                    values += sep + "(" + id + "," + tipo + ",'" + alias + "','" + calle + "','" + colonia + "','" + responsable + "','" + municipio + "','" + noexterior + "','" + nointerior + "','" + cp + "','" + referencia + "','" + telefono + "','" + granel + "','" + maduracion + "','" + calle+ "','" + correo + "','" + rv_instalaciones + "')";
                     sep = ",";
                 }
                 sql_ins += values + ";";
@@ -1937,8 +1979,6 @@ namespace Crm.Inicio
         }
 
 
-
-        /// actualiza los estados
         public Boolean ActualizaEstados()
         {
             try
@@ -1950,38 +1990,75 @@ namespace Crm.Inicio
                 }
                 string sep = "";
                 string values = "";
-                string sql_ins = "INSERT INTO estados (clave,nombre,codigo) VALUES";
+                Boolean bandera_insert = false;
+                Boolean bandera_update = false;
+                string sql_ins = "INSERT INTO estados (clave,nombre,codigo,dom,ubica,actualizado) VALUES";
                 DataSet NuevosDatos = new DataSet();
-
-                ConexionMysqlRemota2.llenaDataset(ref NuevosDatos, "SELECT clave,nombre,codigo FROM estados where clave>" + id_max_local + "");
+                ConexionMysqlRemota2.llenaDataset(ref NuevosDatos, "SELECT clave, nombre, codigo, dom, ubica, actualizado FROM estados ");
                 if (NuevosDatos.Tables[0].Rows.Count == 0)
                 {
                     return true;
                 }
-
                 foreach (DataRow row in NuevosDatos.Tables[0].Rows)
                 {
-                    string clave = Convert.ToString(row["clave"]);
-                    string nombre = Convert.ToString(row["nombre"]);
-                    string codigo = Convert.ToString(row["codigo"]);
+                    string id = ConexionMysql.regresaCampoConsulta("SELECT clave from estados where clave='" + Convert.ToString(row["clave"]) + "'");
+                    if (id != "")
+                    {
+                        if (Convert.ToString(row["actualizado"]) == "0")
+                        {
 
-                    values += sep + "(" + clave + ",'" + nombre + "','" + codigo + "')";
-                    sep = ",";
+                            bandera_update = true;
+                            if (ConexionMysql.insUpd_transaccion("UPDATE estados SET " +
+                                "clave='" + Convert.ToString(row["clave"]) + "', nombre='" + Convert.ToString(row["nombre"]) +
+                                "',codigo='" + Convert.ToString(row["codigo"]) + "'," + "dom='" + Convert.ToString(row["dom"]) + 
+                                "',ubica='" + Convert.ToString(row["ubica"]) + "'," + "actualizado='" + Convert.ToString(row["actualizado"]) + 
+                                "' WHERE clave='" + Convert.ToString(row["clave"]) + "' ") == "Error")
+                                return false;
+                        }
+
+                    }
+                    else
+                    {
+                        // nombre,codigo,dom,ubica,actualizado
+                        bandera_insert = true;
+                        string clave = Convert.ToString(row["clave"]);
+                        string nombre = Convert.ToString(row["nombre"]);
+                        string codigo = Convert.ToString(row["codigo"]);
+                        string dom = Convert.ToString(row["dom"]);
+                        string ubica = Convert.ToString(row["ubica"]);
+                        string actualizado = Convert.ToString(row["actualizado"]);
+                        values += sep + "(" + clave + ",'" + nombre + "','" + codigo + "','" + dom + "','" + ubica + "','" + actualizado + "')";
+                        sep = ",";
+
+                    }
+
                 }
-                sql_ins += values + ";";
-                if (ConexionMysql.insUpd_transaccion(sql_ins) == "Error")
-                    return false;
-                ConexionMysql.transCompleta();
-                return true;
+                if (bandera_insert == false && bandera_update == true)
+                {
+                    ConexionMysql.transCompleta();
+                    return true;
+                }
+                else if (bandera_insert == false && bandera_update == false)
+                {
+                    return true;
+                }
+                else
+                {
+                    sql_ins += values + ";";
+                    if (ConexionMysql.insUpd_transaccion(sql_ins) == "Error")
+                        return false;
+
+                    ConexionMysql.transCompleta();
+                    return true;
+                }
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, ConexionMysql.msjInfo, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
-        }
-
-
+        }// fin actualiza estados
 
         /// actualiza los municipio
         public Boolean ActualizaMunicipios()
@@ -3048,6 +3125,7 @@ namespace Crm.Inicio
                 string values = "";
                 string sep_update = "";
                 string values_update = "";
+                string sql_actua = "";
                 string sql = "INSERT INTO almacen_envasado_ensamble (id_almacen_envasado_ensamble, id_almacen_envasado_entrada, id_comun, no_lote_granel, id_planta, id_predio, litros, agave_coccion_kg, id_verificador,actualizado) VALUES";
                 Boolean bandera_update = false;
                 Boolean bandera_insert = false;
@@ -3064,18 +3142,19 @@ namespace Crm.Inicio
                     string id = ConexionMysql.regresaCampoConsulta("select  id_almacen_envasado_ensamble from  almacen_envasado_ensamble where id_almacen_envasado_ensamble='" + Convert.ToString(row["id_almacen_envasado_ensamble"]) + "'");
                     if (id != "")
                     {
-
                         if (Convert.ToString(row["actualizado"]) == "0")
                         {
                             bandera_update = true;
                             if (ConexionMysql.insUpd_transaccion("UPDATE almacen_envasado_ensamble SET  id_almacen_envasado_entrada= '" + Convert.ToString(row["id_almacen_envasado_entrada"]) + "',id_comun='" + Convert.ToString(row["id_comun"]) + "',no_lote_granel='" + Convert.ToString(row["no_lote_granel"]) + "',id_planta='" + Convert.ToString(row["id_planta"]) + "',id_predio='" + Convert.ToString(row["id_predio"]) + "',litros='" + Convert.ToString(row["litros"]) + "'   WHERE id_almacen_envasado_ensamble='" + Convert.ToString(row["id_almacen_envasado_ensamble"]) + "' ") == "Error")
+                            {
+                                sql_actua = "UPDATE almacen_envasado_ensamble SET  id_almacen_envasado_entrada= '" + Convert.ToString(row["id_almacen_envasado_entrada"]) + "',id_comun='" + Convert.ToString(row["id_comun"]) + "',no_lote_granel='" + Convert.ToString(row["no_lote_granel"]) + "',id_planta='" + Convert.ToString(row["id_planta"]) + "',id_predio='" + Convert.ToString(row["id_predio"]) + "',litros='" + Convert.ToString(row["litros"]) + "'   WHERE id_almacen_envasado_ensamble='" + Convert.ToString(row["id_almacen_envasado_ensamble"]) + "'; ";
                                 return false;
-
+                            }
                         }
-
                     }
                     else
                     {
+                        //MessageBox.Show(id + " : Entra INSERT.");
                         bandera_insert = true;
                         string id_almacen_envasado_ensamble = Convert.ToString(row["id_almacen_envasado_ensamble"]);
                         string id_almacen_envasado_entrada = Convert.ToString(row["id_almacen_envasado_entrada"]);
@@ -3097,20 +3176,21 @@ namespace Crm.Inicio
 
 
 
-
                 if (bandera_update == true && bandera_insert == false)
                 {
                     ConexionMysql.transCompleta();
-
+                    MessageBox.Show(sql_actua);
                     return true;
                 }
                 else
                 {
-                    sql += values + ";";
+                    if (bandera_update == false && bandera_insert == true) { 
+                        sql += values + ";";
 
-                    if (ConexionMysql.insUpd_transaccion(sql) == "Error")
-                        return false;
-                    ConexionMysql.transCompleta();
+                        if (ConexionMysql.insUpd_transaccion(sql) == "Error")
+                            return false;
+                        ConexionMysql.transCompleta();
+                    }
                     return true;
                 }
             }
@@ -3190,13 +3270,14 @@ namespace Crm.Inicio
                 }
                 else
                 {
-
-
-                    if (ConexionMysql.insUpd_transaccion(sql) == "Error")
-                        return false;
-                    ConexionMysql.transCompleta();
+                    if (bandera_update == false && bandera_insert == true)
+                    {
+                        if (ConexionMysql.insUpd_transaccion(sql) == "Error")
+                            return false;
+                        ConexionMysql.transCompleta();
+                        return true;
+                    }
                     return true;
-
                 }
             }
             catch (Exception ex)
@@ -3218,7 +3299,6 @@ namespace Crm.Inicio
                 string sep_update = "";
                 string values_update = "";
                 string sql = "INSERT INTO almacen_encargado (id_almacen, no_cliente, almacen, encargado,folio_unico_granel,estado,municipio,localidad, id_verificador,tipo_almacen, actualizado) VALUES";
-
                 Boolean bandera_update = false;
                 Boolean bandera_insert = false;
                 DataSet datos = new DataSet();
@@ -3232,14 +3312,11 @@ namespace Crm.Inicio
                     string id = ConexionMysql.regresaCampoConsulta("select  id_almacen from  almacen_encargado where id_almacen='" + Convert.ToString(row["id_almacen"]) + "'");
                     if (id != "")
                     {
-
                         if (Convert.ToString(row["actualizado"]) == "0")
                         {
                             bandera_update = true;
-
                             if (ConexionMysql.insUpd_transaccion("UPDATE almacen_encargado SET  no_cliente='" + Convert.ToString(row["no_cliente"]) + "',almacen='" + Convert.ToString(row["almacen"]) + "',encargado='" + Convert.ToString(row["encargado"]) + "',folio_unico_granel='" + Convert.ToString(row["folio_unico_granel"]) + "',estado='" + Convert.ToString(row["estado"]) + "',municipio='" + Convert.ToString(row["municipio"]) + "',localidad='" + Convert.ToString(row["localidad"]) + "',tipo_almacen='" + Convert.ToString(row["tipo_almacen"]) + "'  WHERE id_almacen='" + Convert.ToString(row["id_almacen"]) + "' ") == "Error")
                                 return false;
-
                         }
                     }
                     else
@@ -3255,45 +3332,27 @@ namespace Crm.Inicio
                         string localidad = Convert.ToString(row["localidad"]);
                         string id_verificador = Convert.ToString(row["id_verificador"]);
                         string tipo_almacen = Convert.ToString(row["tipo_almacen"]);
-
-
-
                         values += sep + "('" + id_almacen + "','" + no_cliente + "','" + almacen + "','" + encargado + "','" + folio_unico_granel + "','" + estado + "','" + municipio + "','" + localidad + "'," + id_verificador + ",'" + tipo_almacen + "',1)";
                         sep = ",";
-
-
                     }
                 }
                 sql += values + ";";
 
-                // MessageBox.Show(values);
-
                 if (bandera_update == true && bandera_insert == false)
                 {
-
                     ConexionMysql.transCompleta();
-
                     return true;
                 }
-                else if (bandera_update == false && bandera_insert == true)
+                else if (bandera_insert == false && bandera_update == false)
                 {
-
-                    //MessageBox.Show(sql += values + ";"); 
-
-                    if (ConexionMysql.insUpd_transaccion(sql) == "Error")
-                        return false;
-                    ConexionMysql.transCompleta();
-
                     return true;
                 }
                 else
                 {
-
-                    /*  if (ConexionMysql.insUpd_transaccion(sql) == "Error")
-                          return false;
-                      ConexionMysql.transCompleta();*/
+                    if (ConexionMysql.insUpd_transaccion(sql) == "Error")
+                        return false;
+                    ConexionMysql.transCompleta();
                     return true;
-
                 }
             }
             catch (Exception ex)
@@ -3495,7 +3554,7 @@ namespace Crm.Inicio
                      * que el campo actualizado tenga=0 en cada iteración obtiene obtiene el id del registro
                      * consulta el id en la tabla del servidor, si existe ese id  */
 
-                    string id = ConexionMysql.regresaCampoConsulta("select id_almacen_granel_entrada from  almacen_granel_entrada where id_almacen_granel_entrada='" + Convert.ToString(row["id_almacen_granel_entrada"]) + "'");
+                string id = ConexionMysql.regresaCampoConsulta("select id_almacen_granel_entrada from  almacen_granel_entrada where id_almacen_granel_entrada='" + Convert.ToString(row["id_almacen_granel_entrada"]) + "'");
                     if (id != "")
                     {
                         /* @adnto si trae algó la cadena de id, quiere decir q el id existe en el servidor
@@ -6375,12 +6434,12 @@ namespace Crm.Inicio
                 backgroundWorker.ReportProgress(28);
 
 
-                if (ActualizaTiposInstalacion() == false)
+               /* if (ActualizaTiposInstalacion() == false)
                 {
                     MessageBox.Show("Error al actualizar la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                backgroundWorker.ReportProgress(30);
+                backgroundWorker.ReportProgress(30);*/
 
                 if (ActualizaInstalacion() == false)
                 {
@@ -10729,8 +10788,6 @@ namespace Crm.Inicio
             }
         }
 
-
-
         // marca cuando subio informacion 
         public Boolean SubidaDeInformacion()
         {
@@ -11043,6 +11100,7 @@ namespace Crm.Inicio
                     MessageBox.Show("Error al actualizar la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+
                 backgroundWorker_Subida.ReportProgress(86);
                 if (SubidaEnvasadoSalida() == false)
                 {
@@ -11126,7 +11184,8 @@ namespace Crm.Inicio
             #region
             if (bandera == true)
             {
-                MessageBox.Show("Base de datos actualizada", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                string ahora = ConexionMysqlRemota2.regresaCampoConsulta("select NOW() ");
+                MessageBox.Show("Base de datos actualizada \n " + ahora, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LblSubiendo.Visible = false;
                 Progresbar.Visible = false;
                 carga.Visible = false;
@@ -11309,7 +11368,12 @@ namespace Crm.Inicio
         }
 
         #endregion
-               
+
+        private void btnDictaminacion_Click(object sender, EventArgs e)
+        {
+            FrmSolicitudes_instalacion frm = new FrmSolicitudes_instalacion();
+            frm.ShowDialog();
+        }
     }
 }
 

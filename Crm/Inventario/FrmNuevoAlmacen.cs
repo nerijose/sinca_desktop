@@ -56,20 +56,20 @@ namespace Crm.Inventario
 
         private void FrmNuevaAlmacen_Load(object sender, EventArgs e)
         {
-           /* CmbEstado.Items.Insert(0, "CIUDAD DE MÉXICO");
-            CmbEstado.Items.Insert(1, "DURANGO");
-            CmbEstado.Items.Insert(2, "ESTADO DE MÉXICO");
-            CmbEstado.Items.Insert(3, "GUERRERO");
-            CmbEstado.Items.Insert(4, "GUANAJUATO");
-            CmbEstado.Items.Insert(5, "MICHOACÁN");
-            CmbEstado.Items.Insert(6, "OAXACA");
-            CmbEstado.Items.Insert(7, "PUEBLA");
-            CmbEstado.Items.Insert(8, "SAN LUIS POTOSÍ");
-            CmbEstado.Items.Insert(9, "TAMAULIPAS");
-            CmbEstado.Items.Insert(10, "ZACATECAS");*/
+            /* CmbEstado.Items.Insert(0, "CIUDAD DE MÉXICO");
+             CmbEstado.Items.Insert(1, "DURANGO");
+             CmbEstado.Items.Insert(2, "ESTADO DE MÉXICO");
+             CmbEstado.Items.Insert(3, "GUERRERO");
+             CmbEstado.Items.Insert(4, "GUANAJUATO");
+             CmbEstado.Items.Insert(5, "MICHOACÁN");
+             CmbEstado.Items.Insert(6, "OAXACA");
+             CmbEstado.Items.Insert(7, "PUEBLA");
+             CmbEstado.Items.Insert(8, "SAN LUIS POTOSÍ");
+             CmbEstado.Items.Insert(9, "TAMAULIPAS");
+             CmbEstado.Items.Insert(10, "ZACATECAS");*/
 
-            ConexionMysql.llenaCombo(ref CmbEstado, "SELECT clave, nombre FROM estados", "clave", "nombre");
-
+            //ConexionMysql.llenaCombo(ref CmbEstado, "SELECT clave, nombre FROM estados", "clave", "nombre");
+            ConexionMysql.llenaComboAutocomplit(ref CmbEstado, "SELECT clave, nombre FROM estados WHERE dom = '1' ", "clave", "nombre");
 
         }
         private void CmbEstado_SelectedIndexChanged(object sender, EventArgs e)

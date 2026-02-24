@@ -542,7 +542,7 @@ namespace Crm.Inventario
             if (check == DialogResult.Cancel) { return; }
             else
             {
-
+                
                 string id_comun = "";
                 string id_planta = "";
                 string id_predio = "";
@@ -565,6 +565,7 @@ namespace Crm.Inventario
                         agave_coccion_kg = Convert.ToString(row["agave_coccion_kg"]);
                     }
                     ObtenerIdMaximoGranelEntrada();
+                    
                     if (id_planta != "0")
                     {
                         if (ConexionMysql.insUpd_transaccion("INSERT INTO  granel_entrada(id_granel_entrada,no_cliente,id_fabrica,fecha,no_lote,fq,id_planta,agave_coccion_kg,id_predio,clase,categoria,abocante,ingrediente,lts_entrada,grado_alcoholico_entrada,lts_existentes,grado_alcoholico_existente,fecha_movimiento,id_verificador,actualizado) VALUES( '" + id_max_granel_entrada + "','" + no_cliente + "','" + id_fabrica + "',now(),'" + TxtNoLote.Text + "','" + fq + "','" + id_planta + "','" + agave_coccion_kg + "','" + id_predio + "','" + LblClase.Text + "' , '" + categoria + "','" + abocante + "','" + ingrediente + "'," + TxtLitros.Text + "," + TxtGradoAlcoholico.Text + "," + TxtLitros.Text + "," + TxtGradoAlcoholico.Text + ",NOW()," + Usuario.IdUsuario + ",0)") == "Error")
@@ -574,6 +575,7 @@ namespace Crm.Inventario
                     }
                     else
                     {
+                        //MessageBox.Show("4");
                         if (ConexionMysql.insUpd_transaccion("INSERT INTO  granel_entrada(id_granel_entrada,no_cliente,id_fabrica,fecha,no_lote,fq,id_comun,clase,categoria,abocante,ingrediente,lts_entrada,grado_alcoholico_entrada,lts_existentes,grado_alcoholico_existente,fecha_movimiento,id_verificador,actualizado) VALUES('" + id_max_granel_entrada + "', '" + no_cliente + "','" + id_fabrica + "',now(),'" + TxtNoLote.Text + "','" + fq + "'," + id_comun + ",'" + LblClase.Text + "' , '" + categoria + "','" + abocante + "','" + ingrediente + "'," + TxtLitros.Text + "," + TxtGradoAlcoholico.Text + "," + TxtLitros.Text + "," + TxtGradoAlcoholico.Text + ",NOW()," + Usuario.IdUsuario + ",0)") == "Error")
                         {
                             return;
@@ -584,7 +586,7 @@ namespace Crm.Inventario
                         {
                             id_comun = Convert.ToString(row["id_comun"]);
                             id_planta = Convert.ToString(row["id_planta"]);
-                            id_predio = Convert.ToString(row["id_predio"]);
+                            id_predio = (Convert.ToString(row["id_predio"]) == "") ? "0": Convert.ToString(row["id_predio"]);
                             litros2 = Convert.ToString(row["litros"]);
                             agave_coccion_kg = Convert.ToString(row["agave_coccion_kg"]);
                              ObtenerIdMaximoGranelEnsamble();
@@ -595,7 +597,7 @@ namespace Crm.Inventario
                         }
                     }
                     ObtenerIdMaximoGranelMovimientos();
-                    if (ConexionMysql.insUpd_transaccion("INSERT INTO  granel_movimientos(id_granel_movimientos,id_granel_entrada,id_gran_mov_salio,tipo,destino,litros,grado_alcoholico,fecha,fecha_movimiento,actualizado,id_verificador) VALUES('" + id_max_granel_movimientos + "', '" + id_max_granel_entrada + "','" + id_granel_movimiento + "','entrada','granel-vidrio' , " + TxtLitros.Text + "," + TxtGradoAlcoholico.Text + ",now(),NOW(), 0," + Usuario.IdUsuario + ")") == "Error")
+                    if (ConexionMysql.insUpd_transaccion("INSERT INTO  granel_movimientos(id_granel_movimientos,id_granel_entrada,id_gran_mov_salio,tipo,destino,litros,grado_alcoholico,fecha,fecha_movimiento,actualizado,id_verificador) VALUES('" + id_max_granel_movimientos + "', '" + id_max_granel_entrada + "','" + id_granel_movimiento + "','entrada','granel-vidrio' , " + TxtLitros.Text + "," + TxtGradoAlcoholico.Text + ",now(),now(), 0," + Usuario.IdUsuario + ")") == "Error")
                     {
                         return;
                     }
@@ -614,7 +616,7 @@ namespace Crm.Inventario
                         }
                     }
 
-
+                    
                     DataSet ids = new DataSet();
                     ConexionMysql.llenaDataset(ref ids, "Select id_produccion_entrada From ids_producciones where id_lote='" + id_granel_produccion + "' and tipo_instalacion='granel_fabrica'");
 

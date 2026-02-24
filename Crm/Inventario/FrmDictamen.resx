@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="iTalk_Label77.Text" xml:space="preserve">
+    <value>Para envasar la bebida alcohólica destilada denominada Mezcal se debe contar con autorización del OEC. Cuando el envasador lleve a cabo el envasado de Bebidas Alcohólicas que Contienen Mezcal, debe contar en sus instalaciones con líneas diferenciadas de envasado, previamente autorizadas por el OEC, asegurando que el Mezcal no entre en contacto con líneas, contenedores o infraestructura que pudieran servir para el proceso, transporte o contención de Bebidas Alcohólicas que Contienen Mezcal, así como el envasador debe de cumplir con lo dispuesto en la Norma Mexicana NMX-V-052-NORMEX-2016.</value>
+  </data>
+  <data name="iTalk_Label80.Text" xml:space="preserve">
+    <value>El Mezcal que cumpla con el apartado 4.3. de la NOM-Mezcal en vigor podrá envasarse únicamente como Mezcal clase Joven o Blanco, siempre y cuando no haya recibido ajuste de contenido alcohólico, en cuyo caso debe ser sujeto de un segundo análisis únicamente del % Alc. Vol., en términos de las especificaciones del apartado 4.3. de la NOM-Mezcal en vigor.</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>Para las clases señaladas en el inciso primario 4.5 de la presente Norma Oficial Mexicana, debe realizarse un análisis previo al envasado que demuestre el cumplimiento con todos los parámetros establecidos en el apartado 4.3. de la NOM-Mezcal en vigor.</value>
+  </data>
+  <data name="label27.Text" xml:space="preserve">
+    <value>Se permite el empleo de ingredientes opcionales, tales com: laminilla deoro, variedad de chile, gusanos de agave, frutas, arbolito escarchado, hierbas, entre otros; siempre y cuando no representen un riesgo a la salud.</value>
+  </data>
+  <data name="label28.Text" xml:space="preserve">
+    <value>Se deben envasar en recipiente de tipo sanitario, elaborados con materiales inocuos y resistentes a la distintas etapas del proceso, de tal manera que no reaccionen con el producto o alteren sus caracteristicas físicas, químicas y sensoriales.</value>
+  </data>
+  <metadata name="tpTipo.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="iTalk_Label88.ToolTip" xml:space="preserve">
+    <value>Describir el espacio: Por ejemplo, si esta techado, si tiene piso,  paredes, de que materiales es el techado, 
+el piso, las paredes, si las instalaciones se encuentran deterioradas, a que distancia está de las demás instalaciones, 
+ si el espacio está delimitado, si se observa limpio, si se observa fauna nociva, si está lejos de tiraderos de basura 
+o fuentes de contaminación.</value>
+  </data>
+  <data name="iTalk_Label107.ToolTip" xml:space="preserve">
+    <value>Describir el espacio: Por ejemplo, si esta techado, si tiene piso,  paredes, de que materiales es el techado,
+ el piso, las paredes, si las instalaciones se encuentran deterioradas, a que distancia está de las demás instalaciones, 
+ si el espacio está delimitado, si se observa limpio, si se observa fauna nociva, si está lejos de tiraderos de basura o
+ fuentes de contaminación.</value>
+  </data>
+  <data name="iTalk_Label129.ToolTip" xml:space="preserve">
+    <value>Describir el espacio: Por ejemplo, si esta techado, si tiene piso,  paredes, de que materiales es el techado,
+ el piso, las paredes, si las instalaciones se encuentran deterioradas, a que distancia está de las demás instalaciones,
+  si el espacio está delimitado, si se observa limpio, si se observa fauna nociva, si está lejos de tiraderos de basura o 
+fuentes de contaminación.
+Describa el equipo. Por ejemplo: materiales de fabricación, características particulares, nivel de deterioro,
+ tiempo de vida útil, si es apropiado para el fin que se utiliza.</value>
+  </data>
+  <data name="iTalk_Label179.ToolTip" xml:space="preserve">
+    <value>Describir el espacio: Por ejemplo, si esta techado, si tiene piso,  paredes, de que materiales es el techado, 
+el piso, las paredes, si las instalaciones se encuentran deterioradas, a que distancia está de las demás
+ instalaciones,  si el espacio está delimitado, si se observa limpio, si se observa fauna nociva,
+ si está lejos de tiraderos de basura o fuentes de contaminación.</value>
+  </data>
+  <data name="iTalk_Label108.ToolTip" xml:space="preserve">
+    <value>Describir el espacio: Por ejemplo, si esta techado, si tiene piso,  paredes, de que materiales es el techado, 
+el piso, las paredes, si las instalaciones se encuentran deterioradas, a que distancia está de las demás
+ instalaciones,  si el espacio está delimitado, si se observa limpio, si se observa fauna nociva,
+ si está lejos de tiraderos de basura o fuentes de contaminación.</value>
+  </data>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>47</value>
+  </metadata>
+</root>
