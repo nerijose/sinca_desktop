@@ -73,7 +73,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.SystemColors.Control;
+            this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.pictureBox4);
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.lblNameUser);
@@ -149,10 +149,10 @@
             this.BtnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnMinimizar.FlatAppearance.BorderSize = 0;
             this.BtnMinimizar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
-            this.BtnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
+            this.BtnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.BtnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnMinimizar.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnMinimizar.ForeColor = System.Drawing.Color.White;
+            this.BtnMinimizar.ForeColor = System.Drawing.Color.Black;
             this.BtnMinimizar.Image = global::Crm.Properties.Resources.Minimizar32_32;
             this.BtnMinimizar.Location = new System.Drawing.Point(760, 3);
             this.BtnMinimizar.Name = "BtnMinimizar";
@@ -169,10 +169,10 @@
             this.BtnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnCerrar.FlatAppearance.BorderSize = 0;
             this.BtnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
-            this.BtnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
+            this.BtnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.BtnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCerrar.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCerrar.ForeColor = System.Drawing.Color.White;
+            this.BtnCerrar.ForeColor = System.Drawing.Color.Black;
             this.BtnCerrar.Image = global::Crm.Properties.Resources.Cerrar32_32;
             this.BtnCerrar.Location = new System.Drawing.Point(801, 3);
             this.BtnCerrar.Name = "BtnCerrar";
@@ -189,10 +189,10 @@
             this.BtnCambioUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnCambioUsuario.FlatAppearance.BorderSize = 0;
             this.BtnCambioUsuario.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.Control;
-            this.BtnCambioUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.Control;
+            this.BtnCambioUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightGray;
             this.BtnCambioUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCambioUsuario.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnCambioUsuario.ForeColor = System.Drawing.Color.White;
+            this.BtnCambioUsuario.ForeColor = System.Drawing.Color.Black;
             this.BtnCambioUsuario.Image = global::Crm.Properties.Resources.Cambio_Sesion32_32;
             this.BtnCambioUsuario.Location = new System.Drawing.Point(715, 3);
             this.BtnCambioUsuario.Name = "BtnCambioUsuario";
@@ -204,7 +204,7 @@
             // 
             // menu_lateral
             // 
-            this.menu_lateral.BackColor = System.Drawing.Color.SteelBlue;
+            this.menu_lateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.menu_lateral.Controls.Add(this.btnDictaminacion);
             this.menu_lateral.Controls.Add(this.btnAdministrador);
             this.menu_lateral.Controls.Add(this.label2);
@@ -228,10 +228,10 @@
             // 
             // btnDictaminacion
             // 
-            this.btnDictaminacion.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnDictaminacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.btnDictaminacion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDictaminacion.FlatAppearance.BorderSize = 0;
-            this.btnDictaminacion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkTurquoise;
+            this.btnDictaminacion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.btnDictaminacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDictaminacion.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDictaminacion.ForeColor = System.Drawing.Color.White;
@@ -247,9 +247,10 @@
             // 
             // btnAdministrador
             // 
-            this.btnAdministrador.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnAdministrador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.btnAdministrador.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdministrador.FlatAppearance.BorderSize = 0;
+            this.btnAdministrador.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.btnAdministrador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdministrador.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdministrador.ForeColor = System.Drawing.Color.White;
@@ -278,10 +279,10 @@
             // 
             // BtnPlanDeTrabajo
             // 
-            this.BtnPlanDeTrabajo.BackColor = System.Drawing.Color.SteelBlue;
+            this.BtnPlanDeTrabajo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.BtnPlanDeTrabajo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnPlanDeTrabajo.FlatAppearance.BorderSize = 0;
-            this.BtnPlanDeTrabajo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGreen;
+            this.BtnPlanDeTrabajo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.BtnPlanDeTrabajo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnPlanDeTrabajo.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnPlanDeTrabajo.ForeColor = System.Drawing.Color.White;
@@ -300,7 +301,7 @@
             this.label1.AllowDrop = true;
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoEllipsis = true;
-            this.label1.BackColor = System.Drawing.Color.SteelBlue;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.label1.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(201, 70);
@@ -313,10 +314,10 @@
             // 
             // BtnExtraccionAgave
             // 
-            this.BtnExtraccionAgave.BackColor = System.Drawing.Color.SteelBlue;
+            this.BtnExtraccionAgave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.BtnExtraccionAgave.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnExtraccionAgave.FlatAppearance.BorderSize = 0;
-            this.BtnExtraccionAgave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGreen;
+            this.BtnExtraccionAgave.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.BtnExtraccionAgave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnExtraccionAgave.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnExtraccionAgave.ForeColor = System.Drawing.Color.White;
@@ -332,10 +333,10 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.SteelBlue;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGreen;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
@@ -351,9 +352,10 @@
             // 
             // btnBitacora
             // 
-            this.btnBitacora.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnBitacora.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.btnBitacora.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBitacora.FlatAppearance.BorderSize = 0;
+            this.btnBitacora.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.btnBitacora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBitacora.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBitacora.ForeColor = System.Drawing.Color.White;
@@ -370,10 +372,10 @@
             // 
             // BtnMensajes
             // 
-            this.BtnMensajes.BackColor = System.Drawing.Color.SteelBlue;
+            this.BtnMensajes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.BtnMensajes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnMensajes.FlatAppearance.BorderSize = 0;
-            this.BtnMensajes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGreen;
+            this.BtnMensajes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.BtnMensajes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnMensajes.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnMensajes.ForeColor = System.Drawing.Color.White;
@@ -389,10 +391,10 @@
             // 
             // BtnInventario
             // 
-            this.BtnInventario.BackColor = System.Drawing.Color.SteelBlue;
+            this.BtnInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.BtnInventario.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnInventario.FlatAppearance.BorderSize = 0;
-            this.BtnInventario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkTurquoise;
+            this.BtnInventario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.BtnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnInventario.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnInventario.ForeColor = System.Drawing.Color.White;
@@ -409,10 +411,10 @@
             // 
             // BtnConsulta
             // 
-            this.BtnConsulta.BackColor = System.Drawing.Color.SteelBlue;
+            this.BtnConsulta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.BtnConsulta.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnConsulta.FlatAppearance.BorderSize = 0;
-            this.BtnConsulta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkTurquoise;
+            this.BtnConsulta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.BtnConsulta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnConsulta.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnConsulta.ForeColor = System.Drawing.Color.White;
@@ -428,10 +430,10 @@
             // 
             // BtnSubida
             // 
-            this.BtnSubida.BackColor = System.Drawing.Color.SteelBlue;
+            this.BtnSubida.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.BtnSubida.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnSubida.FlatAppearance.BorderSize = 0;
-            this.BtnSubida.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkTurquoise;
+            this.BtnSubida.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.BtnSubida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSubida.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnSubida.ForeColor = System.Drawing.Color.White;
@@ -447,10 +449,10 @@
             // 
             // BtnActualizar
             // 
-            this.BtnActualizar.BackColor = System.Drawing.Color.SteelBlue;
+            this.BtnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.BtnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnActualizar.FlatAppearance.BorderSize = 0;
-            this.BtnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkTurquoise;
+            this.BtnActualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
             this.BtnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnActualizar.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnActualizar.ForeColor = System.Drawing.Color.White;

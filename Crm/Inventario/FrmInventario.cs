@@ -968,9 +968,45 @@ namespace Crm.Inventario
 
 
 
+        private void EstilizarDataGridViews()
+        {
+            foreach (Control c in this.Controls)
+            {
+                AplicarEstiloADataGridViewsRecursivo(c);
+            }
+        }
+
+        private void AplicarEstiloADataGridViewsRecursivo(Control parent)
+        {
+            if (parent is DataGridView)
+            {
+                DataGridView dgv = (DataGridView)parent;
+                dgv.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+                dgv.BorderStyle = BorderStyle.None;
+                dgv.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+                dgv.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(41, 53, 65);
+                dgv.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
+                dgv.RowHeadersVisible = false;
+                dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                dgv.EnableHeadersVisualStyles = false;
+                dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+                dgv.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(37, 46, 59);
+                dgv.ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.Color.White;
+                dgv.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
+                dgv.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 9F);
+                dgv.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(245, 245, 245);
+            }
+            
+            foreach (Control c in parent.Controls)
+            {
+                AplicarEstiloADataGridViewsRecursivo(c);
+            }
+        }
+
         //--Inicio del FormInventario 
         private void FrmInventario_Load(object sender, EventArgs e)
         {
+            EstilizarDataGridViews();
             //==r@le-- el codigo de ese handler se instancio en el Frminventario()
 
             /* ConexionMysql.conecta();
