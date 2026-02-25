@@ -1675,7 +1675,7 @@
             this.btnMermasHolograma.Size = new System.Drawing.Size(37, 41);
             this.btnMermasHolograma.TabIndex = 449;
             this.btnMermasHolograma.UseVisualStyleBackColor = false;
-            this.btnMermasHolograma.Visible = false;
+            this.btnMermasHolograma.Visible = true;
             this.btnMermasHolograma.Click += new System.EventHandler(this.btnMermasHolograma_Click);
             // 
             // label82

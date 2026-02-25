@@ -48,6 +48,9 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.dgvFolios = new System.Windows.Forms.DataGridView();
             this.chkMaquilaMerma = new System.Windows.Forms.CheckBox();
+            this.btnAdjuntarArchivo = new System.Windows.Forms.Button();
+            this.txtRutaArchivo = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFolios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -228,11 +231,40 @@
             this.chkMaquilaMerma.Text = "Maquila";
             this.chkMaquilaMerma.UseVisualStyleBackColor = true;
             // 
+            // btnAdjuntarArchivo
+            // 
+            this.btnAdjuntarArchivo.Location = new System.Drawing.Point(520, 345);
+            this.btnAdjuntarArchivo.Name = "btnAdjuntarArchivo";
+            this.btnAdjuntarArchivo.Size = new System.Drawing.Size(72, 23);
+            this.btnAdjuntarArchivo.TabIndex = 21;
+            this.btnAdjuntarArchivo.Text = "Subir...";
+            this.btnAdjuntarArchivo.UseVisualStyleBackColor = true;
+            // 
+            // txtRutaArchivo
+            // 
+            this.txtRutaArchivo.Location = new System.Drawing.Point(520, 374);
+            this.txtRutaArchivo.Name = "txtRutaArchivo";
+            this.txtRutaArchivo.ReadOnly = true;
+            this.txtRutaArchivo.Size = new System.Drawing.Size(143, 20);
+            this.txtRutaArchivo.TabIndex = 22;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(517, 329);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(89, 13);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "Evidencia (Foto/PDF):";
+            //
             // frmMermasHologramas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(675, 507);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.txtRutaArchivo);
+            this.Controls.Add(this.btnAdjuntarArchivo);
             this.Controls.Add(this.chkMaquilaMerma);
             this.Controls.Add(this.dgvFolios);
             this.Controls.Add(this.btnCancelar);
@@ -284,5 +316,8 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.DataGridView dgvFolios;
         private System.Windows.Forms.CheckBox chkMaquilaMerma;
+        private System.Windows.Forms.Button btnAdjuntarArchivo;
+        private System.Windows.Forms.TextBox txtRutaArchivo;
+        private System.Windows.Forms.Label label8;
     }
 }

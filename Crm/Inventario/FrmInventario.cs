@@ -3593,10 +3593,10 @@ namespace Crm.Inventario
 
                     if (banderaguia == true)
                     {
-                        FrmCompletarTapda form = new FrmCompletarTapda();
+                        FrmEnsamblePredio form = new FrmEnsamblePredio();
                         form.no_cliente = CmbNoCliente.SelectedValue.ToString();
-                        form.id_produccion = DtaMolienda.Rows[e.RowIndex].Cells["ID_PRODUCCION"].Value.ToString();
-                        form.tipo_tapada = tipo_tapada;
+                        form.id_produccion_existente = DtaMolienda.Rows[e.RowIndex].Cells["ID_PRODUCCION"].Value.ToString();
+                        form.modo_completar_tapada = true;
                         form.ShowDialog();
 
                         CmbFabrica_SelectedIndexChanged(null, null);
@@ -3726,10 +3726,10 @@ namespace Crm.Inventario
 
                     if (banderaguia == true)
                     {
-                        FrmCompletarTapda form = new FrmCompletarTapda();
+                        FrmEnsamblePredio form = new FrmEnsamblePredio();
                         form.no_cliente = CmbNoCliente.SelectedValue.ToString();
-                        form.id_produccion = DtaFormulacion.Rows[e.RowIndex].Cells["ID_PRODUCCION"].Value.ToString();
-                        form.tipo_tapada = tipo_tapada;
+                        form.id_produccion_existente = DtaFormulacion.Rows[e.RowIndex].Cells["ID_PRODUCCION"].Value.ToString();
+                        form.modo_completar_tapada = true;
                         form.ShowDialog();
 
                         CmbFabrica_SelectedIndexChanged(null, null);
@@ -3855,10 +3855,10 @@ namespace Crm.Inventario
 
                     if (banderaguia == true)
                     {
-                        FrmCompletarTapda form = new FrmCompletarTapda();
+                        FrmEnsamblePredio form = new FrmEnsamblePredio();
                         form.no_cliente = CmbNoCliente.SelectedValue.ToString();
-                        form.id_produccion = DtaDestilacion.Rows[e.RowIndex].Cells["ID_PRODUCCION"].Value.ToString();
-                        form.tipo_tapada = tipo_tapada;
+                        form.id_produccion_existente = DtaDestilacion.Rows[e.RowIndex].Cells["ID_PRODUCCION"].Value.ToString();
+                        form.modo_completar_tapada = true;
                         form.ShowDialog();
 
                         CmbFabrica_SelectedIndexChanged(null, null);
@@ -3997,10 +3997,10 @@ namespace Crm.Inventario
 
                     if (bandera == true)
                     {
-                        FrmCompletarTapda form = new FrmCompletarTapda();
+                        FrmEnsamblePredio form = new FrmEnsamblePredio();
                         form.no_cliente = CmbNoCliente.SelectedValue.ToString();
-                        form.id_produccion = DtaProduccion.Rows[e.RowIndex].Cells["ID_PRODUCCION"].Value.ToString();
-                        form.tipo_tapada = tipo_tapada;
+                        form.id_produccion_existente = DtaProduccion.Rows[e.RowIndex].Cells["ID_PRODUCCION"].Value.ToString();
+                        form.modo_completar_tapada = true;
                         form.ShowDialog();
 
                         CmbFabrica_SelectedIndexChanged(null, null);
