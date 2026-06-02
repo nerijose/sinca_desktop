@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -197,6 +197,17 @@ namespace Crm.Inventario
                 {
                     CmbFabrica.SelectedValue = Usuario.FabricaSeleccionada;
                 }
+
+                // Ocultar siempre la configuración final porque ahora se hace desde FrmInventario
+                grpConfiguracionFinal.Visible = false;
+                label13.Visible = false;
+                label14.Visible = false;
+                label15.Visible = false;
+                TxtTapada.Visible = false;
+                CmbCoccion.Visible = false;
+                DataFechaInicioCoccion.Visible = false;
+                label38.Visible = false;
+                CmbFabrica.Visible = false;
 
                 if (modo_completar_tapada && id_produccion_existente != "")
                 {
@@ -780,7 +791,7 @@ namespace Crm.Inventario
             }
         }
 
-        //guardar el ensamble
+        // El botón Físico ahora solo cierra
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
             try
@@ -790,21 +801,33 @@ namespace Crm.Inventario
                     MessageBox.Show("No ha agregado ningún maguey a la molienda/ensamble");
                     return;
                 }
-                if (CmbFabrica.Visible && CmbFabrica.SelectedValue == null)
+                
+                // Retornar control al FrmInventario sin guardar en BD localmente
+                this.DialogResult = DialogResult.OK;
+                this.Hide();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Aviso Importante", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        
+        // El guardado real, llamado desde FrmInventario
+        public void PublicGuardar(string tapadaInventario, string coccionInventario, DateTime fechaInventario, string fabricaInventario)
+        {
+            try
+            {
+                if (DtaEnsamble.Rows.Count < 1)
                 {
-                    MessageBox.Show("No tienes fabrica disponible para seleccion");
+                    MessageBox.Show("No ha agregado ningún maguey a la molienda/ensamble");
                     return;
                 }
-                if (TxtTapada.Visible && TxtTapada.Text == "")
-                {
-                    MessageBox.Show("No ha introduccido el nombre de la tapada");
-                    return;
-                }
-                if (CmbCoccion.Visible && CmbCoccion.SelectedValue == null)
-                {
-                    MessageBox.Show("No tienes cocciones precargadas, actualiza la base de datos");
-                    return;
-                }
+                
+                // Sobrescribimos los valores internos con los de FrmInventario
+                TxtTapada.Text = tapadaInventario;
+                if (coccionInventario != null) CmbCoccion.SelectedValue = coccionInventario;
+                if (fabricaInventario != null) CmbFabrica.SelectedValue = fabricaInventario;
+                DataFechaInicioCoccion.Value = fechaInventario;
 
                 DateTime local = DateTime.Now;
                 string fecha = local.ToString("yyyy-MM-dd HH:mm:ss");

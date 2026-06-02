@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -1076,6 +1076,78 @@ namespace Crm.Inventario
             BanderaDestilacion = false;
             BanderaProduccion = false;
             CmbFabrica_SelectedIndexChanged(null, null);
+
+            // Refactorización UX: Ocultar masivamente controles para FrmEnsamblePredio
+            OcultarControlesProduccion();
+        }
+
+        // Variables para la refactorización de Producción
+        private System.Windows.Forms.Button btnConfigurarEnsamble;
+        public FrmEnsamblePredio frmEnsambleInstancia; // Instancia para guardar los datos configurados
+
+        private void OcultarControlesProduccion()
+        {
+            // Ocultamos controles viejos
+            BtnEnsamblePredio.Visible = false;
+            BtnExtraccion.Visible = false;
+            ChekMagueyComprado.Visible = false;
+            chkGuiaAntigua.Visible = false;
+            ChekAgaveSobrante.Visible = false;
+            label81.Visible = false;
+            label1.Visible = false;
+            label3.Visible = false;
+            label6.Visible = false;
+            label5.Visible = false;
+            TxtNoGuia.Visible = false;
+            TxtNoPredio.Visible = false;
+            TxtPredio.Visible = false;
+            CmbMaguey.Visible = false;
+            TxtExistencia.Visible = false;
+            TxtExtraccion.Visible = false;
+            label12.Visible = false;
+            label4.Visible = false;
+            label8.Visible = false;
+            TxtAgaveEntranteKg.Visible = false;
+            TxtAgaveCoccion.Visible = false;
+            TxtArt.Visible = false;
+
+            // Inyectamos el botón de Configuración si no existe
+            if (btnConfigurarEnsamble == null)
+            {
+                btnConfigurarEnsamble = new System.Windows.Forms.Button();
+                btnConfigurarEnsamble.Text = "⚙️ Asignar Guías / Predios";
+                btnConfigurarEnsamble.Size = new System.Drawing.Size(260, 45);
+                btnConfigurarEnsamble.Location = new System.Drawing.Point(50, 70); 
+                btnConfigurarEnsamble.BackColor = System.Drawing.Color.DarkSeaGreen;
+                btnConfigurarEnsamble.ForeColor = System.Drawing.Color.White;
+                btnConfigurarEnsamble.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+                btnConfigurarEnsamble.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+                btnConfigurarEnsamble.Cursor = System.Windows.Forms.Cursors.Hand;
+                btnConfigurarEnsamble.Click += BtnConfigurarEnsamble_Click;
+                
+                // Mover los controles restantes de PanelProduccion (Tapada, Coccion) para que no se vean amontonados
+                // Nota: Asumimos que los campos finales están en un groupBox o libres, los movemos visualmente.
+                
+                PanelProduccion.Controls.Add(btnConfigurarEnsamble);
+                btnConfigurarEnsamble.BringToFront();
+                
+                // Reordenamiento de foco y navegación (TabIndex)
+                btnConfigurarEnsamble.TabIndex = 1;
+                TxtTapada.TabIndex = 2;
+                CmbCoccion.TabIndex = 3;
+                DataFechaInicioCoccion.TabIndex = 4;
+                CmbFabrica.TabIndex = 5;
+                BtnAgregarProduccion.TabIndex = 6;
+            }
+        }
+
+        private void BtnConfigurarEnsamble_Click(object sender, EventArgs e)
+        {
+            if (frmEnsambleInstancia == null || frmEnsambleInstancia.IsDisposed)
+            {
+                frmEnsambleInstancia = new FrmEnsamblePredio();
+            }
+            frmEnsambleInstancia.ShowDialog();
         }
 
         //al presionar el boton de granel 
@@ -2602,38 +2674,45 @@ namespace Crm.Inventario
             valida.numeroPunto(e, TxtArt.Text);
         }
 
-        //agrega produccion para su coccion
+        //agrega produccion para su coccion (Refactorizado para usar FrmEnsamblePredio)
         private void BtnAgregarProduccion_Click(object sender, EventArgs e)
         {
             try
             {
-                if (ChekMagueyComprado.Checked == true && ChekAgaveSobrante.Checked == false)
+                if (frmEnsambleInstancia == null || frmEnsambleInstancia.IsDisposed)
                 {
-                    ProduccionAgaveComprado();
-
+                    MessageBox.Show("No ha configurado guías o predios. Haga clic en '⚙️ Asignar Guías / Predios' primero.");
+                    return;
                 }
-                else if (ChekAgaveSobrante.Checked == true)
-                {
-                    ProduccionAgaveSobrante();
 
+                if (TxtTapada.Text == "")
+                {
+                    MessageBox.Show("No ha introducido el nombre de la tapada");
+                    return;
                 }
-                else
+                
+                if (CmbCoccion.SelectedValue == null)
                 {
-                    //Se agrega la siguiente linea para validar que una GUIA solo se puede usar una sola vez, seteando un 0 a esa extraccion----2020
-                    if (TxtNoGuia.Text.ToString() != "")
-                    {
-                        if (TxtNoGuia.Text.Substring(0, 1) == "g" || TxtNoGuia.Text.Substring(0, 1) == "G") { 
-                        if (ConexionMysql.insUpd_transaccion("UPDATE  cextracciones SET status=0  WHERE id_extraccion like '" + TxtNoGuia.Text + "'") == "Error")
-                            return;
-                        }
-                        else
-                        {
-                            if (ConexionMysql.insUpd_transaccion("UPDATE  reveca2_cextracciones SET status=0  WHERE id_extraccion =" + TxtNoGuia.Text + "") == "Error")
-                                return;
-                        }
+                    MessageBox.Show("Debe seleccionar una cocción.");
+                    return;
+                }
 
-                    }//fin
-                    ProduccionNormal();
+                string id_fabrica = null;
+                if (CmbFabrica.SelectedValue != null)
+                {
+                    id_fabrica = CmbFabrica.SelectedValue.ToString();
+                }
+
+                // Llamar al guardado masivo público en FrmEnsamblePredio
+                frmEnsambleInstancia.PublicGuardar(TxtTapada.Text, CmbCoccion.SelectedValue.ToString(), DataFechaInicioCoccion.Value, id_fabrica);
+                
+                // Limpiar instancia si guardó con éxito (el form se oculta internamente)
+                if(frmEnsambleInstancia.DialogResult == DialogResult.OK)
+                {
+                    frmEnsambleInstancia = null;
+                    TxtTapada.Text = "";
+                    TxtAgaveEntranteKg.Text = ""; // Por si acaso
+                    addTablasProduccion();
                 }
             }
             catch (Exception ex)
