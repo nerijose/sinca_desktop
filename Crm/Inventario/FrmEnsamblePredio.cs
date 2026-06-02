@@ -21,6 +21,8 @@ namespace Crm.Inventario
             InitializeComponent();
         }
         public string no_cliente = "0";
+        public string id_produccion_existente = "";
+        public bool modo_completar_tapada = false;
         string id_predio_agave_sobrante = "";
         string id_plnata_agave_sobrante = "";
         string id_produccion_entrada_sobrante = "";
@@ -194,6 +196,31 @@ namespace Crm.Inventario
                 if (Usuario.FabricaSeleccionada != "0")
                 {
                     CmbFabrica.SelectedValue = Usuario.FabricaSeleccionada;
+                }
+
+                if (modo_completar_tapada && id_produccion_existente != "")
+                {
+                    // Desactivar campos que no aplican o no deben editarse en modo completar (ej. nombre de tapada, fecha, coccion)
+                    TxtTapada.Enabled = false;
+                    CmbCoccion.Enabled = false;
+                    DataFechaInicioCoccion.Enabled = false;
+                    
+                    // Ocultar Controles que el usuario pidió no mostrar
+                    CmbFabrica.Visible = false;
+                    label38.Visible = false;
+                    grpConfiguracionFinal.Visible = false;
+
+                    // Opcionalmente: poner el text del form
+                    string nombreTapada = ConexionMysql.regresaCampoConsulta("SELECT tapada FROM produccion_entrada WHERE id_produccion_entrada='" + id_produccion_existente + "'");
+                    TxtTapada.Text = nombreTapada;
+                    this.Text = "Completar Maguey/Guía de Tapada: " + nombreTapada;
+                    
+                    id_maestro_mezcalero = ConexionMysql.regresaCampoConsulta("SELECT id_maestro_mezcalero FROM produccion_entrada WHERE id_produccion_entrada='" + id_produccion_existente + "'");
+                    
+                    string idFabricaTapada = ConexionMysql.regresaCampoConsulta("SELECT id_fabrica FROM produccion_entrada WHERE id_produccion_entrada='" + id_produccion_existente + "'");
+                    if (idFabricaTapada != "") {
+                        CmbFabrica.SelectedValue = idFabricaTapada;
+                    }
                 }
 
                 CmbTipoMaguey.Items.Insert(0, "Ingresar Guía AMMA y Antigua");
@@ -758,22 +785,22 @@ namespace Crm.Inventario
         {
             try
             {
-                if (DtaEnsamble.Rows.Count < 2)
+                if (DtaEnsamble.Rows.Count < 1)
                 {
-                    MessageBox.Show("No ha realizado ninguna unión");
+                    MessageBox.Show("No ha agregado ningún maguey a la molienda/ensamble");
                     return;
                 }
-                if (CmbFabrica.SelectedValue == null)
+                if (CmbFabrica.Visible && CmbFabrica.SelectedValue == null)
                 {
                     MessageBox.Show("No tienes fabrica disponible para seleccion");
                     return;
                 }
-                if (TxtTapada.Text == "")
+                if (TxtTapada.Visible && TxtTapada.Text == "")
                 {
                     MessageBox.Show("No ha introduccido el nombre de la tapada");
                     return;
                 }
-                if (CmbCoccion.SelectedValue == null)
+                if (CmbCoccion.Visible && CmbCoccion.SelectedValue == null)
                 {
                     MessageBox.Show("No tienes cocciones precargadas, actualiza la base de datos");
                     return;
@@ -867,8 +894,77 @@ namespace Crm.Inventario
 
 
                     ObtenerIdMaximoProduccionEntrada();
+
+                    string p_id_predio = "0";
+                    string p_id_planta = "0";
+                    string p_no_pinas = "0";
+                    string p_agave_kg = "0";
+                    string p_agave_coccion = "0";
+                    string p_tipo = "2";
+                    string p_id_comun = "0";
+                    string p_gcrm = "0";
+                    string p_no_guia = "0";
+                    
+                    string cols_extra = "";
+                    string vals_extra = "";
+
+                    if (DtaEnsamble.Rows.Count == 1)
+                    {
+                        p_tipo = "1";
+                        p_id_predio = DtaEnsamble.Rows[0].Cells["ID_PARAJE"].Value != null && DtaEnsamble.Rows[0].Cells["ID_PARAJE"].Value.ToString() != "" ? DtaEnsamble.Rows[0].Cells["ID_PARAJE"].Value.ToString() : "0";
+                        p_id_planta = DtaEnsamble.Rows[0].Cells["ID_PLANTA"].Value != null && DtaEnsamble.Rows[0].Cells["ID_PLANTA"].Value.ToString() != "" ? DtaEnsamble.Rows[0].Cells["ID_PLANTA"].Value.ToString() : "0";
+                        p_no_pinas = DtaEnsamble.Rows[0].Cells["NUMERO_PIÑA"].Value != null && DtaEnsamble.Rows[0].Cells["NUMERO_PIÑA"].Value.ToString() != "" ? DtaEnsamble.Rows[0].Cells["NUMERO_PIÑA"].Value.ToString() : "0";
+                        p_agave_kg = DtaEnsamble.Rows[0].Cells["MAGUEY_ENTRANTE"].Value != null && DtaEnsamble.Rows[0].Cells["MAGUEY_ENTRANTE"].Value.ToString() != "" ? DtaEnsamble.Rows[0].Cells["MAGUEY_ENTRANTE"].Value.ToString() : "0";
+                        p_agave_coccion = DtaEnsamble.Rows[0].Cells["MAGUEY_COCCION"].Value != null && DtaEnsamble.Rows[0].Cells["MAGUEY_COCCION"].Value.ToString() != "" ? DtaEnsamble.Rows[0].Cells["MAGUEY_COCCION"].Value.ToString() : "0";
+                        p_no_guia = DtaEnsamble.Rows[0].Cells["NO_GUIA"].Value != null && DtaEnsamble.Rows[0].Cells["NO_GUIA"].Value.ToString() != "" ? DtaEnsamble.Rows[0].Cells["NO_GUIA"].Value.ToString() : "0";
+
+                        if (DtaEnsamble.Rows[0].Cells["REGAMMA"].Value != null && DtaEnsamble.Rows[0].Cells["REGAMMA"].Value.ToString() != "si" && p_id_predio == "0")
+                        {
+                            p_id_comun = DtaEnsamble.Rows[0].Cells["ID_PLANTA_COMPRADA"].Value != null && DtaEnsamble.Rows[0].Cells["ID_PLANTA_COMPRADA"].Value.ToString() != "" ? DtaEnsamble.Rows[0].Cells["ID_PLANTA_COMPRADA"].Value.ToString() : "0";
+                            p_gcrm = "1";
+                            cols_extra = ", id_comun, gcrm";
+                            vals_extra = ", '" + p_id_comun + "', '" + p_gcrm + "'";
+                        }
+
+                        cols_extra += ", no_guia";
+                        vals_extra += ", '" + p_no_guia + "'";
+                    }
+
                     //codigo para guardar una produccion 
-                    if (ConexionMysql.insUpd_transaccion("INSERT INTO  produccion_entrada(id_fabrica,id_maestro_mezcalero,id_produccion_entrada,no_cliente,id_predio,id_planta,tapada,no_pinas_agave,agave_kg,agave_coccion_kg,id_coccion,periodo_coccion_inicio,porcentaje_art,id_verificador,fecha,estatus,tipo) VALUES('" + CmbFabrica.SelectedValue + "', '" + id_maestro_mezcalero + "','" + id_max_produccion_entrada + "','" + no_cliente + "',0,0,'" + TxtTapada.Text + "',0,0,0," + CmbCoccion.SelectedValue + ",'" + DataFechaInicioCoccion.Value.ToString("yyyy-MM-dd") + "'," + art_compuesto + "," + Usuario.IdUsuario + ",'" + fecha + "',1,2)") == "Error")
+                    string sqlEnt = "";
+                    if (modo_completar_tapada && id_produccion_existente != "")
+                    {
+                        // En modo completar, hacemos un UPDATE a la tapada existente. Solo guardaremos los datos modificados.
+                        // La lógica para extraer el id correcto de "modo edición" en vez de id_max_produccion_entrada
+                        id_max_produccion_entrada = id_produccion_existente;
+                        
+                        string update_guia_extra = "";
+                        if (p_tipo == "1") {
+                            update_guia_extra = ", no_guia='" + p_no_guia + "'";
+                            if (p_gcrm == "1") {
+                                update_guia_extra += ", id_comun='" + p_id_comun + "', gcrm='1'";
+                            } else {
+                                update_guia_extra += ", gcrm='0'";
+                            }
+                        }
+
+                        sqlEnt = "UPDATE produccion_entrada SET " +
+                                 "id_predio='" + p_id_predio + "', " +
+                                 "id_planta='" + p_id_planta + "', " +
+                                 "no_pinas_agave=" + p_no_pinas + ", " +
+                                 "agave_kg=" + p_agave_kg + ", " +
+                                 "agave_coccion_kg=" + p_agave_coccion + ", " +
+                                 "tipo=" + p_tipo + 
+                                 update_guia_extra + 
+                                 " WHERE id_produccion_entrada='" + id_produccion_existente + "'";
+                    }
+                    else
+                    {
+                        // Inserción normal de nueva tapada
+                        sqlEnt = "INSERT INTO produccion_entrada(id_fabrica,id_maestro_mezcalero,id_produccion_entrada,no_cliente,id_predio,id_planta,tapada,no_pinas_agave,agave_kg,agave_coccion_kg,id_coccion,periodo_coccion_inicio,porcentaje_art,id_verificador,fecha,estatus,tipo" + cols_extra + ") VALUES('" + CmbFabrica.SelectedValue + "', '" + id_maestro_mezcalero + "','" + id_max_produccion_entrada + "','" + no_cliente + "','" + p_id_predio + "','" + p_id_planta + "','" + TxtTapada.Text + "'," + p_no_pinas + "," + p_agave_kg + "," + p_agave_coccion + "," + CmbCoccion.SelectedValue + ",'" + DataFechaInicioCoccion.Value.ToString("yyyy-MM-dd") + "'," + art_compuesto + "," + Usuario.IdUsuario + ",'" + fecha + "',1," + p_tipo + vals_extra + ")";
+                    }
+
+                    if (ConexionMysql.insUpd_transaccion(sqlEnt) == "Error")
                     {
                         return;
                     }
@@ -1002,39 +1098,42 @@ namespace Crm.Inventario
                         }// fin del if tipo de tapada crm
                         */
                         // "REGAMMA"
-                        if (DtaEnsamble.Rows[x].Cells["REGAMMA"].Value.ToString() == "si")
+                        if (DtaEnsamble.Rows.Count > 1) 
                         {
-                            //ObtenerIdMaximoProduccionEnsamble();
-                            if (ConexionMysql.insUpd_transaccion(
-                                "INSERT INTO  produccion_ensamble(" +
-                                "id_produccion_entrada, id_ensamble_union,  id_agave_sobrante,  id_predio,      id_planta,    " +
-                                "no_guia,               no_pinas_agave,     agave_kg,           agave_coccion_kg,   porcentaje_art, " +
-                                "tipo,                  id_verificador) VALUES ( " +
-                                "'" + id_max_produccion_entrada + "','" + id_max_produccion_ensamble_union + "','" + (DtaEnsamble.Rows[x].Cells["ID_PLANTA"].Value.ToString() == "0" ? DtaEnsamble.Rows[x].Cells["ID_AGAVE_SOBRANTE"].Value.ToString() : "") + "','" + DtaEnsamble.Rows[x].Cells["ID_PARAJE"].Value + "'," + DtaEnsamble.Rows[x].Cells["ID_PLANTA"].Value + ", " +
-                                "'" + DtaEnsamble.Rows[x].Cells["NO_GUIA"].Value.ToString() + "'," + (DtaEnsamble.Rows[x].Cells["NUMERO_PIÑA"].Value.ToString() == "" ? "0" : DtaEnsamble.Rows[x].Cells["NUMERO_PIÑA"].Value) + "," + DtaEnsamble.Rows[x].Cells["MAGUEY_ENTRANTE"].Value + "," + DtaEnsamble.Rows[x].Cells["MAGUEY_COCCION"].Value + "," + DtaEnsamble.Rows[x].Cells["%_ART"].Value + ", " +
-                                "" + DtaEnsamble.Rows[x].Cells["TIPO"].Value + "," + Usuario.IdUsuario + ")") == "Error")
+                            if (DtaEnsamble.Rows[x].Cells["REGAMMA"].Value.ToString() == "si")
                             {
-                                return;
+                                //ObtenerIdMaximoProduccionEnsamble();
+                                if (ConexionMysql.insUpd_transaccion(
+                                    "INSERT INTO  produccion_ensamble(" +
+                                    "id_produccion_entrada, id_ensamble_union,  id_agave_sobrante,  id_predio,      id_planta,    " +
+                                    "no_guia,               no_pinas_agave,     agave_kg,           agave_coccion_kg,   porcentaje_art, " +
+                                    "tipo,                  id_verificador) VALUES ( " +
+                                    "'" + id_max_produccion_entrada + "','" + id_max_produccion_ensamble_union + "','" + (DtaEnsamble.Rows[x].Cells["ID_PLANTA"].Value.ToString() == "0" ? DtaEnsamble.Rows[x].Cells["ID_AGAVE_SOBRANTE"].Value.ToString() : "") + "','" + DtaEnsamble.Rows[x].Cells["ID_PARAJE"].Value + "'," + DtaEnsamble.Rows[x].Cells["ID_PLANTA"].Value + ", " +
+                                    "'" + DtaEnsamble.Rows[x].Cells["NO_GUIA"].Value.ToString() + "'," + (DtaEnsamble.Rows[x].Cells["NUMERO_PIÑA"].Value.ToString() == "" ? "0" : DtaEnsamble.Rows[x].Cells["NUMERO_PIÑA"].Value) + "," + DtaEnsamble.Rows[x].Cells["MAGUEY_ENTRANTE"].Value + "," + DtaEnsamble.Rows[x].Cells["MAGUEY_COCCION"].Value + "," + DtaEnsamble.Rows[x].Cells["%_ART"].Value + ", " +
+                                    "" + DtaEnsamble.Rows[x].Cells["TIPO"].Value + "," + Usuario.IdUsuario + ")") == "Error")
+                                {
+                                    return;
+                                }
+                            } else
+                            {
+                                // GUÍAS EXTERNAS
+                                if (ConexionMysql.insUpd_transaccion(
+                                    "INSERT INTO  produccion_ensamble(" +
+                                    "id_produccion_entrada, id_ensamble_union,  id_agave_sobrante,  id_comun,   gcrm,    " +
+                                    "no_guia,               no_pinas_agave,     agave_kg,           agave_coccion_kg,   porcentaje_art, " +
+                                    "tipo,                  id_verificador) VALUES ( " +
+                                    "'" + id_max_produccion_entrada + "','" + id_max_produccion_ensamble_union + "','" + (DtaEnsamble.Rows[x].Cells["ID_PLANTA"].Value.ToString() == "0" ? DtaEnsamble.Rows[x].Cells["ID_AGAVE_SOBRANTE"].Value.ToString() : "") + "','0','1', " +
+                                    "'" + DtaEnsamble.Rows[x].Cells["NO_GUIA"].Value.ToString() + "'," + (DtaEnsamble.Rows[x].Cells["NUMERO_PIÑA"].Value.ToString() == "" ? "0" : DtaEnsamble.Rows[x].Cells["NUMERO_PIÑA"].Value) + "," + DtaEnsamble.Rows[x].Cells["MAGUEY_ENTRANTE"].Value + "," + DtaEnsamble.Rows[x].Cells["MAGUEY_COCCION"].Value + "," + DtaEnsamble.Rows[x].Cells["%_ART"].Value + ", " +
+                                    "" + DtaEnsamble.Rows[x].Cells["TIPO"].Value + "," + Usuario.IdUsuario + ")") == "Error")
+                                {
+                                    return;
+                                }
+                                //ObtenerIdMaximoGuiasDesconocidas();
+                                /*if (ConexionMysql.insUpd_transaccion("INSERT INTO  guias_desconocidas (id_guia_desconocida,id_produccion_entrada,no_guia,predio,fecha_ingreso, verificador_id, actualizado) VALUES( '" + id_max_guias_desconocidas + "','" + id_produccion + "','" + TxtNoGuia.Text.ToString() + "','" + txtPredioCrm.Text.ToString() + "', NOW(), '" + Usuario.IdUsuario + "',0)") == "Error")
+                                {
+                                    return;
+                                }*/
                             }
-                        } else
-                        {
-                            // GUÍAS EXTERNAS
-                            if (ConexionMysql.insUpd_transaccion(
-                                "INSERT INTO  produccion_ensamble(" +
-                                "id_produccion_entrada, id_ensamble_union,  id_agave_sobrante,  id_comun,   gcrm    " +
-                                "no_guia,               no_pinas_agave,     agave_kg,           agave_coccion_kg,   porcentaje_art, " +
-                                "tipo,                  id_verificador) VALUES ( " +
-                                "'" + id_max_produccion_entrada + "','" + id_max_produccion_ensamble_union + "','" + (DtaEnsamble.Rows[x].Cells["ID_PLANTA"].Value.ToString() == "0" ? DtaEnsamble.Rows[x].Cells["ID_AGAVE_SOBRANTE"].Value.ToString() : "") + "','0','1', " +
-                                "'0'," + (DtaEnsamble.Rows[x].Cells["NUMERO_PIÑA"].Value.ToString() == "" ? "0" : DtaEnsamble.Rows[x].Cells["NUMERO_PIÑA"].Value) + "," + DtaEnsamble.Rows[x].Cells["MAGUEY_ENTRANTE"].Value + "," + DtaEnsamble.Rows[x].Cells["MAGUEY_COCCION"].Value + "," + DtaEnsamble.Rows[x].Cells["%_ART"].Value + ", " +
-                                "" + DtaEnsamble.Rows[x].Cells["TIPO"].Value + "," + Usuario.IdUsuario + ")") == "Error")
-                            {
-                                return;
-                            }
-                            //ObtenerIdMaximoGuiasDesconocidas();
-                            /*if (ConexionMysql.insUpd_transaccion("INSERT INTO  guias_desconocidas (id_guia_desconocida,id_produccion_entrada,no_guia,predio,fecha_ingreso, verificador_id, actualizado) VALUES( '" + id_max_guias_desconocidas + "','" + id_produccion + "','" + TxtNoGuia.Text.ToString() + "','" + txtPredioCrm.Text.ToString() + "', NOW(), '" + Usuario.IdUsuario + "',0)") == "Error")
-                            {
-                                return;
-                            }*/
                         }
                     }
 

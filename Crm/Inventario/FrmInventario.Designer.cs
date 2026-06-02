@@ -1653,7 +1653,7 @@
             // lblMermasH
             // 
             this.lblMermasH.AutoSize = true;
-            this.lblMermasH.Location = new System.Drawing.Point(495, 273);
+            this.lblMermasH.Location = new System.Drawing.Point(919, 330);
             this.lblMermasH.Name = "lblMermasH";
             this.lblMermasH.Size = new System.Drawing.Size(63, 26);
             this.lblMermasH.TabIndex = 450;
@@ -1670,12 +1670,11 @@
             this.btnMermasHolograma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMermasHolograma.ForeColor = System.Drawing.Color.White;
             this.btnMermasHolograma.Image = global::Crm.Properties.Resources.mermas;
-            this.btnMermasHolograma.Location = new System.Drawing.Point(455, 264);
+            this.btnMermasHolograma.Location = new System.Drawing.Point(879, 321);
             this.btnMermasHolograma.Name = "btnMermasHolograma";
             this.btnMermasHolograma.Size = new System.Drawing.Size(37, 41);
             this.btnMermasHolograma.TabIndex = 449;
             this.btnMermasHolograma.UseVisualStyleBackColor = false;
-            this.btnMermasHolograma.Visible = true;
             this.btnMermasHolograma.Click += new System.EventHandler(this.btnMermasHolograma_Click);
             // 
             // label82
